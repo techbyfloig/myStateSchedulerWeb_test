@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — My State by Tech by Floig LLC</title>
+  <meta name="description" content="Terms of service, service description, and user authorization for My State by Tech by Floig LLC.">
+  <link rel="icon" type="image/png" href="appicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg-primary: #FAFBFE;
+      --bg-warm: #FFF9F3;
+      --bg-white: #FFFFFF;
+      --navy: #1E3A5F;
+      --navy-light: #2A4F7A;
+      --navy-muted: #3D6590;
+      --navy-soft: #EEF2F7;
+      --orange: #D4793A;
+      --orange-deep: #C06A30;
+      --orange-light: #E8993D;
+      --orange-glow: rgba(212, 121, 58, 0.08);
+      --text-primary: #1A2B42;
+      --text-secondary: #5A6B80;
+      --text-light: #8A96A6;
+      --border: #E2E8F0;
+      --shadow-sm: 0 1px 3px rgba(30, 58, 95, 0.05);
+      --shadow-md: 0 4px 16px rgba(30, 58, 95, 0.07);
+      --shadow-lg: 0 8px 32px rgba(30, 58, 95, 0.09);
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 { font-family: 'Fraunces', serif; line-height: 1.25; letter-spacing: -0.01em; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 16px 32px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: transparent;
+      backdrop-filter: none; -webkit-backdrop-filter: none;
+      border-bottom: 1px solid transparent;
+      box-shadow: none;
+      transition: background 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease;
+    }
+    nav.scrolled {
+      background: linear-gradient(165deg, rgba(30, 58, 95, 0.97), rgba(42, 79, 122, 0.97));
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 2px 20px rgba(30, 58, 95, 0.25);
+      padding: 12px 32px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .nav-logo {
+      font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.25rem;
+      color: #FFFFFF; text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav-logo img { width: 38px; height: 38px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); flex-shrink: 0; }
+    .nav-links { display: flex; align-items: center; gap: 30px; list-style: none; }
+    .nav-links a { text-decoration: none; color: rgba(255,255,255,0.75); font-size: 0.93rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #FFFFFF; }
+    .nav-cta {
+      background: rgba(255,255,255,0.85) !important; color: var(--navy) !important;
+      padding: 10px 22px; border-radius: 50px; font-weight: 600 !important;
+      transition: all 0.25s !important; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    }
+    .nav-cta:hover { background: #FFFFFF !important; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
+    .lang-toggle { display: flex; align-items: center; gap: 4px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 4px 6px; cursor: pointer; font-size: 0.78rem; font-weight: 600; margin-right: 8px; }
+    .lang-toggle span { padding: 4px 10px; border-radius: 50px; color: rgba(255,255,255,0.6); transition: all 0.25s; }
+    .lang-toggle span.active { background: rgba(255,255,255,0.85); color: var(--navy); }
+    .mobile-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .mobile-toggle span { width: 24px; height: 2px; background: #FFFFFF; border-radius: 2px; transition: transform 0.3s ease, opacity 0.3s ease; display: block; }
+    .mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .mobile-toggle.active span:nth-child(2) { opacity: 0; }
+    .mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* HERO HEADER */
+    .legal-hero {
+      padding: 140px 24px 60px;
+      text-align: center;
+      background: url('image2.png') center/cover no-repeat;
+      position: relative; overflow: hidden;
+    }
+    .legal-hero::before { content: ''; position: absolute; inset: 0; background: rgba(30, 58, 95, 0.5); pointer-events: none; }
+    .legal-hero h1 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; color: #FFFFFF; margin-bottom: 18px; position: relative; z-index: 1; }
+    .legal-hero p { font-size: 1.08rem; color: rgba(255,255,255,0.85); max-width: 680px; margin: 0 auto; line-height: 1.7; position: relative; z-index: 1; }
+    .legal-hero .effective-date { display: inline-block; margin-top: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.12); padding: 8px 18px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.15); position: relative; z-index: 1; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+    .legal-hero .cross-link { display: inline-block; margin-top: 14px; font-size: 0.9rem; color: var(--orange-light); text-decoration: none; font-weight: 500; transition: color 0.2s; position: relative; z-index: 1; }
+    .legal-hero .cross-link:hover { color: #FFFFFF; text-decoration: underline; }
+
+    /* PAGE LAYOUT */
+    .legal-page { max-width: 860px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    /* TABLE OF CONTENTS */
+    .toc {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      margin-bottom: 48px;
+    }
+    .toc h2 { font-size: 1.15rem; font-weight: 600; color: var(--navy); margin-bottom: 16px; }
+    .toc-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .toc-list a {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none; color: var(--text-secondary);
+      font-size: 0.95rem; font-weight: 500;
+      padding: 8px 14px; border-radius: 10px;
+      transition: all 0.2s;
+    }
+    .toc-list a:hover { background: var(--navy-soft); color: var(--navy); }
+    .toc-list .toc-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px; border-radius: 8px;
+      font-size: 0.78rem; font-weight: 700;
+      background: linear-gradient(135deg, rgba(30,58,95,0.07), rgba(212,121,58,0.07));
+      color: var(--navy);
+      flex-shrink: 0;
+    }
+
+    /* LEGAL SECTIONS */
+    .legal-section {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      margin-bottom: 28px;
+      transition: box-shadow 0.3s;
+    }
+    .legal-section:hover { box-shadow: var(--shadow-md); }
+    .legal-section:target { box-shadow: 0 0 0 2px var(--orange), var(--shadow-md); }
+
+    .section-num {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.07em;
+      text-transform: uppercase; color: var(--orange);
+      margin-bottom: 12px;
+    }
+    .section-num span {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 24px; height: 24px; border-radius: 6px;
+      background: var(--orange-glow); font-size: 0.72rem;
+    }
+
+    .legal-section h2 {
+      font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 20px;
+    }
+
+    .legal-section h3 {
+      font-size: 1.1rem; font-weight: 600; color: var(--navy); margin: 28px 0 12px;
+      padding-top: 20px; border-top: 1px solid var(--border);
+    }
+    .legal-section h3:first-of-type { border-top: none; padding-top: 0; margin-top: 24px; }
+
+    .legal-section p {
+      font-size: 0.95rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 14px;
+    }
+
+    .legal-section ul {
+      list-style: none; margin: 12px 0 16px; display: flex; flex-direction: column; gap: 8px;
+    }
+    .legal-section li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.93rem; color: var(--text-secondary); line-height: 1.6;
+    }
+    .legal-section li::before { content: '\2192'; color: var(--navy-muted); flex-shrink: 0; margin-top: 1px; }
+
+    /* HIGHLIGHT BOXES */
+    .highlight-important, .highlight-warning, .highlight-green {
+      padding: 20px 24px 20px 8px;
+      border-radius: var(--radius-md);
+      margin: 20px 0;
+      font-size: 0.93rem;
+      line-height: 1.7;
+    }
+    .highlight-important p, .highlight-warning p, .highlight-green p { margin-bottom: 0; }
+
+    .highlight-important {
+      background: var(--navy-soft);
+      border-left: 3px solid var(--navy);
+      color: var(--navy);
+    }
+
+    .highlight-warning {
+      background: #FFF5F0;
+      border-left: 3px solid var(--orange);
+      color: #8B4513;
+    }
+
+    .highlight-green {
+      background: #E8F5EE;
+      border-left: 3px solid #2D8F5E;
+      color: #1E5A3A;
+    }
+
+    .bold-statement {
+      font-weight: 600; color: var(--navy); font-size: 1rem;
+    }
+
+    /* CONTACT BOX */
+    .contact-box {
+      background: linear-gradient(165deg, var(--navy), var(--navy-light));
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      color: white;
+      margin-top: 40px;
+    }
+    .contact-box h2 { font-size: 1.3rem; color: white; margin-bottom: 16px; }
+    .contact-box p { color: rgba(255,255,255,0.8); font-size: 0.93rem; line-height: 1.7; margin-bottom: 8px; }
+    .contact-box a { color: var(--orange-light); text-decoration: none; font-weight: 600; }
+    .contact-box a:hover { text-decoration: underline; }
+    .contact-detail { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .contact-detail .cd-icon {
+      width: 32px; height: 32px; border-radius: 8px;
+      background: rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.7); flex-shrink: 0;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 60px 24px 32px;
+      background: var(--navy);
+      color: rgba(255, 255, 255, 0.7);
+      position: relative;
+    }
+    footer::before {
+      content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 85%; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    }
+    .footer-inner { max-width: 1080px; margin: 0 auto; }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+      padding-bottom: 40px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); margin-bottom: 28px;
+    }
+    .footer-logo {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.15rem;
+      color: #FFFFFF; text-decoration: none; margin-bottom: 14px;
+    }
+    .footer-logo img { width: 32px; height: 32px; border-radius: 8px; }
+    .footer-brand-desc { font-size: 0.88rem; color: rgba(255, 255, 255, 0.55); line-height: 1.6; margin-bottom: 20px; max-width: 280px; }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social-link {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255, 255, 255, 0.6); transition: background 0.2s, color 0.2s; text-decoration: none;
+    }
+    .footer-social-link:hover { background: rgba(255, 255, 255, 0.15); color: #FFFFFF; }
+    .footer-col-title {
+      font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255, 255, 255, 0.4); margin-bottom: 18px;
+    }
+    .footer-col-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col-links a { font-size: 0.9rem; color: rgba(255, 255, 255, 0.65); text-decoration: none; transition: color 0.2s; }
+    .footer-col-links a:hover { color: #FFFFFF; }
+    .footer-bottom { text-align: center; }
+    .footer-copyright { font-size: 0.78rem; color: rgba(255, 255, 255, 0.35); line-height: 1.6; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+    @media (max-width: 640px) {
+      nav { padding: 12px 18px; }
+      nav.scrolled { padding: 10px 18px; }
+      .nav-links {
+        display: flex; position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column;
+        background: linear-gradient(165deg, rgba(30, 58, 95, 0.98), rgba(42, 79, 122, 0.98));
+        backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+        padding: 0 20px; gap: 0;
+        max-height: 0; overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
+        box-shadow: 0 8px 24px rgba(30,58,95,0.25);
+      }
+      .nav-links.open { max-height: 380px; padding: 20px; gap: 16px; }
+      .nav-links a { opacity: 0; transform: translateX(-10px); transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s; }
+      .nav-links.open a { opacity: 1; transform: translateX(0); }
+      .nav-links li:nth-child(1) a { transition-delay: 0.05s; }
+      .nav-links li:nth-child(2) a { transition-delay: 0.1s; }
+      .nav-links li:nth-child(3) a { transition-delay: 0.15s; }
+      .nav-links li:nth-child(4) a { transition-delay: 0.2s; }
+      .nav-links li:nth-child(5) a { transition-delay: 0.25s; }
+      .mobile-toggle { display: flex; }
+      .legal-hero { padding: 110px 18px 40px; }
+      .legal-page { padding: 40px 16px 80px; }
+      .legal-section { padding: 28px 22px; }
+      .toc { padding: 24px 20px; }
+      .contact-box { padding: 28px 22px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+      .footer-brand-desc { max-width: 100%; margin-left: auto; margin-right: auto; }
+      .footer-social { justify-content: center; }
+      .footer-logo { justify-content: center; }
+    }
+
+    /* SCROLL ANIMATIONS */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img data-config-src="app.icon" src="appicon.jpg" alt="DPS QuickBook">
+      <span data-config="app.name">DPS QuickBook</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav-home">Home</a></li>
+      <li><a href="index.html#how-it-works" data-i18n="nav-how">How It Works</a></li>
+      <li><a href="index.html#pricing" data-i18n="nav-pricing">Pricing</a></li>
+      <li><a href="index.html#faq" data-i18n="nav-contact">Contact</a></li>
+      <li><div class="lang-toggle" onclick="toggleLang()"><span id="lang-en" class="active">EN</span><span id="lang-es">ES</span></div></li>
+      <li><a href="index.html#download" class="nav-cta" data-i18n="nav-cta">Download App</a></li>
+    </ul>
+    <button class="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <!-- HERO -->
+  <div class="legal-hero">
+    <h1 data-i18n="terms-hero-title">Terms of Service</h1>
+    <p data-i18n="terms-hero-desc">The terms and conditions governing your use of {{app.mobileName}} by {{company.name}}.</p>
+    <span class="effective-date" data-i18n="terms-hero-date">Effective Date: {{legal.effectiveDate}}</span>
+    <br>
+    <a href="privacy.html" class="cross-link" data-i18n="terms-hero-crosslink" data-i18n-html="true">View Privacy Policy &rarr;</a>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="legal-page">
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc fade-in">
+      <h2 data-i18n="terms-toc-title">Contents</h2>
+      <ul class="toc-list">
+        <li><a href="#terms-of-service"><span class="toc-num">1</span> <span data-i18n="terms-toc-1">Terms of Service</span></a></li>
+        <li><a href="#service-description"><span class="toc-num">2</span> <span data-i18n="terms-toc-2">Service Description & Limitations</span></a></li>
+        <li><a href="#government-disclaimer"><span class="toc-num">3</span> <span data-i18n="terms-toc-3">Government Non-Affiliation</span></a></li>
+        <li><a href="#authorization"><span class="toc-num">4</span> <span data-i18n="terms-toc-4">User Authorization</span></a></li>
+        <li><a href="#contact"><span class="toc-num">5</span> <span data-i18n="terms-toc-5">Contact Information</span></a></li>
+      </ul>
+    </div>
+
+    <!-- SECTION 1: TERMS OF SERVICE -->
+    <div class="legal-section fade-in" id="terms-of-service">
+      <div class="section-num"><span>1</span> <span data-i18n="terms-s1-label">Section One</span></div>
+      <h2 data-i18n="terms-s1-title">Terms of Service</h2>
+
+      <h3 data-i18n="terms-s1-h3-1">1.1 — Acceptance of Terms</h3>
+      <p data-i18n="terms-s1-p1">By creating an account or using {{app.mobileName}}, you agree to these Terms of Service. If you do not agree, you must not use the service. We reserve the right to modify these terms at any time, with notice provided through the app or via email.</p>
+
+      <h3 data-i18n="terms-s1-h3-2">1.2 — Eligibility</h3>
+      <p data-i18n="terms-s1-p2">You must be at least 18 years of age to use {{app.mobileName}}. By using the service, you represent that you meet this requirement and that all information you provide is accurate and complete.</p>
+
+      <h3 data-i18n="terms-s1-h3-3">1.3 — Account Responsibility</h3>
+      <p data-i18n="terms-s1-p3">You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account. You agree to notify us immediately of any unauthorized use.</p>
+
+      <h3 data-i18n="terms-s1-h3-4">1.4 — Acceptable Use</h3>
+      <p data-i18n="terms-s1-p4">You agree to use {{app.mobileName}} only for its intended purpose of monitoring and securing DPS appointments. You agree not to:</p>
+      <ul>
+        <li data-i18n="terms-s1-li1">Use the service for any unlawful purpose</li>
+        <li data-i18n="terms-s1-li2">Resell, redistribute, or commercially exploit appointments obtained through the service</li>
+        <li data-i18n="terms-s1-li3">Provide false or misleading information</li>
+        <li data-i18n="terms-s1-li4">Attempt to interfere with or disrupt the service</li>
+        <li data-i18n="terms-s1-li5">Create multiple accounts for the same individual</li>
+      </ul>
+
+      <h3 data-i18n="terms-s1-h3-5">1.5 — Government Non-Affiliation</h3>
+      <div class="highlight-important">
+        <p data-i18n="terms-s1-p5">{{app.mobileName}} is an independent service and is not affiliated with, endorsed by, sponsored by, or associated with the Texas Department of Public Safety (DPS) or any governmental agency.</p>
+        <p style="margin-top:10px" data-i18n="terms-s1-p6">All appointments are secured through publicly available official government systems. We do not guarantee appointment availability, timing, or eligibility.</p>
+      </div>
+
+      <h3 data-i18n="terms-s1-h3-6">1.6 — Payment & Refunds</h3>
+      <p data-i18n="terms-s1-p7">Manual booking features are always free. Premium auto-booking services are charged only when the feature is actively used. All fees are non-refundable unless otherwise required by applicable law. Pricing is subject to change with reasonable advance notice.</p>
+
+      <h3 data-i18n="terms-s1-h3-7">1.7 — Limitation of Liability</h3>
+      <p data-i18n="terms-s1-p8">To the maximum extent permitted by law, {{company.name}} and its officers, employees, and agents shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the service. Our total liability shall not exceed the amount you paid for the service in the twelve months preceding the claim.</p>
+
+      <h3 data-i18n="terms-s1-h3-8">1.8 — Termination</h3>
+      <p data-i18n="terms-s1-p9">We reserve the right to suspend or terminate your account at any time for violation of these terms or for any reason at our discretion, with or without notice. Upon termination, your right to use the service ceases immediately.</p>
+
+      <h3 data-i18n="terms-s1-h3-9">1.9 — Governing Law</h3>
+      <p data-i18n="terms-s1-p10">These terms are governed by and construed in accordance with the laws of the State of Texas, without regard to conflict of law principles. Any disputes shall be resolved in the courts located in the State of Texas.</p>
+    </div>
+
+    <!-- SECTION 2: SERVICE DESCRIPTION -->
+    <div class="legal-section fade-in" id="service-description">
+      <div class="section-num"><span>2</span> <span data-i18n="terms-s2-label">Section Two</span></div>
+      <h2 data-i18n="terms-s2-title">Service Description & Limitations</h2>
+
+      <h3 data-i18n="terms-s2-h3-1">2.1 — Service Nature</h3>
+      <p data-i18n="terms-s2-p1">{{app.mobileName}} provides appointment monitoring and reservation assistance for Texas DPS appointments. Our service operates as follows:</p>
+      <ul>
+        <li data-i18n="terms-s2-li1">We monitor publicly available appointment availability through official channels</li>
+        <li data-i18n="terms-s2-li2">For premium users, we may automatically reserve appointments based on user-defined preferences and availability</li>
+        <li data-i18n="terms-s2-li3">Users are responsible for confirming appointment eligibility, document requirements, and all DPS regulations</li>
+        <li data-i18n="terms-s2-li4">We do not guarantee successful booking of any appointment</li>
+        <li data-i18n="terms-s2-li5">Manual appointment browsing is always available free of charge</li>
+      </ul>
+
+      <h3 data-i18n="terms-s2-h3-2">2.2 — No Guarantee of Results</h3>
+      <div class="highlight-warning">
+        <p data-i18n="terms-s2-p2">{{app.mobileName}} does not guarantee that an appointment will be available, booked, or suitable for your specific needs. Appointment availability is controlled entirely by the Texas Department of Public Safety. We are not responsible for:</p>
+      </div>
+      <ul>
+        <li data-i18n="terms-s2-li6">Failure to secure an appointment within a desired timeframe</li>
+        <li data-i18n="terms-s2-li7">Appointments that do not match your specific service requirements</li>
+        <li data-i18n="terms-s2-li8">DPS rejecting your documents, identification, or eligibility</li>
+        <li data-i18n="terms-s2-li9">Changes to DPS scheduling systems, policies, or availability</li>
+        <li data-i18n="terms-s2-li10">Technical issues with DPS systems beyond our control</li>
+      </ul>
+
+      <h3 data-i18n="terms-s2-h3-3">2.3 — Premium Auto-Booking</h3>
+      <p data-i18n="terms-s2-p3">The auto-booking feature provides automated monitoring and reservation based on user-authorized preferences. When you enable auto-booking, you authorize {{app.mobileName}} to attempt appointment reservations on your behalf using the information and preferences you have provided.</p>
+      <p data-i18n="terms-s2-p4">You will always receive a notification when an appointment is secured. You may cancel or modify your auto-booking preferences at any time through the app.</p>
+    </div>
+
+    <!-- SECTION 3: GOVERNMENT DISCLAIMER -->
+    <div class="legal-section fade-in" id="government-disclaimer">
+      <div class="section-num"><span>3</span> <span data-i18n="terms-s3-label">Section Three</span></div>
+      <h2 data-i18n="terms-s3-title">Government Non-Affiliation Disclaimer</h2>
+
+      <div class="highlight-important">
+        <p class="bold-statement" style="margin-bottom:12px" data-i18n="terms-s3-p1">{{app.mobileName}} is not the Texas Department of Public Safety.</p>
+        <p data-i18n="terms-s3-p2">{{app.mobileName}} is an independent, privately operated service developed and maintained by {{company.name}}. We are not affiliated with, endorsed by, sponsored by, or associated with the Texas Department of Public Safety (DPS), the Texas Department of Motor Vehicles (TxDMV), or any federal, state, or local government agency.</p>
+        <p style="margin-top:10px" data-i18n="terms-s3-p3">All appointment scheduling is conducted through publicly available official government systems. We do not have special access to, priority within, or influence over government appointment systems.</p>
+        <p style="margin-top:10px" data-i18n="terms-s3-p4">Users are solely responsible for verifying their eligibility, preparing required documents, and complying with all DPS policies and requirements.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 4: AUTHORIZATION -->
+    <div class="legal-section fade-in" id="authorization">
+      <div class="section-num"><span>4</span> <span data-i18n="terms-s4-label">Section Four</span></div>
+      <h2 data-i18n="terms-s4-title">User Authorization</h2>
+
+      <div class="highlight-warning">
+        <p class="bold-statement" data-i18n="terms-s4-p1">Important: Please read this section carefully.</p>
+      </div>
+
+      <p data-i18n="terms-s4-p2">By enabling and using auto-booking services, you expressly authorize {{app.mobileName}} to act on your behalf to attempt appointment reservations using the information you provide. This authorization includes:</p>
+      <ul>
+        <li data-i18n="terms-s4-li1">Monitoring appointment availability based on your specified preferences</li>
+        <li data-i18n="terms-s4-li2">Attempting to reserve available appointments that match your criteria</li>
+        <li data-i18n="terms-s4-li3">Using your provided information to complete reservation forms</li>
+        <li data-i18n="terms-s4-li4">Sending you notifications regarding reservation attempts and outcomes</li>
+      </ul>
+
+      <p data-i18n="terms-s4-p3">You may revoke this authorization at any time by disabling auto-booking in your account settings. Revoking authorization will not affect any appointments already secured on your behalf.</p>
+
+      <p data-i18n="terms-s4-p4">You acknowledge that by granting this authorization, you accept responsibility for any appointments reserved through the auto-booking service, and you understand that {{app.mobileName}} cannot guarantee the accuracy, availability, or suitability of any appointment secured.</p>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact-box fade-in" id="contact">
+      <h2 data-i18n="terms-contact-title">Contact Information</h2>
+      <p data-i18n="terms-contact-desc">If you have questions about these terms, please reach out:</p>
+      <div style="margin-top:20px">
+        <div class="contact-detail">
+          <span class="cd-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg></span>
+          <p data-i18n="terms-contact-email" data-i18n-html="true">Email: <a href="mailto:{{company.email}}">{{company.email}}</a></p>
+        </div>
+        <div class="contact-detail">
+          <span class="cd-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22V18h6v4M9 6h.01M15 6h.01M9 10h.01M15 10h.01M9 14h.01M15 14h.01"/></svg></span>
+          <p data-i18n="terms-contact-address" data-i18n-html="true">{{company.name}}<br>{{company.street}}, {{company.city}}, {{company.state}} {{company.zip}}<br>{{company.country}}</p>
+        </div>
+      </div>
+      <p style="margin-top:16px; font-size:0.85rem; opacity:0.6;" data-i18n="terms-contact-response">Please allow up to 5 business days for a response.</p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo"><img data-config-src="app.icon" src="appicon.jpg" alt="DPS QuickBook"> <span data-config="app.name">DPS QuickBook</span></a>
+          <p class="footer-brand-desc" data-i18n="footer-desc">Find and secure earlier Texas DPS appointments. Book manually for free or let us handle it automatically.</p>
+          <p class="footer-brand-desc" data-i18n="footer-address" data-i18n-html="true" style="margin-bottom: 16px; font-size: 0.82rem;">{{company.name}}<br>{{company.street}}, {{company.city}}, {{company.state}} {{company.zip}}<br>{{company.country}}</p>
+          <div class="footer-social">
+            <a href="#" data-config-href="links.twitter" class="footer-social-link" aria-label="Twitter"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="#" data-config-href="links.instagram" class="footer-social-link" aria-label="Instagram"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" data-config-href="links.facebook" class="footer-social-link" aria-label="Facebook"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title" data-i18n="footer-product">Product</h4>
+          <ul class="footer-col-links">
+            <li><a href="index.html#how-it-works" data-i18n="footer-how">How It Works</a></li>
+            <li><a href="index.html#pricing" data-i18n="footer-pricing">Pricing</a></li>
+            <li><a href="index.html#download" data-i18n="footer-download">Download App</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title" data-i18n="footer-company">Company</h4>
+          <ul class="footer-col-links">
+            <li><a href="index.html#transparency" data-i18n="footer-trust">Trust & Privacy</a></li>
+            <li><a href="index.html#transparency" data-i18n="footer-compliance">Compliance</a></li>
+            <li><a href="index.html#faq" data-i18n="footer-faq">FAQ</a></li>
+            <li><a href="index.html#faq" data-i18n="footer-contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title" data-i18n="footer-legal">Legal</h4>
+          <ul class="footer-col-links">
+            <li><a href="privacy.html" data-i18n="footer-privacy">Privacy Policy</a></li>
+            <li><a href="terms.html" data-i18n="footer-terms">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright" data-i18n="footer-disclaimer">Not affiliated with the Texas Department of Public Safety. All appointments booked through the official DPS website.</p>
+        <p class="footer-copyright" data-i18n="footer-copyright">&copy; {{company.copyrightYear}} {{app.name}} by {{company.name}}. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script>
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Nav scroll effect
+    const nav = document.querySelector('nav');
+    const toggleBtn = document.querySelector('.mobile-toggle');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }, { passive: true });
+
+    // Mobile toggle
+    toggleBtn.addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+  </script>
+
+  <script>
+    const translations = {
+      es: {
+        // Nav
+        "nav-home": "Inicio",
+        "nav-how": "C\u00f3mo Funciona",
+        "nav-pricing": "Precios",
+        "nav-contact": "Contacto",
+        "nav-cta": "Descargar App",
+
+        // Hero
+        "terms-hero-title": "T\u00e9rminos de Servicio",
+        "terms-hero-desc": "Los t\u00e9rminos y condiciones que rigen el uso de {{app.mobileName}} por {{company.name}}.",
+        "terms-hero-date": "Fecha de Vigencia: {{legal.effectiveDateEs}}",
+        "terms-hero-crosslink": "Ver Pol\u00edtica de Privacidad &rarr;",
+
+        // Table of Contents
+        "terms-toc-title": "Contenido",
+        "terms-toc-1": "T\u00e9rminos de Servicio",
+        "terms-toc-2": "Descripci\u00f3n y Limitaciones del Servicio",
+        "terms-toc-3": "No Afiliaci\u00f3n Gubernamental",
+        "terms-toc-4": "Autorizaci\u00f3n del Usuario",
+        "terms-toc-5": "Informaci\u00f3n de Contacto",
+
+        // Section 1: Terms of Service
+        "terms-s1-label": "Secci\u00f3n Uno",
+        "terms-s1-title": "T\u00e9rminos de Servicio",
+        "terms-s1-h3-1": "1.1 \u2014 Aceptaci\u00f3n de los T\u00e9rminos",
+        "terms-s1-p1": "Al crear una cuenta o utilizar {{app.mobileName}}, usted acepta estos T\u00e9rminos de Servicio. Si no est\u00e1 de acuerdo, no debe utilizar el servicio. Nos reservamos el derecho de modificar estos t\u00e9rminos en cualquier momento, con notificaci\u00f3n proporcionada a trav\u00e9s de la aplicaci\u00f3n o por correo electr\u00f3nico.",
+        "terms-s1-h3-2": "1.2 \u2014 Elegibilidad",
+        "terms-s1-p2": "Debe tener al menos 18 a\u00f1os de edad para utilizar {{app.mobileName}}. Al utilizar el servicio, usted declara que cumple con este requisito y que toda la informaci\u00f3n que proporciona es precisa y completa.",
+        "terms-s1-h3-3": "1.3 \u2014 Responsabilidad de la Cuenta",
+        "terms-s1-p3": "Usted es responsable de mantener la confidencialidad de las credenciales de su cuenta y de toda la actividad que ocurra bajo su cuenta. Usted acepta notificarnos inmediatamente de cualquier uso no autorizado.",
+        "terms-s1-h3-4": "1.4 \u2014 Uso Aceptable",
+        "terms-s1-p4": "Usted acepta utilizar {{app.mobileName}} \u00fanicamente para su prop\u00f3sito previsto de monitorear y asegurar citas del DPS. Usted acepta no:",
+        "terms-s1-li1": "Utilizar el servicio para cualquier prop\u00f3sito il\u00edcito",
+        "terms-s1-li2": "Revender, redistribuir o explotar comercialmente las citas obtenidas a trav\u00e9s del servicio",
+        "terms-s1-li3": "Proporcionar informaci\u00f3n falsa o enga\u00f1osa",
+        "terms-s1-li4": "Intentar interferir con o interrumpir el servicio",
+        "terms-s1-li5": "Crear m\u00faltiples cuentas para el mismo individuo",
+        "terms-s1-h3-5": "1.5 \u2014 No Afiliaci\u00f3n Gubernamental",
+        "terms-s1-p5": "{{app.mobileName}} es un servicio independiente y no est\u00e1 afiliado, respaldado, patrocinado ni asociado con el Departamento de Seguridad P\u00fablica de Texas (DPS) ni con ninguna agencia gubernamental.",
+        "terms-s1-p6": "Todas las citas se aseguran a trav\u00e9s de sistemas gubernamentales oficiales disponibles p\u00fablicamente. No garantizamos la disponibilidad, el horario ni la elegibilidad de las citas.",
+        "terms-s1-h3-6": "1.6 \u2014 Pagos y Reembolsos",
+        "terms-s1-p7": "Las funciones de reserva manual son siempre gratuitas. Los servicios premium de reserva autom\u00e1tica se cobran solo cuando la funci\u00f3n se utiliza activamente. Todas las tarifas no son reembolsables a menos que la ley aplicable lo requiera. Los precios est\u00e1n sujetos a cambios con aviso previo razonable.",
+        "terms-s1-h3-7": "1.7 \u2014 Limitaci\u00f3n de Responsabilidad",
+        "terms-s1-p8": "En la medida m\u00e1xima permitida por la ley, {{company.name}} y sus directivos, empleados y agentes no ser\u00e1n responsables de ning\u00fan da\u00f1o indirecto, incidental, especial, consecuente o punitivo derivado de su uso del servicio. Nuestra responsabilidad total no exceder\u00e1 el monto que usted pag\u00f3 por el servicio en los doce meses anteriores a la reclamaci\u00f3n.",
+        "terms-s1-h3-8": "1.8 \u2014 Terminaci\u00f3n",
+        "terms-s1-p9": "Nos reservamos el derecho de suspender o terminar su cuenta en cualquier momento por violaci\u00f3n de estos t\u00e9rminos o por cualquier raz\u00f3n a nuestra discreci\u00f3n, con o sin previo aviso. Tras la terminaci\u00f3n, su derecho a utilizar el servicio cesa inmediatamente.",
+        "terms-s1-h3-9": "1.9 \u2014 Ley Aplicable",
+        "terms-s1-p10": "Estos t\u00e9rminos se rigen e interpretan de acuerdo con las leyes del Estado de Texas, sin considerar los principios de conflicto de leyes. Cualquier disputa se resolver\u00e1 en los tribunales ubicados en el Estado de Texas.",
+
+        // Section 2: Service Description
+        "terms-s2-label": "Secci\u00f3n Dos",
+        "terms-s2-title": "Descripci\u00f3n y Limitaciones del Servicio",
+        "terms-s2-h3-1": "2.1 \u2014 Naturaleza del Servicio",
+        "terms-s2-p1": "{{app.mobileName}} proporciona monitoreo de citas y asistencia de reserva para citas del DPS de Texas. Nuestro servicio opera de la siguiente manera:",
+        "terms-s2-li1": "Monitoreamos la disponibilidad de citas p\u00fablicamente accesibles a trav\u00e9s de canales oficiales",
+        "terms-s2-li2": "Para usuarios premium, podemos reservar autom\u00e1ticamente citas seg\u00fan las preferencias y disponibilidad definidas por el usuario",
+        "terms-s2-li3": "Los usuarios son responsables de confirmar la elegibilidad de la cita, los requisitos de documentos y todas las regulaciones del DPS",
+        "terms-s2-li4": "No garantizamos la reserva exitosa de ninguna cita",
+        "terms-s2-li5": "La b\u00fasqueda manual de citas siempre est\u00e1 disponible de forma gratuita",
+        "terms-s2-h3-2": "2.2 \u2014 Sin Garant\u00eda de Resultados",
+        "terms-s2-p2": "{{app.mobileName}} no garantiza que una cita estar\u00e1 disponible, ser\u00e1 reservada o ser\u00e1 adecuada para sus necesidades espec\u00edficas. La disponibilidad de citas es controlada en su totalidad por el Departamento de Seguridad P\u00fablica de Texas. No somos responsables de:",
+        "terms-s2-li6": "No poder asegurar una cita dentro del plazo deseado",
+        "terms-s2-li7": "Citas que no coincidan con sus requisitos espec\u00edficos de servicio",
+        "terms-s2-li8": "Que el DPS rechace sus documentos, identificaci\u00f3n o elegibilidad",
+        "terms-s2-li9": "Cambios en los sistemas de programaci\u00f3n, pol\u00edticas o disponibilidad del DPS",
+        "terms-s2-li10": "Problemas t\u00e9cnicos con los sistemas del DPS fuera de nuestro control",
+        "terms-s2-h3-3": "2.3 \u2014 Reserva Autom\u00e1tica Premium",
+        "terms-s2-p3": "La funci\u00f3n de reserva autom\u00e1tica proporciona monitoreo automatizado y reserva basada en las preferencias autorizadas por el usuario. Cuando usted habilita la reserva autom\u00e1tica, autoriza a {{app.mobileName}} a intentar reservas de citas en su nombre utilizando la informaci\u00f3n y preferencias que ha proporcionado.",
+        "terms-s2-p4": "Siempre recibir\u00e1 una notificaci\u00f3n cuando se asegure una cita. Puede cancelar o modificar sus preferencias de reserva autom\u00e1tica en cualquier momento a trav\u00e9s de la aplicaci\u00f3n.",
+
+        // Section 3: Government Disclaimer
+        "terms-s3-label": "Secci\u00f3n Tres",
+        "terms-s3-title": "Aviso de No Afiliaci\u00f3n Gubernamental",
+        "terms-s3-p1": "{{app.mobileName}} no es el Departamento de Seguridad P\u00fablica de Texas.",
+        "terms-s3-p2": "{{app.mobileName}} es un servicio independiente, operado de forma privada, desarrollado y mantenido por {{company.name}}. No estamos afiliados, respaldados, patrocinados ni asociados con el Departamento de Seguridad P\u00fablica de Texas (DPS), el Departamento de Veh\u00edculos Motorizados de Texas (TxDMV), ni con ninguna agencia gubernamental federal, estatal o local.",
+        "terms-s3-p3": "Toda la programaci\u00f3n de citas se realiza a trav\u00e9s de sistemas gubernamentales oficiales disponibles p\u00fablicamente. No tenemos acceso especial, prioridad ni influencia sobre los sistemas de citas gubernamentales.",
+        "terms-s3-p4": "Los usuarios son los \u00fanicos responsables de verificar su elegibilidad, preparar los documentos requeridos y cumplir con todas las pol\u00edticas y requisitos del DPS.",
+
+        // Section 4: Authorization
+        "terms-s4-label": "Secci\u00f3n Cuatro",
+        "terms-s4-title": "Autorizaci\u00f3n del Usuario",
+        "terms-s4-p1": "Importante: Por favor lea esta secci\u00f3n cuidadosamente.",
+        "terms-s4-p2": "Al habilitar y utilizar los servicios de reserva autom\u00e1tica, usted autoriza expresamente a {{app.mobileName}} a actuar en su nombre para intentar reservas de citas utilizando la informaci\u00f3n que proporciona. Esta autorizaci\u00f3n incluye:",
+        "terms-s4-li1": "Monitorear la disponibilidad de citas seg\u00fan sus preferencias especificadas",
+        "terms-s4-li2": "Intentar reservar citas disponibles que coincidan con sus criterios",
+        "terms-s4-li3": "Utilizar la informaci\u00f3n proporcionada para completar formularios de reserva",
+        "terms-s4-li4": "Enviarle notificaciones sobre los intentos de reserva y sus resultados",
+        "terms-s4-p3": "Puede revocar esta autorizaci\u00f3n en cualquier momento deshabilitando la reserva autom\u00e1tica en la configuraci\u00f3n de su cuenta. Revocar la autorizaci\u00f3n no afectar\u00e1 las citas ya aseguradas en su nombre.",
+        "terms-s4-p4": "Usted reconoce que al otorgar esta autorizaci\u00f3n, acepta la responsabilidad por cualquier cita reservada a trav\u00e9s del servicio de reserva autom\u00e1tica, y entiende que {{app.mobileName}} no puede garantizar la precisi\u00f3n, disponibilidad o idoneidad de ninguna cita asegurada.",
+
+        // Contact
+        "terms-contact-title": "Informaci\u00f3n de Contacto",
+        "terms-contact-desc": "Si tiene preguntas sobre estos t\u00e9rminos, por favor comun\u00edquese con nosotros:",
+        "terms-contact-email": "Correo electr\u00f3nico: <a href=\"mailto:{{company.email}}\">{{company.email}}</a>",
+        "terms-contact-address": "{{company.name}}<br>{{company.street}}, {{company.city}}, {{company.state}} {{company.zip}}<br>Estados Unidos",
+        "terms-contact-response": "Por favor permita hasta 5 d\u00edas h\u00e1biles para recibir una respuesta.",
+
+        // Footer
+        "footer-desc": "Encuentra y asegura citas del DPS de Texas m\u00e1s tempranas. Reserva manualmente gratis o d\u00e9janos manejarlo autom\u00e1ticamente.",
+        "footer-product": "Producto",
+        "footer-how": "C\u00f3mo Funciona",
+        "footer-pricing": "Precios",
+        "footer-download": "Descargar App",
+        "footer-company": "Empresa",
+        "footer-trust": "Confianza y Privacidad",
+        "footer-compliance": "Cumplimiento",
+        "footer-faq": "Preguntas",
+        "footer-contact": "Contacto",
+        "footer-legal": "Legal",
+        "footer-privacy": "Pol\u00edtica de Privacidad",
+        "footer-terms": "T\u00e9rminos de Servicio",
+        "footer-disclaimer": "No afiliado al Departamento de Seguridad P\u00fablica de Texas. Todas las citas se reservan a trav\u00e9s del sitio oficial del DPS.",
+        "footer-address": "{{company.name}}<br>{{company.street}}, {{company.city}}, {{company.state}} {{company.zip}}<br>Estados Unidos",
+        "footer-copyright": "\u00a9 {{company.copyrightYear}} {{app.name}} por {{company.name}}. Todos los derechos reservados."
+      }
+    };
+
+    const englishOriginals = {};
+
+    function initTranslations() {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        englishOriginals[key] = el.getAttribute('data-i18n-html') === 'true' ? el.innerHTML : el.textContent;
+      });
+    }
+
+    function setLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (lang === 'es' && translations.es[key]) {
+          if (el.getAttribute('data-i18n-html') === 'true') { el.innerHTML = translations.es[key]; }
+          else { el.textContent = translations.es[key]; }
+        } else if (lang === 'en' && englishOriginals[key]) {
+          if (el.getAttribute('data-i18n-html') === 'true') { el.innerHTML = englishOriginals[key]; }
+          else { el.textContent = englishOriginals[key]; }
+        }
+      });
+      document.documentElement.lang = lang;
+      document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+      document.getElementById('lang-es').classList.toggle('active', lang === 'es');
+      localStorage.setItem('lang', lang);
+    }
+
+    function toggleLang() {
+      const current = localStorage.getItem('lang') || 'en';
+      setLanguage(current === 'en' ? 'es' : 'en');
+    }
+
+    // --- CONFIG RESOLVER ---
+    function resolveConfig(str) {
+      return str.replace(/\{\{(\S+?)\}\}/g, (_, key) => {
+        return key.split('.').reduce((o, k) => o?.[k], CONFIG) ?? '{{' + key + '}}';
+      });
+    }
+
+    function applyConfig() {
+      document.querySelectorAll('[data-config]').forEach(el => {
+        const val = el.dataset.config.split('.').reduce((o, k) => o?.[k], CONFIG);
+        if (val) el.textContent = val;
+      });
+      document.querySelectorAll('[data-config-src]').forEach(el => {
+        const val = el.dataset.configSrc.split('.').reduce((o, k) => o?.[k], CONFIG);
+        if (val) el.src = val;
+      });
+      document.querySelectorAll('[data-config-href]').forEach(el => {
+        const key = el.dataset.configHref;
+        let val = key.split('.').reduce((o, k) => o?.[k], CONFIG);
+        if (val) {
+          if (key === 'company.email') val = 'mailto:' + val;
+          el.href = val;
+        }
+      });
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        if (el.getAttribute('data-i18n-html') === 'true') {
+          el.innerHTML = resolveConfig(el.innerHTML);
+        } else {
+          const resolved = resolveConfig(el.textContent);
+          if (resolved !== el.textContent) el.textContent = resolved;
+        }
+      });
+    }
+
+    applyConfig();
+    Object.keys(translations.es).forEach(key => {
+      if (typeof translations.es[key] === 'string') {
+        translations.es[key] = resolveConfig(translations.es[key]);
+      }
+    });
+
+    initTranslations();
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang && savedLang !== 'en') setLanguage(savedLang);
+  </script>
+
+</body>
+</html>

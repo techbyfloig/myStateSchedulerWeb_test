@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{app.name}} — Find Earlier Texas DPS Appointments</title>
+  <meta name="description" content="Find and secure earlier Texas DPS appointments. Book manually for free or let us automatically reserve newly available slots for you.">
+  <link rel="icon" type="image/png" href="appicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg-primary: #FAFBFE;
+      --bg-warm: #FFF9F3;
+      --bg-white: #FFFFFF;
+      --navy: #1E3A5F;
+      --navy-light: #2A4F7A;
+      --navy-muted: #3D6590;
+      --navy-soft: #EEF2F7;
+      --navy-softer: #F5F7FA;
+      --orange: #D4793A;
+      --orange-deep: #C06A30;
+      --orange-light: #E8993D;
+      --orange-glow: rgba(212, 121, 58, 0.08);
+      --orange-soft: #FFF5ED;
+      --gold: #F5C842;
+      --gold-soft: #FFF8E5;
+      --green-primary: #2D8F5E;
+      --green-light: #E8F5EE;
+      --green-dark: #1E6B42;
+      --blue-accent: #4A8BD6;
+      --blue-light: #EBF2FB;
+      --text-primary: #1A2B42;
+      --text-secondary: #5A6B80;
+      --text-light: #8A96A6;
+      --border: #E2E8F0;
+      --border-warm: #F0E6DA;
+      --shadow-sm: 0 1px 3px rgba(30, 58, 95, 0.05);
+      --shadow-md: 0 4px 16px rgba(30, 58, 95, 0.07);
+      --shadow-lg: 0 8px 32px rgba(30, 58, 95, 0.09);
+      --shadow-xl: 0 16px 48px rgba(30, 58, 95, 0.11);
+      --shadow-card: 0 1px 3px rgba(30, 58, 95, 0.04), 0 4px 12px rgba(30, 58, 95, 0.06);
+      --shadow-card-hover: 0 4px 8px rgba(30, 58, 95, 0.06), 0 12px 28px rgba(30, 58, 95, 0.1);
+      --shadow-elevated: 0 8px 24px rgba(30, 58, 95, 0.08), 0 2px 6px rgba(30, 58, 95, 0.04);
+      --gradient-divider: linear-gradient(90deg, transparent 0%, var(--border) 30%, var(--border) 70%, transparent 100%);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 { font-family: 'Fraunces', serif; line-height: 1.25; letter-spacing: -0.01em; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 16px 32px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: transparent;
+      backdrop-filter: none; -webkit-backdrop-filter: none;
+      border-bottom: 1px solid transparent;
+      box-shadow: none;
+      transition: background 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease;
+    }
+    nav.scrolled {
+      background: linear-gradient(165deg, rgba(30, 58, 95, 0.97), rgba(42, 79, 122, 0.97));
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 2px 20px rgba(30, 58, 95, 0.25);
+      padding: 12px 32px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .nav-logo {
+      font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.25rem;
+      color: #FFFFFF; text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav-logo img { width: 38px; height: 38px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); flex-shrink: 0; }
+    .nav-links { display: flex; align-items: center; gap: 30px; list-style: none; }
+    .nav-links a { text-decoration: none; color: rgba(255,255,255,0.75); font-size: 0.93rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #FFFFFF; }
+    .nav-cta {
+      background: rgba(255,255,255,0.85) !important; color: var(--navy) !important;
+      padding: 10px 22px; border-radius: 50px; font-weight: 600 !important;
+      transition: all 0.25s !important; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    }
+    .nav-cta:hover { background: #FFFFFF !important; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
+    .lang-toggle { display: flex; align-items: center; gap: 4px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 4px 6px; cursor: pointer; font-size: 0.78rem; font-weight: 600; margin-right: 8px; }
+    .lang-toggle span { padding: 4px 10px; border-radius: 50px; color: rgba(255,255,255,0.6); transition: all 0.25s; }
+    .lang-toggle span.active { background: rgba(255,255,255,0.85); color: var(--navy); }
+    .mobile-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .mobile-toggle span { width: 24px; height: 2px; background: #FFFFFF; border-radius: 2px; transition: transform 0.3s ease, opacity 0.3s ease; display: block; }
+    .mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .mobile-toggle.active span:nth-child(2) { opacity: 0; }
+    .mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center; justify-content: flex-end;
+      text-align: center; padding: 120px 24px 80px; position: relative; overflow: hidden;
+      background: url('image1.png') center/cover no-repeat;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(30, 58, 95, 0.45) 0%, rgba(30, 58, 95, 0.70) 100%);
+      pointer-events: none;
+    }
+    .hero::after { content: ''; position: absolute; top: -120px; right: -180px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(212,121,58,0.06) 0%, transparent 70%); border-radius: 50%; pointer-events: none; }
+    .hero-content { max-width: 720px; position: relative; z-index: 1; margin-right: 15%; margin-top: -70px; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.15); padding: 8px 18px; border-radius: 50px; font-size: 0.84rem; font-weight: 500; color: rgba(255,255,255,0.85); margin-bottom: 28px; box-shadow: none; animation: fadeInDown 0.6s ease both; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+    .hero-badge-dot { width: 8px; height: 8px; background: var(--green-primary); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.6; transform: scale(1.3); } }
+    .hero h1 { font-size: clamp(2.5rem, 5.5vw, 3.8rem); font-weight: 700; color: #FFFFFF; margin-bottom: 20px; letter-spacing: -0.02em; animation: fadeInUp 0.7s ease both 0.1s; }
+    .hero h1 span { color: var(--orange-light); font-style: italic; text-shadow: 0 0 10px rgba(255,255,255,0.1); }
+    .hero-sub { font-size: clamp(1.05rem, 2vw, 1.2rem); color: rgba(255,255,255,0.85); max-width: 560px; margin: 0 auto 36px; line-height: 1.7; animation: fadeInUp 0.7s ease both 0.2s; }
+    .hero-buttons { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; animation: fadeInUp 0.7s ease both 0.3s; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.85); color: var(--navy); padding: 16px 32px; border-radius: 50px; font-size: 1.05rem; font-weight: 600; text-decoration: none; border: none; cursor: pointer; transition: all 0.25s; box-shadow: 0 4px 18px rgba(0,0,0,0.1); font-family: inherit; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+    .btn-primary:hover { background: #FFFFFF; transform: translateY(-2px); box-shadow: 0 6px 26px rgba(0,0,0,0.15); }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.85); color: var(--navy); padding: 16px 32px; border-radius: 50px; font-size: 1.05rem; font-weight: 600; text-decoration: none; border: none; cursor: pointer; transition: all 0.25s; box-shadow: 0 4px 18px rgba(0,0,0,0.1); font-family: inherit; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+    .btn-secondary:hover { background: #FFFFFF; transform: translateY(-2px); box-shadow: 0 6px 26px rgba(0,0,0,0.15); }
+    .hero-trust { font-size: 0.8rem; color: rgba(255,255,255,0.5); animation: fadeInUp 0.7s ease both 0.4s; }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* HERO STATS BAR */
+    .hero-stats {
+      display: flex; align-items: center; justify-content: center; gap: 32px;
+      margin-top: 40px; padding: 20px 36px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      box-shadow: none;
+      animation: fadeInUp 0.7s ease both 0.5s;
+    }
+    .hero-stat { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+    .hero-stat-number { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 700; color: #FFFFFF; line-height: 1; display: flex; align-items: baseline; }
+    .hero-stat-suffix { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 700; color: var(--orange-light); }
+    .hero-stat-label { font-size: 0.75rem; color: rgba(255,255,255,0.6); font-weight: 500; letter-spacing: 0.02em; }
+    .hero-stat-icon { color: #FFFFFF; }
+    .hero-stat-divider { width: 1px; height: 36px; background: rgba(255,255,255,0.2); }
+
+    /* SECTIONS */
+    section { padding: 100px 24px; }
+    .section-container { max-width: 1080px; margin: 0 auto; }
+    .section-label { display: inline-block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; }
+    .section-title { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; color: var(--navy); margin-bottom: 16px; letter-spacing: -0.015em; }
+    .section-desc { font-size: 1.08rem; color: var(--text-secondary); max-width: 600px; line-height: 1.7; }
+
+    /* SECTION DIVIDERS */
+    .section-divider { position: relative; }
+    .section-divider::before {
+      content: ''; display: block; position: absolute; top: 0; left: 50%;
+      transform: translateX(-50%); width: 85%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+
+    /* PROBLEM */
+    .problem {
+      background: var(--bg-primary);
+      position: relative;
+    }
+    .problem-inner { text-align: left; }
+    .problem-title { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; color: var(--navy); margin-bottom: 32px; }
+    .problem-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 40px; }
+    .problem-card {
+      background: rgba(255,255,255,0.7); border: 1px solid rgba(226,232,240,0.6); border-radius: var(--radius-lg);
+      padding: 34px 28px; text-align: left;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.35s ease;
+      box-shadow: var(--shadow-card); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    }
+    .problem-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-card-hover); border-color: rgba(30, 58, 95, 0.12); }
+    .problem-card-icon { width: 50px; height: 50px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; background: var(--orange-glow); color: var(--orange); }
+    .problem-card h3 { font-size: 1.12rem; font-weight: 600; margin-bottom: 10px; color: var(--navy); }
+    .problem-card p { font-size: 0.93rem; color: var(--text-secondary); line-height: 1.6; }
+    .problem-card-col { display: flex; flex-direction: column; }
+    .problem-card-title { font-size: 1.35rem; font-weight: 700; color: var(--navy); margin-bottom: 14px; }
+    .problem-card-col .problem-card { flex: 1; }
+    .problem-cards > *:nth-child(1) { transition-delay: 0s; }
+    .problem-cards > *:nth-child(2) { transition-delay: 0.1s; }
+    .problem-cards > *:nth-child(3) { transition-delay: 0.2s; }
+
+    /* SOCIAL PROOF BAR */
+    .social-proof { padding: 60px 24px; background: var(--navy); position: relative; overflow: hidden; }
+    .social-proof::before {
+      content: ''; position: absolute; inset: 0;
+      pointer-events: none;
+    }
+    .proof-bar {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+      max-width: 900px; margin: 0 auto; position: relative; z-index: 1;
+    }
+    .proof-stat { text-align: center; }
+    .proof-stat-number { font-family: 'Fraunces', serif; font-size: 2.2rem; font-weight: 700; color: #FFFFFF; line-height: 1; margin-bottom: 8px; }
+    .proof-suffix { color: var(--orange); font-size: 1.4rem; }
+    .proof-stat-label { font-size: 0.82rem; color: rgba(255, 255, 255, 0.6); font-weight: 500; letter-spacing: 0.03em; }
+
+    /* SOLUTION */
+    .solution .section-desc { margin-bottom: 48px; }
+    .solution-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+    .solution-card { border-radius: var(--radius-xl); padding: 38px 34px; position: relative; overflow: hidden; }
+    .solution-card::before { content: ''; position: absolute; top: -20px; right: -20px; width: 180px; height: 180px; border-radius: 50%; opacity: 0.12; pointer-events: none; }
+    .solution-free { background: rgba(255,255,255,0.85); border: 1.5px solid var(--border); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .solution-free::before { background: none; }
+    .solution-premium { background: linear-gradient(165deg, var(--navy), var(--navy-light)); border: none; }
+    .solution-premium::before { background: radial-gradient(circle, rgba(255,255,255,0.1), transparent); }
+    .solution-card-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 50px; font-size: 0.78rem; font-weight: 600; margin-bottom: 20px; }
+    .solution-free .solution-card-badge { background: rgba(45,143,94,0.1); color: var(--green-dark); }
+    .solution-premium .solution-card-badge { background: rgba(255,255,255,0.12); color: var(--orange-light); }
+    .solution-card h3 { font-size: 1.45rem; font-weight: 700; margin-bottom: 20px; color: var(--navy); }
+    .solution-premium h3 { color: #FFFFFF; }
+    .solution-card ul { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .solution-card li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.97rem; color: var(--text-secondary); line-height: 1.5; }
+    .solution-card li .check { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; margin-top: 2px; }
+    .solution-free .check { background: rgba(45,143,94,0.12); color: var(--green-primary); }
+    .solution-premium .check { background: rgba(255,255,255,0.15); color: var(--orange-light); }
+    .solution-premium li { color: rgba(255,255,255,0.85); }
+    .solution-note { margin-top: 26px; padding: 16px 20px; background: rgba(255,255,255,0.85); border-radius: var(--radius-md); font-size: 0.9rem; color: var(--text-secondary); border-left: 3px solid var(--orange); display: flex; align-items: center; gap: 10px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: var(--shadow-card); }
+
+    /* HOW IT WORKS */
+    .how-it-works {
+      background: var(--bg-primary);
+      position: relative;
+    }
+    .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 48px; }
+    .step { text-align: center; position: relative; }
+    .step:not(:last-child)::after { content: ''; position: absolute; top: 32px; right: -13px; width: 26px; height: 2px; background: var(--border); }
+    .step-number { width: 62px; height: 62px; border-radius: 18px; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 700; margin: 0 auto 18px; background: linear-gradient(135deg, rgba(30,58,95,0.07), rgba(212,121,58,0.07)); color: var(--navy); border: 1.5px solid rgba(30,58,95,0.1); }
+    .step h3 { font-size: 1.02rem; font-weight: 600; margin-bottom: 8px; color: var(--navy); }
+    .step p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; }
+    .compliance-line { text-align: center; margin-top: 40px; padding: 16px 24px; background: rgba(250,251,254,0.85); border-radius: var(--radius-md); font-size: 0.9rem; color: var(--text-secondary); border: 1px solid var(--border); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .compliance-line strong { color: var(--navy); }
+
+    /* TRUST & PRIVACY */
+    .trust-compliance-grid { display: grid; grid-template-columns: 1fr 1px 1fr; gap: 32px; align-items: start; }
+    .trust-compliance-grid > .tc-divider { background: var(--border); align-self: stretch; }
+    .transparency-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .transparency-card { background: rgba(255,255,255,0.85); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 22px; box-shadow: var(--shadow-card); transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease; text-align: left; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .transparency-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card-hover); }
+    .transparency-card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; color: var(--navy); white-space: nowrap; }
+    .transparency-card h3 svg { flex-shrink: 0; }
+    .transparency-card ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .transparency-card li { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; color: var(--text-secondary); }
+    .transparency-card li .icon { flex-shrink: 0; font-size: 14px; color: var(--navy-muted); }
+    .icon-x { color: #C0392B !important; }
+    .transparency-note { text-align: left; margin-top: 26px; font-size: 0.88rem; color: var(--text-light); font-style: italic; }
+
+    /* PRICING */
+    .pricing {
+      background: var(--bg-primary);
+      position: relative;
+    }
+    .pricing-inner { text-align: center; }
+    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; max-width: 740px; margin: 48px auto 0; }
+    .pricing-card {
+      border-radius: var(--radius-xl); padding: 40px 30px; text-align: left; position: relative;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .pricing-card:hover { transform: translateY(-6px); }
+    .pricing-free { background: rgba(250,251,254,0.85); border: 1.5px solid var(--border); box-shadow: var(--shadow-card); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .pricing-free:hover { box-shadow: var(--shadow-card-hover); }
+    .pricing-premium { background: linear-gradient(165deg, var(--navy), var(--navy-light)); color: white; border: none; box-shadow: var(--shadow-elevated); }
+    .pricing-premium:hover { box-shadow: 0 12px 40px rgba(30, 58, 95, 0.3); }
+    .pricing-card-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+    .pricing-free .pricing-card-label { color: var(--green-primary); }
+    .pricing-premium .pricing-card-label { color: var(--orange-light); }
+    .pricing-card h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 6px; }
+    .pricing-premium h3 { color: white; }
+    .pricing-card .price-note { font-size: 0.85rem; margin-bottom: 24px; }
+    .pricing-free .price-note { color: var(--text-light); }
+    .pricing-premium .price-note { color: rgba(232,153,61,0.7); }
+    .pricing-card ul { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+    .pricing-card li { display: flex; align-items: center; gap: 10px; font-size: 0.93rem; }
+    .pricing-free li { color: var(--text-secondary); }
+    .pricing-premium li { color: rgba(255,255,255,0.85); }
+    .pricing-card li .pcheck { flex-shrink: 0; font-size: 14px; }
+    .pricing-free .pcheck { color: var(--green-primary); }
+    .pricing-premium .pcheck { color: var(--orange-light); }
+    .pricing-card .pricing-btn { display: block; width: 100%; text-align: center; padding: 14px; border-radius: 50px; font-weight: 600; font-size: 0.98rem; text-decoration: none; transition: all 0.25s; cursor: pointer; border: none; font-family: inherit; }
+    .pricing-free .pricing-btn { background: rgba(30,58,95,0.08); color: var(--navy); border: 1.5px solid var(--border); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+    .pricing-free .pricing-btn:hover { background: rgba(30,58,95,0.12); border-color: var(--navy-muted); color: var(--navy-light); }
+    .pricing-premium .pricing-btn { background: rgba(255,255,255,0.85); color: var(--navy); box-shadow: 0 4px 16px rgba(0,0,0,0.1); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+    .pricing-premium .pricing-btn:hover { background: #FFFFFF; transform: translateY(-1px); box-shadow: 0 6px 24px rgba(0,0,0,0.15); }
+    .pricing-footnote { text-align: center; margin-top: 24px; font-size: 0.88rem; color: var(--text-light); }
+
+    /* DASHBOARD */
+    .dashboard-preview .section-desc { margin-bottom: 48px; }
+    .dashboard-features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .dash-feature {
+      background: rgba(255,255,255,0.85); border: 1px solid var(--border); border-radius: var(--radius-lg);
+      padding: 28px 24px; display: flex; align-items: flex-start; gap: 16px;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: var(--shadow-card); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    }
+    .dash-feature:hover { transform: translateY(-4px); box-shadow: var(--shadow-card-hover); }
+    .dash-feature-icon { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(30,58,95,0.06), rgba(212,121,58,0.06)); color: var(--navy-muted); }
+    .dash-feature h3 { font-family: 'DM Sans', sans-serif; font-size: 1.02rem; font-weight: 600; margin-bottom: 6px; color: var(--navy); }
+    .dash-feature p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; }
+    .dashboard-features > *:nth-child(1) { transition-delay: 0s; }
+    .dashboard-features > *:nth-child(2) { transition-delay: 0.1s; }
+    .dashboard-features > *:nth-child(3) { transition-delay: 0.15s; }
+    .dashboard-features > *:nth-child(4) { transition-delay: 0.2s; }
+
+    /* COMPLIANCE */
+    .compliance {
+      background: var(--bg-primary);
+      position: relative;
+    }
+    .compliance-inner { text-align: center; }
+    .compliance-items { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .compliance-item {
+      display: flex; align-items: center; gap: 14px; padding: 20px 22px;
+      background: rgba(250,251,254,0.85); border-radius: var(--radius-md); border: 1px solid var(--border);
+      font-size: 0.93rem; color: var(--text-secondary); text-align: left;
+      transition: box-shadow 0.3s ease, border-color 0.3s ease;
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    }
+    .compliance-item:hover { box-shadow: var(--shadow-card); border-color: rgba(30, 58, 95, 0.12); }
+    .compliance-item .ci-icon {
+      flex-shrink: 0; width: 36px; height: 36px; border-radius: 10px;
+      background: linear-gradient(135deg, rgba(30, 58, 95, 0.06), rgba(30, 58, 95, 0.02));
+      border: 1px solid rgba(30, 58, 95, 0.08);
+      display: flex; align-items: center; justify-content: center; color: var(--navy-muted);
+    }
+    .compliance-items > *:nth-child(1) { transition-delay: 0s; }
+    .compliance-items > *:nth-child(2) { transition-delay: 0.08s; }
+    .compliance-items > *:nth-child(3) { transition-delay: 0.16s; }
+    .compliance-items > *:nth-child(4) { transition-delay: 0.24s; }
+
+    /* FAQ */
+    .faq { background: var(--bg-primary); position: relative; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+    .faq-list { display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: rgba(255,255,255,0.85); border: 1px solid var(--border); border-radius: var(--radius-md);
+      overflow: hidden; transition: box-shadow 0.3s ease, border-color 0.3s ease;
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    }
+    .faq-item:hover { box-shadow: var(--shadow-card); }
+    .faq-item.active { border-color: rgba(212, 121, 58, 0.3); box-shadow: var(--shadow-card); }
+    .faq-question {
+      width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 22px 24px; background: none; border: none; cursor: pointer;
+      font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 600; color: var(--navy);
+      text-align: left; line-height: 1.4; transition: color 0.2s;
+    }
+    .faq-question:hover { color: var(--orange); }
+    .faq-chevron { flex-shrink: 0; color: var(--text-light); transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s; }
+    .faq-item.active .faq-chevron { transform: rotate(180deg); color: var(--orange); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease; padding: 0 24px; }
+    .faq-item.active .faq-answer { max-height: 300px; padding: 0 24px 22px; }
+    .faq-answer p { font-size: 0.93rem; color: var(--text-secondary); line-height: 1.7; }
+
+    /* CONTACT FORM */
+    .contact-card {
+      background: rgba(255,255,255,0.85); border: 1px solid var(--border); border-radius: var(--radius-lg);
+      padding: 34px 30px; box-shadow: var(--shadow-card);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    }
+    .contact-card h3 {
+      font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 6px;
+    }
+    .contact-card-desc {
+      font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 24px; line-height: 1.6;
+    }
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .contact-form label {
+      font-size: 0.85rem; font-weight: 600; color: var(--navy); display: flex; flex-direction: column; gap: 6px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%; padding: 12px 16px; border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+      font-family: 'DM Sans', sans-serif; font-size: 0.93rem; color: var(--text-primary);
+      background: var(--bg-primary); transition: border-color 0.2s, box-shadow 0.2s; outline: none;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--orange); box-shadow: 0 0 0 3px rgba(212, 121, 58, 0.1);
+    }
+    .contact-form textarea { resize: vertical; min-height: 110px; }
+    .contact-form-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: rgba(30, 58, 95, 0.85); color: white;
+      padding: 14px 28px; border-radius: 50px; font-size: 0.98rem; font-weight: 600;
+      border: none; cursor: pointer; font-family: inherit;
+      transition: all 0.25s; box-shadow: 0 4px 16px rgba(30, 58, 95, 0.2);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    }
+    .contact-form-btn:hover { background: var(--navy); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(30, 58, 95, 0.3); }
+    .contact-form-note {
+      font-size: 0.8rem; color: var(--text-light); text-align: center; margin-top: 4px;
+    }
+
+    /* FINAL CTA */
+    .final-cta { text-align: center; padding: 100px 24px 60px; position: relative; background: url('image2.png') center/cover no-repeat; overflow: hidden; }
+    .final-cta::before { content: ''; position: absolute; inset: 0; background: rgba(30, 58, 95, 0.6); pointer-events: none; }
+    .final-cta h2 { font-size: clamp(2rem, 4.5vw, 2.8rem); font-weight: 700; color: #FFFFFF; margin-bottom: 18px; position: relative; z-index: 1; }
+    .final-cta h2 span { color: var(--orange-light); font-style: italic; text-shadow: 0 0 10px rgba(255,255,255,0.1); }
+    .final-cta-sub { font-size: 1.05rem; color: rgba(255,255,255,0.85); margin-bottom: 36px; position: relative; z-index: 1; }
+    .final-cta-trust { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-top: 16px; position: relative; z-index: 1; }
+
+    /* APP DOWNLOAD */
+    .app-download { padding: 80px 24px 100px; background: var(--bg-primary); position: relative; }
+    .app-download-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .app-download-text h2 { font-size: clamp(1.8rem, 3.5vw, 2.3rem); font-weight: 700; color: var(--navy); margin-bottom: 16px; }
+    .app-download-text p { font-size: 1.02rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 32px; }
+    .store-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+    .store-btn { display: inline-flex; align-items: center; gap: 12px; background: rgba(30, 58, 95, 0.85); color: white; padding: 14px 26px; border-radius: 14px; text-decoration: none; transition: all 0.25s; box-shadow: var(--shadow-md); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+    .store-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); background: var(--navy); }
+    .store-btn-icon { font-size: 26px; line-height: 1; display: flex; align-items: center; }
+    .store-btn-text { display: flex; flex-direction: column; line-height: 1.2; }
+    .store-btn-label { font-size: 0.68rem; opacity: 0.7; font-weight: 400; }
+    .store-btn-name { font-size: 1.02rem; font-weight: 600; }
+    .app-download-visual { display: flex; justify-content: center; }
+
+    /* PHONE MOCKUP */
+    .phone-mockup { width: 260px; height: 520px; background: linear-gradient(165deg, var(--navy), var(--navy-light)); border-radius: 40px; padding: 12px; box-shadow: var(--shadow-xl), 0 0 0 1px rgba(255,255,255,0.05) inset; position: relative; }
+    .phone-screen { width: 100%; height: 100%; background: var(--bg-primary); border-radius: 30px; overflow: hidden; display: flex; flex-direction: column; }
+    .phone-header { background: linear-gradient(135deg, var(--orange), var(--orange-light)); padding: 40px 20px 20px; color: white; }
+    .phone-header-title { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+    .phone-header-sub { font-size: 0.7rem; opacity: 0.85; }
+    .phone-body { padding: 14px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
+    .phone-card { background: white; border-radius: 12px; padding: 14px; border: 1px solid var(--border); }
+    .phone-card-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+    .phone-card-label { font-size: 0.65rem; font-weight: 600; color: var(--navy); }
+    .phone-card-badge { font-size: 0.55rem; padding: 2px 8px; border-radius: 50px; font-weight: 600; }
+    .badge-green { background: var(--green-light); color: var(--green-primary); }
+    .badge-blue { background: var(--navy-soft); color: var(--navy); }
+    .phone-card-detail { font-size: 0.6rem; color: var(--text-light); }
+
+    /* FOOTER */
+    footer {
+      padding: 60px 24px 32px;
+      background: var(--navy);
+      color: rgba(255, 255, 255, 0.7);
+      position: relative;
+    }
+    footer::before {
+      content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 85%; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    }
+    .footer-inner { max-width: 1080px; margin: 0 auto; }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+      padding-bottom: 40px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); margin-bottom: 28px;
+    }
+    .footer-logo {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.15rem;
+      color: #FFFFFF; text-decoration: none; margin-bottom: 14px;
+    }
+    .footer-logo img { width: 32px; height: 32px; border-radius: 8px; }
+    .footer-brand-desc { font-size: 0.88rem; color: rgba(255, 255, 255, 0.55); line-height: 1.6; margin-bottom: 20px; max-width: 280px; }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social-link {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255, 255, 255, 0.6); transition: background 0.2s, color 0.2s; text-decoration: none;
+    }
+    .footer-social-link:hover { background: rgba(255, 255, 255, 0.15); color: #FFFFFF; }
+    .footer-col-title {
+      font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255, 255, 255, 0.4); margin-bottom: 18px;
+    }
+    .footer-col-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col-links a { font-size: 0.9rem; color: rgba(255, 255, 255, 0.65); text-decoration: none; transition: color 0.2s; }
+    .footer-col-links a:hover { color: #FFFFFF; }
+    .footer-bottom { text-align: center; }
+    .footer-copyright { font-size: 0.78rem; color: rgba(255, 255, 255, 0.35); line-height: 1.6; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero { justify-content: center; }
+      .hero-content { margin-right: 0; margin-top: 0; }
+      .problem-cards { grid-template-columns: 1fr; }
+      .solution-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: repeat(2, 1fr); }
+      .step:not(:last-child)::after { display: none; }
+      .trust-compliance-grid { grid-template-columns: 1fr; }
+      .trust-compliance-grid > .tc-divider { display: none; }
+      .transparency-grid { grid-template-columns: 1fr; }
+      .transparency-card h3 { white-space: normal; }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 440px; }
+      .dashboard-features { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .compliance-items { grid-template-columns: 1fr; }
+      .app-download-inner { grid-template-columns: 1fr; text-align: center; }
+      .store-buttons { justify-content: center; }
+      .app-download-visual { order: -1; }
+      .proof-bar { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+    @media (max-width: 640px) {
+      nav { padding: 12px 18px; }
+      nav.scrolled { padding: 10px 18px; }
+      .nav-links {
+        display: flex; position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column;
+        background: linear-gradient(165deg, rgba(30, 58, 95, 0.98), rgba(42, 79, 122, 0.98));
+        backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+        padding: 0 20px; gap: 0;
+        max-height: 0; overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
+        box-shadow: 0 8px 24px rgba(30,58,95,0.25);
+      }
+      .nav-links.open { max-height: 380px; padding: 20px; gap: 16px; }
+      .nav-links a { opacity: 0; transform: translateX(-10px); transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s; }
+      .nav-links.open a { opacity: 1; transform: translateX(0); }
+      .nav-links li:nth-child(1) a { transition-delay: 0.05s; }
+      .nav-links li:nth-child(2) a { transition-delay: 0.1s; }
+      .nav-links li:nth-child(3) a { transition-delay: 0.15s; }
+      .nav-links li:nth-child(4) a { transition-delay: 0.2s; }
+      .nav-links li:nth-child(5) a { transition-delay: 0.25s; }
+      .nav-links li:nth-child(6) a { transition-delay: 0.3s; }
+      .mobile-toggle { display: flex; }
+      section { padding: 70px 18px; }
+      .hero { padding: 100px 18px 60px; min-height: auto; background-position: left center; }
+      .hero-content { max-width: 100%; }
+      .hero-buttons { flex-direction: column; }
+      .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+      .hero-stats { flex-direction: column; gap: 16px; padding: 20px 24px; }
+      .hero-stat-divider { width: 40px; height: 1px; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .phone-mockup { width: 220px; height: 440px; }
+      .proof-bar { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .pricing-grid { max-width: 100%; }
+      .pricing-card { padding: 30px 22px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+      .footer-brand-desc { max-width: 100%; margin-left: auto; margin-right: auto; }
+      .footer-social { justify-content: center; }
+      .footer-logo { justify-content: center; }
+    }
+
+    /* ANIMATIONS */
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo"><img data-config-src="app.icon" src="appicon.jpg" alt="DPS QuickBook"> <span data-config="app.name">DPS QuickBook</span></a>
+    <ul class="nav-links">
+      <li><a href="#how-it-works" data-i18n="nav-how">How It Works</a></li>
+      <li><a href="#pricing" data-i18n="nav-pricing">Pricing</a></li>
+      <li><a href="#faq" data-i18n="nav-faq">FAQ</a></li>
+      <li><a href="#faq" data-i18n="nav-contact">Contact</a></li>
+      <li><a href="#transparency" data-i18n="nav-trust">Trust & Privacy</a></li>
+      <li><div class="lang-toggle" onclick="toggleLang()"><span id="lang-en" class="active">EN</span><span id="lang-es">ES</span></div></li>
+      <li><a href="#download" class="nav-cta" data-i18n="nav-cta">Download App</a></li>
+    </ul>
+    <button class="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge"><span class="hero-badge-dot"></span> <span data-i18n="hero-badge">Monitoring Texas DPS appointments now</span></div>
+      <h1 data-i18n="hero-title" data-i18n-html="true">Find and Secure <span>Earlier</span> Texas DPS Appointments.</h1>
+      <p class="hero-sub" data-i18n="hero-sub">Book manually for free, or let us automatically secure newly available appointments for you.</p>
+      <div class="hero-buttons">
+        <a href="#download" class="btn-primary" data-i18n="hero-btn-download" data-i18n-html="true"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14m-7-7l7 7 7-7"/></svg> Download the App</a>
+        <a href="#how-it-works" class="btn-secondary" data-i18n="hero-btn-how" data-i18n-html="true">How It Works <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7"/></svg></a>
+      </div>
+      <p class="hero-trust" data-i18n="hero-trust">Not affiliated with the Texas Department of Public Safety.</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-number"><span class="counter" data-config-target="stats.appointmentsMonitored" data-target="10000">0</span><span class="hero-stat-suffix">+</span></div>
+          <span class="hero-stat-label" data-i18n="stat-monitored">Appointments Monitored</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <div class="hero-stat-number"><span class="counter" data-config-target="stats.appRating" data-target="4.8" data-decimal="true">0</span></div>
+          <span class="hero-stat-label" data-i18n="stat-rating">App Store Rating</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <svg class="hero-stat-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg>
+          <span class="hero-stat-label" data-i18n="stat-coverage">Texas-Wide Coverage</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="problem section-divider" id="problem">
+    <div class="section-container problem-inner fade-in">
+      <span class="section-label" data-i18n="problem-label">The Problem</span>
+      <div class="problem-cards">
+        <div class="problem-card-col fade-in">
+          <h2 class="problem-card-title" data-i18n="problem-title-1">Long Wait Times.</h2>
+          <div class="problem-card">
+            <div class="problem-card-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg></div>
+            <h3 data-i18n="problem-h3-1">Booked Weeks Out</h3>
+            <p data-i18n="problem-p-1">DPS appointments are often scheduled weeks or even months in advance, leaving you stuck waiting.</p>
+          </div>
+        </div>
+        <div class="problem-card-col fade-in">
+          <h2 class="problem-card-title" data-i18n="problem-title-2">Missed Openings.</h2>
+          <div class="problem-card">
+            <div class="problem-card-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0115.36-6.36L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 01-15.36 6.36L3 16"/></svg></div>
+            <h3 data-i18n="problem-h3-2">Random Cancellations</h3>
+            <p data-i18n="problem-p-2">Cancellation slots appear at random times throughout the day with no warning or pattern.</p>
+          </div>
+        </div>
+        <div class="problem-card-col fade-in">
+          <h2 class="problem-card-title" data-i18n="problem-title-3">Constant Refreshing.</h2>
+          <div class="problem-card">
+            <div class="problem-card-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+            <h3 data-i18n="problem-h3-3">No Time to Refresh</h3>
+            <p data-i18n="problem-p-3">Manually checking the DPS site all day isn't realistic when you have work, school, or life happening.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF BAR -->
+  <section class="social-proof" id="social-proof">
+    <div class="section-container">
+      <div class="proof-bar">
+        <div class="proof-stat fade-in">
+          <div class="proof-stat-number"><span class="counter" data-config-target="stats.appointmentsMonitored" data-target="10000">0</span><span class="proof-suffix">+</span></div>
+          <div class="proof-stat-label" data-i18n="proof-monitored">Appointments Monitored</div>
+        </div>
+        <div class="proof-stat fade-in">
+          <div class="proof-stat-number"><span class="counter" data-config-target="stats.usersServed" data-target="2500">0</span><span class="proof-suffix">+</span></div>
+          <div class="proof-stat-label" data-i18n="proof-users">Users Served</div>
+        </div>
+        <div class="proof-stat fade-in">
+          <div class="proof-stat-number"><span class="counter" data-config-target="stats.avgTimeSaved" data-target="48">0</span><span class="proof-suffix"> hrs</span></div>
+          <div class="proof-stat-label" data-i18n="proof-time">Avg. Time Saved</div>
+        </div>
+        <div class="proof-stat fade-in">
+          <div class="proof-stat-number"><span class="counter" data-config-target="stats.dpsLocations" data-target="150">0</span><span class="proof-suffix">+</span></div>
+          <div class="proof-stat-label" data-i18n="proof-locations">Texas DPS Locations</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section class="solution" id="solution">
+    <div class="section-container fade-in">
+      <span class="section-label" data-i18n="solution-label">The Solution</span>
+      <h2 class="section-title" data-i18n="solution-title">We Monitor So You Don't Have To.</h2>
+      <p class="section-desc" data-i18n="solution-desc">Choose the approach that works for you — browse openings yourself, or let us handle it automatically.</p>
+      <div class="solution-grid">
+        <div class="solution-card solution-free">
+          <div class="solution-card-badge"><svg width="12" height="12" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="#2D8F5E"/></svg> Free</div>
+          <h3 data-i18n="solution-free-title">Manual Booking</h3>
+          <ul>
+            <li><span class="check">&#10003;</span> <span data-i18n="solution-free-1">View available appointments 24/7</span></li>
+            <li><span class="check">&#10003;</span> <span data-i18n="solution-free-2">Choose your location & search radius</span></li>
+            <li><span class="check">&#10003;</span> <span data-i18n="solution-free-3">Book directly at your own pace</span></li>
+          </ul>
+        </div>
+        <div class="solution-card solution-premium">
+          <div class="solution-card-badge"><svg width="12" height="12" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="var(--orange-light)"/></svg> Premium</div>
+          <h3 data-i18n="solution-premium-title">Auto-Booking</h3>
+          <ul>
+            <li><span class="check">&#10003;</span> <span data-i18n="solution-premium-1">We monitor newly released openings</span></li>
+            <li><span class="check">&#10003;</span> <span data-i18n="solution-premium-2">Automatically reserve eligible appointments based on your availability</span></li>
+            <li><span class="check">&#10003;</span> <span data-i18n="solution-premium-3">Instant notification once reserved</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="solution-note"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" style="color:var(--orange);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg> <span data-i18n="solution-note">You are always notified when an appointment is secured — no surprises.</span></div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works section-divider" id="how-it-works">
+    <div class="section-container fade-in">
+      <div style="text-align:center">
+        <span class="section-label" data-i18n="how-label">How It Works</span>
+        <h2 class="section-title" data-i18n="how-title">Four Simple Steps</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step"><div class="step-number">1</div><h3 data-i18n="step-h3-1">Create an Account</h3><p data-i18n="step-p-1">Quick and easy — just the essentials to get started.</p></div>
+        <div class="step"><div class="step-number">2</div><h3 data-i18n="step-h3-2">Set Your Preferences</h3><p data-i18n="step-p-2">Choose your preferred location, radius, and available times.</p></div>
+        <div class="step"><div class="step-number">3</div><h3 data-i18n="step-h3-3">Choose Your Plan</h3><p data-i18n="step-p-3">Browse manually for free or enable auto-booking for hands-off scheduling.</p></div>
+        <div class="step"><div class="step-number">4</div><h3 data-i18n="step-h3-4">Get Notified</h3><p data-i18n="step-p-4">We'll let you know the moment an appointment is secured.</p></div>
+      </div>
+      <div class="compliance-line" data-i18n="how-compliance" data-i18n-html="true"><strong>All appointments are secured through the official DPS website.</strong></div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="section-container fade-in" style="position: relative; z-index: 1;">
+      <h2 data-i18n="cta-title" data-i18n-html="true">Stop Refreshing.<br>Start <span>Securing</span> Appointments.</h2>
+      <p class="final-cta-sub" data-i18n="cta-sub">Get the app and take control of your DPS scheduling today.</p>
+      <a href="#download" class="btn-primary" style="font-size:1.08rem; padding:18px 40px;" data-i18n="cta-btn" data-i18n-html="true">Download the App <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7"/></svg></a>
+      <p class="final-cta-trust" data-i18n="cta-trust">Manual booking is free. Always.</p>
+    </div>
+  </section>
+
+  <!-- TRUST, PRIVACY & COMPLIANCE -->
+  <section class="transparency" id="transparency">
+    <div class="section-container fade-in">
+      <div class="trust-compliance-grid">
+        <div style="text-align: center;">
+          <span class="section-label" data-i18n="trust-label">Trust & Privacy</span>
+          <h2 class="section-title" data-i18n="trust-title">Your Privacy Matters</h2>
+          <div class="transparency-grid" style="margin-top: 32px;">
+            <div class="transparency-card">
+              <h3><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg> What We Collect</h3>
+              <ul>
+                <li><span class="icon">&rarr;</span> <span data-i18n="trust-collect-1">Name</span></li>
+                <li><span class="icon">&rarr;</span> <span data-i18n="trust-collect-2">Location preferences</span></li>
+                <li><span class="icon">&rarr;</span> <span data-i18n="trust-collect-3">Availability windows</span></li>
+                <li><span class="icon">&rarr;</span> <span data-i18n="trust-collect-4">Account login credentials</span></li>
+              </ul>
+            </div>
+            <div class="transparency-card">
+              <h3><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M15 9l-6 6M9 9l6 6"/></svg> What We Never Do</h3>
+              <ul>
+                <li><span class="icon icon-x">&times;</span> <span data-i18n="trust-never-1">Sell your information</span></li>
+                <li><span class="icon icon-x">&times;</span> <span data-i18n="trust-never-2">Access unrelated data</span></li>
+                <li><span class="icon icon-x">&times;</span> <span data-i18n="trust-never-3">Share data without your consent</span></li>
+              </ul>
+            </div>
+          </div>
+          <p class="transparency-note" data-i18n="trust-note">You can manage or delete your account anytime.</p>
+        </div>
+        <div class="tc-divider"></div>
+        <div style="text-align: center;">
+          <span class="section-label" data-i18n="compliance-label">Compliance</span>
+          <h2 class="section-title" data-i18n="compliance-title">Independent Service</h2>
+          <div class="compliance-items" style="margin-top: 32px;">
+            <div class="compliance-item fade-in"><span class="ci-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 11v4M12 8h.01"/></svg></span> <span data-i18n="compliance-1">Not affiliated with Texas DPS</span></div>
+            <div class="compliance-item fade-in"><span class="ci-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 11v4M12 8h.01"/></svg></span> <span data-i18n="compliance-2">We do not control appointment availability</span></div>
+            <div class="compliance-item fade-in"><span class="ci-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 11v4M12 8h.01"/></svg></span> <span data-i18n="compliance-3">We do not guarantee specific dates</span></div>
+            <div class="compliance-item fade-in"><span class="ci-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 11v4M12 8h.01"/></svg></span> <span data-i18n="compliance-4">Users are responsible for confirming eligibility</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing section-divider" id="pricing">
+    <div class="section-container pricing-inner fade-in">
+      <span class="section-label" data-i18n="pricing-label">Pricing</span>
+      <h2 class="section-title" data-i18n="pricing-title">Manage Everything From One Dashboard</h2>
+      <p class="section-desc" style="margin:0 auto 48px" data-i18n="pricing-desc">With your account, you have full control over your appointments and preferences.</p>
+      <div class="pricing-grid" style="margin-top: 48px;">
+        <div class="pricing-card pricing-free">
+          <div class="pricing-card-label" data-i18n="pricing-free-label">Free Plan</div>
+          <h3 data-config="pricing.freePrice">$0</h3>
+          <p class="price-note" data-i18n="pricing-free-note">Manual booking is always free. No card required.</p>
+          <ul>
+            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-free-1">Search publicly available DPS appointments</span></li>
+            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-free-2">View and manage your scheduled appointments</span></li>
+            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-free-3">Save preferred locations</span></li>
+            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-free-4">Access your personal dashboard</span></li>
+            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-free-5">Receive standard booking confirmations</span></li>
+          </ul>
+          <a href="#download" class="pricing-btn" data-i18n="pricing-free-btn">Get Started Free</a>
+        </div>
+        <div class="pricing-card pricing-premium">
+          <div class="pricing-card-label" data-i18n="pricing-premium-label">Auto-Booking</div>
+          <h3>Premium</h3>
+          <p class="price-note" data-i18n="pricing-premium-note">Charged only when auto-booking is used.</p>
+          <ul>
+            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-premium-1">Includes all Free features</span></li>
+            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-premium-2">Automated monitoring of publicly available cancellations</span></li>
+            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-premium-3">Reservation attempt when an earlier appointment becomes available</span></li>
+            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-premium-4">Real-time status updates within your dashboard</span></li>
+            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-premium-5">Instant notification if a booking is secured</span></li>
+          </ul>
+          <a href="#download" class="pricing-btn" data-i18n="pricing-premium-btn">Start Auto-Booking</a>
+        </div>
+      </div>
+      <p class="pricing-footnote" data-i18n="pricing-footnote">This service is not affiliated with, endorsed by, or sponsored by the Texas Department of Public Safety. All appointments are obtained through publicly available systems.</p>
+    </div>
+  </section>
+
+  <!-- FAQ & CONTACT -->
+  <section class="faq section-divider" id="faq">
+    <div class="section-container">
+      <div style="text-align:center">
+        <span class="section-label" data-i18n="faq-label">FAQ & Contact</span>
+        <h2 class="section-title" data-i18n="faq-title">Questions? We're Here to Help.</h2>
+        <p class="section-desc" style="margin:0 auto 48px" data-i18n="faq-desc">Browse common questions or send us a message directly.</p>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-list">
+          <div class="faq-item fade-in">
+            <button class="faq-question" aria-expanded="false">
+              <span data-i18n="faq-q-1">Is {{app.name}} affiliated with the Texas DPS?</span>
+              <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer"><p data-i18n="faq-a-1">No. {{app.name}} is an independent service operated by {{company.name}}. We are not affiliated with, endorsed by, or sponsored by the Texas Department of Public Safety or any government agency. All appointments are booked through the official DPS scheduling system.</p></div>
+          </div>
+          <div class="faq-item fade-in">
+            <button class="faq-question" aria-expanded="false">
+              <span data-i18n="faq-q-2">How does auto-booking work?</span>
+              <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer"><p data-i18n="faq-a-2">When you enable auto-booking, our system continuously monitors DPS appointment availability based on your specified preferences (location, radius, time windows). When a matching slot opens up, we automatically reserve it for you and send you an instant notification. You can disable auto-booking at any time.</p></div>
+          </div>
+          <div class="faq-item fade-in">
+            <button class="faq-question" aria-expanded="false">
+              <span data-i18n="faq-q-3">Is manual browsing really free?</span>
+              <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer"><p data-i18n="faq-a-3">Yes. Manual browsing is completely free, with no credit card required. You can view available appointments, set your location and radius, and book directly at your own pace at no cost. Premium features (auto-booking) are charged only when actively used.</p></div>
+          </div>
+          <div class="faq-item fade-in">
+            <button class="faq-question" aria-expanded="false">
+              <span data-i18n="faq-q-4">What information do you need from me?</span>
+              <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer"><p data-i18n="faq-a-4">We collect only what is necessary: your name, email, location preferences, availability windows, and account credentials (encrypted). We never sell your data or share it with third parties for marketing. You can delete your account and all data at any time.</p></div>
+          </div>
+          <div class="faq-item fade-in">
+            <button class="faq-question" aria-expanded="false">
+              <span data-i18n="faq-q-5">Can I cancel an auto-booked appointment?</span>
+              <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer"><p data-i18n="faq-a-5">Yes. Any appointment secured through auto-booking can be managed and cancelled through the official DPS website. You are always notified immediately when an appointment is reserved, giving you full control over whether to keep it.</p></div>
+          </div>
+          <div class="faq-item fade-in">
+            <button class="faq-question" aria-expanded="false">
+              <span data-i18n="faq-q-6">Which DPS locations are supported?</span>
+              <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer"><p data-i18n="faq-a-6">{{app.name}} monitors appointments across all Texas DPS office locations statewide. You can set your preferred location and search radius, and we will find available appointments within your specified area.</p></div>
+          </div>
+        </div>
+        <div class="contact-card fade-in">
+          <h3 data-i18n="contact-title">Get in Touch</h3>
+          <p class="contact-card-desc" data-i18n="contact-desc">Have a question not covered here? Send us a message and we'll get back to you.</p>
+          <form class="contact-form" data-config-action="links.formspree" action="https://formspree.io/f/{form_id}" method="POST">
+            <label><span data-i18n="contact-name-label">Name</span>
+              <input type="text" name="name" data-i18n-placeholder="contact-name-ph" placeholder="Your name" required>
+            </label>
+            <label><span data-i18n="contact-email-label">Email</span>
+              <input type="email" name="email" placeholder="you@example.com" required>
+            </label>
+            <label><span data-i18n="contact-msg-label">Message</span>
+              <textarea name="message" data-i18n-placeholder="contact-msg-ph" placeholder="How can we help?" required></textarea>
+            </label>
+            <button type="submit" class="contact-form-btn" data-i18n="contact-btn" data-i18n-html="true">Send Message <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
+            <p class="contact-form-note" data-i18n="contact-note">We'll get back to you within 5 business days.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <!-- APP DOWNLOAD -->
+  <section class="app-download section-divider" id="download">
+    <div class="app-download-inner">
+      <div class="app-download-text fade-in">
+        <span class="section-label" data-i18n="download-label">Get the App</span>
+        <h2 data-i18n="download-title">Access Everything From Your Phone.</h2>
+        <p data-i18n="download-desc">Monitor appointments, manage your availability, and receive notifications directly from the app.</p>
+        <div class="store-buttons">
+          <a data-config-href="links.appStore" href="#" class="store-btn">
+            <span class="store-btn-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg></span>
+            <span class="store-btn-text"><span class="store-btn-label" data-i18n="store-apple-label">Download on the</span><span class="store-btn-name">App Store</span></span>
+          </a>
+          <a data-config-href="links.playStore" href="#" class="store-btn">
+            <span class="store-btn-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 010 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg></span>
+            <span class="store-btn-text"><span class="store-btn-label" data-i18n="store-google-label">Get it on</span><span class="store-btn-name">Google Play</span></span>
+          </a>
+        </div>
+      </div>
+      <div class="app-download-visual fade-in">
+        <div class="phone-mockup">
+          <div class="phone-screen">
+            <div class="phone-header">
+              <div class="phone-header-title" data-config="app.name">DPS QuickBook</div>
+              <div class="phone-header-sub" data-i18n="phone-sub">3 appointments found nearby</div>
+            </div>
+            <div class="phone-body">
+              <div class="phone-card"><div class="phone-card-row"><span class="phone-card-label">Garland Mega Center</span><span class="phone-card-badge badge-green">Available</span></div><div class="phone-card-detail">Mar 4, 2026 &middot; 10:30 AM &middot; 3.2 mi</div></div>
+              <div class="phone-card"><div class="phone-card-row"><span class="phone-card-label">Carrollton Office</span><span class="phone-card-badge badge-green">Available</span></div><div class="phone-card-detail">Mar 5, 2026 &middot; 2:15 PM &middot; 8.7 mi</div></div>
+              <div class="phone-card"><div class="phone-card-row"><span class="phone-card-label">McKinney Office</span><span class="phone-card-badge badge-blue">Auto-booked</span></div><div class="phone-card-detail">Mar 6, 2026 &middot; 9:00 AM &middot; 14.1 mi</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="footer-logo"><img data-config-src="app.icon" src="appicon.jpg" alt="DPS QuickBook"> <span data-config="app.name">DPS QuickBook</span></a>
+          <p class="footer-brand-desc" data-i18n="footer-desc">Find and secure earlier Texas DPS appointments. Book manually for free or let us handle it automatically.</p>
+          <p class="footer-brand-desc" data-i18n="footer-address" data-i18n-html="true" style="margin-bottom: 16px; font-size: 0.82rem;">{{company.name}}<br>{{company.street}}, {{company.city}}, {{company.state}} {{company.zip}}<br>{{company.country}}</p>
+          <div class="footer-social">
+            <a data-config-href="links.twitter" href="#" class="footer-social-link" aria-label="Twitter"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a data-config-href="links.instagram" href="#" class="footer-social-link" aria-label="Instagram"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+            <a data-config-href="links.facebook" href="#" class="footer-social-link" aria-label="Facebook"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title" data-i18n="footer-product">Product</h4>
+          <ul class="footer-col-links">
+            <li><a href="#how-it-works" data-i18n="footer-how">How It Works</a></li>
+            <li><a href="#pricing" data-i18n="footer-pricing">Pricing</a></li>
+            <li><a href="#download" data-i18n="footer-download">Download App</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title" data-i18n="footer-company">Company</h4>
+          <ul class="footer-col-links">
+            <li><a href="#transparency" data-i18n="footer-trust">Trust & Privacy</a></li>
+            <li><a href="#transparency" data-i18n="footer-compliance">Compliance</a></li>
+            <li><a href="#faq" data-i18n="footer-faq">FAQ</a></li>
+            <li><a href="#faq" data-i18n="footer-contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title" data-i18n="footer-legal">Legal</h4>
+          <ul class="footer-col-links">
+            <li><a href="privacy.html" data-i18n="footer-privacy">Privacy Policy</a></li>
+            <li><a href="terms.html" data-i18n="footer-terms">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright" data-i18n="footer-disclaimer">Not affiliated with the Texas Department of Public Safety. All appointments booked through the official DPS website.</p>
+        <p class="footer-copyright" data-i18n="footer-copyright" data-i18n-html="true">&copy; {{company.copyrightYear}} {{app.name}} by {{company.name}}. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script>
+    // --- CONFIG RESOLVER ---
+    function resolveConfig(str) {
+      return str.replace(/\{\{(\S+?)\}\}/g, (_, key) => {
+        return key.split('.').reduce((o, k) => o?.[k], CONFIG) ?? '{{' + key + '}}';
+      });
+    }
+
+    function applyConfig() {
+      // Standalone text
+      document.querySelectorAll('[data-config]').forEach(el => {
+        const val = el.dataset.config.split('.').reduce((o, k) => o?.[k], CONFIG);
+        if (val) el.textContent = val;
+      });
+      // Image src
+      document.querySelectorAll('[data-config-src]').forEach(el => {
+        const val = el.dataset.configSrc.split('.').reduce((o, k) => o?.[k], CONFIG);
+        if (val) el.src = val;
+      });
+      // Links href
+      document.querySelectorAll('[data-config-href]').forEach(el => {
+        const key = el.dataset.configHref;
+        let val = key.split('.').reduce((o, k) => o?.[k], CONFIG);
+        if (val) {
+          if (key === 'company.email') val = 'mailto:' + val;
+          el.href = val;
+        }
+      });
+      // Form action
+      document.querySelectorAll('[data-config-action]').forEach(el => {
+        const val = el.dataset.configAction.split('.').reduce((o, k) => o?.[k], CONFIG);
+        if (val) el.action = val;
+      });
+      // Data-target (stats counters)
+      document.querySelectorAll('[data-config-target]').forEach(el => {
+        const val = el.dataset.configTarget.split('.').reduce((o, k) => o?.[k], CONFIG);
+        if (val) el.dataset.target = val;
+      });
+      // Resolve {{key}} templates in text content
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        if (el.getAttribute('data-i18n-html') === 'true') {
+          el.innerHTML = resolveConfig(el.innerHTML);
+        } else {
+          const resolved = resolveConfig(el.textContent);
+          if (resolved !== el.textContent) el.textContent = resolved;
+        }
+      });
+    }
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Nav scroll effect
+    const nav = document.querySelector('nav');
+    const toggleBtn = document.querySelector('.mobile-toggle');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }, { passive: true });
+
+    // Mobile toggle
+    toggleBtn.addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item.active').forEach(i => i.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
+        btn.setAttribute('aria-expanded', !isActive);
+      });
+    });
+
+    // Animated number counters
+    function animateCounter(el) {
+      const target = parseFloat(el.dataset.target);
+      const isDecimal = el.dataset.decimal === 'true';
+      const duration = 2000;
+      const start = performance.now();
+      function update(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = eased * target;
+        if (isDecimal) {
+          el.textContent = current.toFixed(1);
+        } else {
+          el.textContent = Math.floor(current).toLocaleString();
+        }
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          el.textContent = isDecimal ? target.toFixed(1) : target.toLocaleString();
+        }
+      }
+      requestAnimationFrame(update);
+    }
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.counter').forEach(animateCounter);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.proof-bar, .hero-stats').forEach(el => counterObserver.observe(el));
+
+    // --- LANGUAGE TOGGLE ---
+    const translations = { es: {
+      // Nav
+      "nav-how": "Cómo Funciona", "nav-pricing": "Precios", "nav-faq": "Preguntas", "nav-contact": "Contacto",
+      "nav-trust": "Confianza y Privacidad", "nav-cta": "Descargar App",
+      // Hero
+      "hero-badge": "Monitoreando citas del DPS de Texas ahora",
+      "hero-title": "Encuentra y Asegura Citas del DPS de Texas Más <span>Tempranas</span>.",
+      "hero-sub": "Reserva manualmente gratis, o deja que aseguremos automáticamente las citas recién disponibles para ti.",
+      "hero-btn-download": '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14m-7-7l7 7 7-7"/></svg> Descargar la App',
+      "hero-btn-how": 'Cómo Funciona <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>',
+      "hero-trust": "No afiliado al Departamento de Seguridad Pública de Texas.",
+      "stat-monitored": "Citas Monitoreadas", "stat-rating": "Calificación App Store", "stat-coverage": "Cobertura en Todo Texas",
+      // Problem
+      "problem-label": "El Problema",
+      "problem-title-1": "Largas Esperas.", "problem-title-2": "Citas Perdidas.", "problem-title-3": "Actualización Constante.",
+      "problem-h3-1": "Reservado Semanas Después", "problem-h3-2": "Cancelaciones Aleatorias", "problem-h3-3": "Sin Tiempo para Actualizar",
+      "problem-p-1": "Las citas del DPS a menudo se programan semanas o incluso meses por adelantado, dejándote esperando.",
+      "problem-p-2": "Los espacios de cancelación aparecen en momentos aleatorios durante el día sin aviso ni patrón.",
+      "problem-p-3": "Revisar manualmente el sitio del DPS todo el día no es realista cuando tienes trabajo, escuela o vida.",
+      // Social Proof
+      "proof-monitored": "Citas Monitoreadas", "proof-users": "Usuarios Atendidos",
+      "proof-time": "Tiempo Promedio Ahorrado", "proof-locations": "Ubicaciones DPS en Texas",
+      // Solution
+      "solution-label": "La Solución", "solution-title": "Nosotros Monitoreamos Para Que Tú No Tengas Que Hacerlo.",
+      "solution-desc": "Elige el enfoque que funcione para ti — busca espacios tú mismo, o déjanos manejarlo automáticamente.",
+      "solution-free-title": "Reserva Manual",
+      "solution-free-1": "Ver citas disponibles 24/7", "solution-free-2": "Elige tu ubicación y radio de búsqueda",
+      "solution-free-3": "Reserva directamente a tu ritmo",
+      "solution-premium-title": "Reserva Automática",
+      "solution-premium-1": "Monitoreamos nuevas aperturas publicadas",
+      "solution-premium-2": "Reservamos automáticamente citas elegibles según tu disponibilidad",
+      "solution-premium-3": "Notificación instantánea una vez reservada",
+      "solution-note": "Siempre se te notifica cuando se asegura una cita — sin sorpresas.",
+      // How It Works
+      "how-label": "Cómo Funciona", "how-title": "Cuatro Simples Pasos",
+      "step-h3-1": "Crea una Cuenta", "step-p-1": "Rápido y fácil — solo lo esencial para comenzar.",
+      "step-h3-2": "Configura tus Preferencias", "step-p-2": "Elige tu ubicación preferida, radio y horarios disponibles.",
+      "step-h3-3": "Elige tu Plan", "step-p-3": "Busca manualmente gratis o activa la reserva automática.",
+      "step-h3-4": "Recibe Notificaciones", "step-p-4": "Te avisaremos en el momento en que se asegure una cita.",
+      "how-compliance": "<strong>Todas las citas se aseguran a través del sitio oficial del DPS.</strong>",
+      // Final CTA
+      "cta-title": "Deja de Actualizar.<br>Empieza a <span>Asegurar</span> Citas.",
+      "cta-sub": "Descarga la app y toma control de tu agenda del DPS hoy.",
+      "cta-btn": 'Descargar la App <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>',
+      "cta-trust": "La reserva manual es gratis. Siempre.",
+      // Trust & Compliance
+      "trust-label": "Confianza y Privacidad", "trust-title": "Tu Privacidad Importa",
+      "trust-collect-1": "Nombre", "trust-collect-2": "Preferencias de ubicación",
+      "trust-collect-3": "Ventanas de disponibilidad", "trust-collect-4": "Credenciales de inicio de sesión",
+      "trust-never-1": "Vender tu información", "trust-never-2": "Acceder a datos no relacionados",
+      "trust-never-3": "Compartir datos sin tu consentimiento",
+      "trust-note": "Puedes administrar o eliminar tu cuenta en cualquier momento.",
+      "compliance-label": "Cumplimiento", "compliance-title": "Servicio Independiente",
+      "compliance-1": "No afiliado al DPS de Texas", "compliance-2": "No controlamos la disponibilidad de citas",
+      "compliance-3": "No garantizamos fechas específicas", "compliance-4": "Los usuarios son responsables de confirmar su elegibilidad",
+      // Pricing
+      "pricing-label": "Precios", "pricing-title": "Administra Todo Desde Un Solo Panel",
+      "pricing-desc": "Con tu cuenta, tienes control total sobre tus citas y preferencias.",
+      "pricing-free-label": "Plan Gratuito", "pricing-free-note": "La reserva manual siempre es gratis. Sin tarjeta requerida.",
+      "pricing-free-1": "Busca citas del DPS disponibles públicamente",
+      "pricing-free-2": "Ve y administra tus citas programadas",
+      "pricing-free-3": "Guarda ubicaciones preferidas",
+      "pricing-free-4": "Accede a tu panel personal",
+      "pricing-free-5": "Recibe confirmaciones estándar de reserva",
+      "pricing-free-btn": "Comenzar Gratis",
+      "pricing-premium-label": "Reserva Automática", "pricing-premium-note": "Se cobra solo cuando se usa la reserva automática.",
+      "pricing-premium-1": "Incluye todas las funciones gratuitas",
+      "pricing-premium-2": "Monitoreo automatizado de cancelaciones disponibles públicamente",
+      "pricing-premium-3": "Intento de reserva cuando una cita más temprana esté disponible",
+      "pricing-premium-4": "Actualizaciones de estado en tiempo real en tu panel",
+      "pricing-premium-5": "Notificación instantánea si se asegura una reserva",
+      "pricing-premium-btn": "Iniciar Reserva Automática",
+      "pricing-footnote": "Este servicio no está afiliado, respaldado ni patrocinado por el Departamento de Seguridad Pública de Texas. Todas las citas se obtienen a través de sistemas disponibles públicamente.",
+      // FAQ
+      "faq-label": "Preguntas y Contacto", "faq-title": "¿Preguntas? Estamos Aquí para Ayudar.",
+      "faq-desc": "Consulta preguntas comunes o envíanos un mensaje directamente.",
+      "faq-q-1": "¿{{app.name}} está afiliado al DPS de Texas?",
+      "faq-a-1": "No. {{app.name}} es un servicio independiente operado por {{company.name}}. No estamos afiliados, respaldados ni patrocinados por el Departamento de Seguridad Pública de Texas ni ninguna agencia gubernamental. Todas las citas se reservan a través del sistema oficial de programación del DPS.",
+      "faq-q-2": "¿Cómo funciona la reserva automática?",
+      "faq-a-2": "Cuando activas la reserva automática, nuestro sistema monitorea continuamente la disponibilidad de citas del DPS según tus preferencias especificadas (ubicación, radio, ventanas de tiempo). Cuando se abre un espacio que coincide, lo reservamos automáticamente para ti y te enviamos una notificación instantánea. Puedes desactivar la reserva automática en cualquier momento.",
+      "faq-q-3": "¿La búsqueda manual es realmente gratuita?",
+      "faq-a-3": "Sí. La búsqueda manual es completamente gratuita, sin necesidad de tarjeta de crédito. Puedes ver citas disponibles, configurar tu ubicación y radio, y reservar directamente a tu ritmo sin costo. Las funciones premium (reserva automática) se cobran solo cuando se usan activamente.",
+      "faq-q-4": "¿Qué información necesitan de mí?",
+      "faq-a-4": "Solo recopilamos lo necesario: tu nombre, correo electrónico, preferencias de ubicación, ventanas de disponibilidad y credenciales de cuenta (encriptadas). Nunca vendemos tus datos ni los compartimos con terceros para marketing. Puedes eliminar tu cuenta y todos los datos en cualquier momento.",
+      "faq-q-5": "¿Puedo cancelar una cita reservada automáticamente?",
+      "faq-a-5": "Sí. Cualquier cita asegurada mediante reserva automática puede ser administrada y cancelada a través del sitio oficial del DPS. Siempre se te notifica inmediatamente cuando se reserva una cita, dándote control total sobre si mantenerla.",
+      "faq-q-6": "¿Qué ubicaciones del DPS son compatibles?",
+      "faq-a-6": "{{app.name}} monitorea citas en todas las oficinas del DPS de Texas en todo el estado. Puedes configurar tu ubicación preferida y radio de búsqueda, y encontraremos citas disponibles dentro de tu área especificada.",
+      // Contact
+      "contact-title": "Contáctanos", "contact-desc": "¿Tienes una pregunta no cubierta aquí? Envíanos un mensaje y te responderemos.",
+      "contact-name-label": "Nombre", "contact-name-ph": "Tu nombre",
+      "contact-email-label": "Correo electrónico", "contact-msg-label": "Mensaje", "contact-msg-ph": "¿Cómo podemos ayudarte?",
+      "contact-btn": 'Enviar Mensaje <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>',
+      "contact-note": "Te responderemos dentro de 5 días hábiles.",
+      // Download
+      "download-label": "Obtén la App", "download-title": "Accede a Todo Desde Tu Teléfono.",
+      "download-desc": "Monitorea citas, administra tu disponibilidad y recibe notificaciones directamente desde la app.",
+      "store-apple-label": "Descárgalo en", "store-google-label": "Disponible en",
+      "phone-sub": "3 citas encontradas cerca",
+      // Footer
+      "footer-desc": "Encuentra y asegura citas del DPS de Texas más tempranas. Reserva manualmente gratis o déjanos manejarlo automáticamente.",
+      "footer-product": "Producto", "footer-how": "Cómo Funciona", "footer-pricing": "Precios", "footer-download": "Descargar App",
+      "footer-company": "Empresa", "footer-trust": "Confianza y Privacidad", "footer-compliance": "Cumplimiento",
+      "footer-faq": "Preguntas", "footer-contact": "Contacto",
+      "footer-legal": "Legal", "footer-privacy": "Política de Privacidad", "footer-terms": "Términos de Servicio",
+      "footer-disclaimer": "No afiliado al Departamento de Seguridad Pública de Texas. Todas las citas se reservan a través del sitio oficial del DPS.",
+      "footer-address": "{{company.name}}<br>{{company.street}}, {{company.city}}, {{company.state}} {{company.zip}}<br>Estados Unidos",
+      "footer-copyright": "&copy; {{company.copyrightYear}} {{app.name}} por {{company.name}}. Todos los derechos reservados."
+    }};
+
+    const englishOriginals = {};
+    function initTranslations() {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        englishOriginals[key] = el.getAttribute('data-i18n-html') === 'true' ? el.innerHTML : el.textContent;
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        englishOriginals['ph:' + el.getAttribute('data-i18n-placeholder')] = el.placeholder;
+      });
+    }
+
+    function setLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (lang === 'es' && translations.es[key]) {
+          if (el.getAttribute('data-i18n-html') === 'true') {
+            el.innerHTML = translations.es[key];
+          } else {
+            el.textContent = translations.es[key];
+          }
+        } else if (lang === 'en' && englishOriginals[key]) {
+          if (el.getAttribute('data-i18n-html') === 'true') {
+            el.innerHTML = englishOriginals[key];
+          } else {
+            el.textContent = englishOriginals[key];
+          }
+        }
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        el.placeholder = lang === 'es' && translations.es[key] ? translations.es[key] : (englishOriginals['ph:' + key] || el.placeholder);
+      });
+      document.documentElement.lang = lang;
+      document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+      document.getElementById('lang-es').classList.toggle('active', lang === 'es');
+      localStorage.setItem('lang', lang);
+    }
+
+    function toggleLang() {
+      const current = localStorage.getItem('lang') || 'en';
+      setLanguage(current === 'en' ? 'es' : 'en');
+    }
+
+    // Apply config values and resolve {{key}} templates
+    applyConfig();
+    document.title = resolveConfig(document.title);
+    Object.keys(translations.es).forEach(key => {
+      if (typeof translations.es[key] === 'string') {
+        translations.es[key] = resolveConfig(translations.es[key]);
+      }
+    });
+
+    initTranslations();
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang && savedLang !== 'en') setLanguage(savedLang);
+  </script>
+</body>
+</html>

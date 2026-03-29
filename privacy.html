@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — My State by Tech by Floig LLC</title>
+  <meta name="description" content="Privacy policy and data collection practices for My State by Tech by Floig LLC.">
+  <link rel="icon" type="image/png" href="appicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg-primary: #FAFBFE;
+      --bg-warm: #FFF9F3;
+      --bg-white: #FFFFFF;
+      --navy: #1E3A5F;
+      --navy-light: #2A4F7A;
+      --navy-muted: #3D6590;
+      --navy-soft: #EEF2F7;
+      --orange: #D4793A;
+      --orange-deep: #C06A30;
+      --orange-light: #E8993D;
+      --orange-glow: rgba(212, 121, 58, 0.08);
+      --text-primary: #1A2B42;
+      --text-secondary: #5A6B80;
+      --text-light: #8A96A6;
+      --border: #E2E8F0;
+      --shadow-sm: 0 1px 3px rgba(30, 58, 95, 0.05);
+      --shadow-md: 0 4px 16px rgba(30, 58, 95, 0.07);
+      --shadow-lg: 0 8px 32px rgba(30, 58, 95, 0.09);
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 { font-family: 'Fraunces', serif; line-height: 1.25; letter-spacing: -0.01em; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 16px 32px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: transparent;
+      backdrop-filter: none; -webkit-backdrop-filter: none;
+      border-bottom: 1px solid transparent;
+      box-shadow: none;
+      transition: background 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease;
+    }
+    nav.scrolled {
+      background: linear-gradient(165deg, rgba(30, 58, 95, 0.97), rgba(42, 79, 122, 0.97));
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 2px 20px rgba(30, 58, 95, 0.25);
+      padding: 12px 32px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .nav-logo {
+      font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.25rem;
+      color: #FFFFFF; text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav-logo img { width: 38px; height: 38px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); flex-shrink: 0; }
+    .nav-links { display: flex; align-items: center; gap: 30px; list-style: none; }
+    .nav-links a { text-decoration: none; color: rgba(255,255,255,0.75); font-size: 0.93rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #FFFFFF; }
+    .nav-cta {
+      background: rgba(255,255,255,0.85) !important; color: var(--navy) !important;
+      padding: 10px 22px; border-radius: 50px; font-weight: 600 !important;
+      transition: all 0.25s !important; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    }
+    .nav-cta:hover { background: #FFFFFF !important; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
+    .lang-toggle { display: flex; align-items: center; gap: 4px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 4px 6px; cursor: pointer; font-size: 0.78rem; font-weight: 600; margin-right: 8px; }
+    .lang-toggle span { padding: 4px 10px; border-radius: 50px; color: rgba(255,255,255,0.6); transition: all 0.25s; }
+    .lang-toggle span.active { background: rgba(255,255,255,0.85); color: var(--navy); }
+    .mobile-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .mobile-toggle span { width: 24px; height: 2px; background: #FFFFFF; border-radius: 2px; transition: transform 0.3s ease, opacity 0.3s ease; display: block; }
+    .mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .mobile-toggle.active span:nth-child(2) { opacity: 0; }
+    .mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* HERO HEADER */
+    .legal-hero {
+      padding: 140px 24px 60px;
+      text-align: center;
+      background: url('image2.png') center/cover no-repeat;
+      position: relative; overflow: hidden;
+    }
+    .legal-hero::before { content: ''; position: absolute; inset: 0; background: rgba(30, 58, 95, 0.5); pointer-events: none; }
+    .legal-hero h1 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; color: #FFFFFF; margin-bottom: 18px; position: relative; z-index: 1; }
+    .legal-hero p { font-size: 1.08rem; color: rgba(255,255,255,0.85); max-width: 680px; margin: 0 auto; line-height: 1.7; position: relative; z-index: 1; }
+    .legal-hero .effective-date { display: inline-block; margin-top: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.12); padding: 8px 18px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.15); position: relative; z-index: 1; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+    .legal-hero .cross-link { display: inline-block; margin-top: 14px; font-size: 0.9rem; color: var(--orange-light); text-decoration: none; font-weight: 500; transition: color 0.2s; position: relative; z-index: 1; }
+    .legal-hero .cross-link:hover { color: #FFFFFF; text-decoration: underline; }
+
+    /* PAGE LAYOUT */
+    .legal-page { max-width: 860px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    /* TABLE OF CONTENTS */
+    .toc {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      margin-bottom: 48px;
+    }
+    .toc h2 { font-size: 1.15rem; font-weight: 600; color: var(--navy); margin-bottom: 16px; }
+    .toc-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .toc-list a {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none; color: var(--text-secondary);
+      font-size: 0.95rem; font-weight: 500;
+      padding: 8px 14px; border-radius: 10px;
+      transition: all 0.2s;
+    }
+    .toc-list a:hover { background: var(--navy-soft); color: var(--navy); }
+    .toc-list .toc-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px; border-radius: 8px;
+      font-size: 0.78rem; font-weight: 700;
+      background: linear-gradient(135deg, rgba(30,58,95,0.07), rgba(212,121,58,0.07));
+      color: var(--navy);
+      flex-shrink: 0;
+    }
+
+    /* LEGAL SECTIONS */
+    .legal-section {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      margin-bottom: 28px;
+      transition: box-shadow 0.3s;
+    }
+    .legal-section:hover { box-shadow: var(--shadow-md); }
+    .legal-section:target { box-shadow: 0 0 0 2px var(--orange), var(--shadow-md); }
+
+    .section-num {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.07em;
+      text-transform: uppercase; color: var(--orange);
+      margin-bottom: 12px;
+    }
+    .section-num span {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 24px; height: 24px; border-radius: 6px;
+      background: var(--orange-glow); font-size: 0.72rem;
+    }
+
+    .legal-section h2 {
+      font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 20px;
+    }
+
+    .legal-section h3 {
+      font-size: 1.1rem; font-weight: 600; color: var(--navy); margin: 28px 0 12px;
+      padding-top: 20px; border-top: 1px solid var(--border);
+    }
+    .legal-section h3:first-of-type { border-top: none; padding-top: 0; margin-top: 24px; }
+
+    .legal-section p {
+      font-size: 0.95rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 14px;
+    }
+
+    .legal-section ul {
+      list-style: none; margin: 12px 0 16px; display: flex; flex-direction: column; gap: 8px;
+    }
+    .legal-section li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.93rem; color: var(--text-secondary); line-height: 1.6;
+    }
+    .legal-section li::before { content: '\2192'; color: var(--navy-muted); flex-shrink: 0; margin-top: 1px; }
+
+    /* HIGHLIGHT BOXES */
+    .highlight-important, .highlight-warning, .highlight-green {
+      padding: 20px 24px 20px 8px;
+      border-radius: var(--radius-md);
+      margin: 20px 0;
+      font-size: 0.93rem;
+      line-height: 1.7;
+    }
+    .highlight-important p, .highlight-warning p, .highlight-green p { margin-bottom: 0; }
+
+    .highlight-important {
+      background: var(--navy-soft);
+      border-left: 3px solid var(--navy);
+      color: var(--navy);
+    }
+
+    .highlight-warning {
+      background: #FFF5F0;
+      border-left: 3px solid var(--orange);
+      color: #8B4513;
+    }
+
+    .highlight-green {
+      background: #E8F5EE;
+      border-left: 3px solid #2D8F5E;
+      color: #1E5A3A;
+    }
+
+    .bold-statement {
+      font-weight: 600; color: var(--navy); font-size: 1rem;
+    }
+
+    /* CONTACT BOX */
+    .contact-box {
+      background: linear-gradient(165deg, var(--navy), var(--navy-light));
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      color: white;
+      margin-top: 40px;
+    }
+    .contact-box h2 { font-size: 1.3rem; color: white; margin-bottom: 16px; }
+    .contact-box p { color: rgba(255,255,255,0.8); font-size: 0.93rem; line-height: 1.7; margin-bottom: 8px; }
+    .contact-box a { color: var(--orange-light); text-decoration: none; font-weight: 600; }
+    .contact-box a:hover { text-decoration: underline; }
+    .contact-detail { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .contact-detail .cd-icon {
+      width: 32px; height: 32px; border-radius: 8px;
+      background: rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.7); flex-shrink: 0;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 60px 24px 32px;
+      background: var(--navy);
+      color: rgba(255, 255, 255, 0.7);
+      position: relative;
+    }
+    footer::before {
+      content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 85%; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    }
+    .footer-inner { max-width: 1080px; margin: 0 auto; }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+      padding-bottom: 40px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); margin-bottom: 28px;
+    }
+    .footer-logo {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.15rem;
+      color: #FFFFFF; text-decoration: none; margin-bottom: 14px;
+    }
+    .footer-logo img { width: 32px; height: 32px; border-radius: 8px; }
+    .footer-brand-desc { font-size: 0.88rem; color: rgba(255, 255, 255, 0.55); line-height: 1.6; margin-bottom: 20px; max-width: 280px; }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social-link {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255, 255, 255, 0.6); transition: background 0.2s, color 0.2s; text-decoration: none;
+    }
+    .footer-social-link:hover { background: rgba(255, 255, 255, 0.15); color: #FFFFFF; }
+    .footer-col-title {
+      font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255, 255, 255, 0.4); margin-bottom: 18px;
+    }
+    .footer-col-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col-links a { font-size: 0.9rem; color: rgba(255, 255, 255, 0.65); text-decoration: none; transition: color 0.2s; }
+    .footer-col-links a:hover { color: #FFFFFF; }
+    .footer-bottom { text-align: center; }
+    .footer-copyright { font-size: 0.78rem; color: rgba(255, 255, 255, 0.35); line-height: 1.6; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+    @media (max-width: 640px) {
+      nav { padding: 12px 18px; }
+      nav.scrolled { padding: 10px 18px; }
+      .nav-links {
+        display: flex; position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column;
+        background: linear-gradient(165deg, rgba(30, 58, 95, 0.98), rgba(42, 79, 122, 0.98));
+        backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+        padding: 0 20px; gap: 0;
+        max-height: 0; overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
+        box-shadow: 0 8px 24px rgba(30,58,95,0.25);
+      }
+      .nav-links.open { max-height: 380px; padding: 20px; gap: 16px; }
+      .nav-links a { opacity: 0; transform: translateX(-10px); transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s; }
+      .nav-links.open a { opacity: 1; transform: translateX(0); }
+      .nav-links li:nth-child(1) a { transition-delay: 0.05s; }
+      .nav-links li:nth-child(2) a { transition-delay: 0.1s; }
+      .nav-links li:nth-child(3) a { transition-delay: 0.15s; }
+      .nav-links li:nth-child(4) a { transition-delay: 0.2s; }
+      .nav-links li:nth-child(5) a { transition-delay: 0.25s; }
+      .mobile-toggle { display: flex; }
+      .legal-hero { padding: 110px 18px 40px; }
+      .legal-page { padding: 40px 16px 80px; }
+      .legal-section { padding: 28px 22px; }
+      .toc { padding: 24px 20px; }
+      .contact-box { padding: 28px 22px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+      .footer-brand-desc { max-width: 100%; margin-left: auto; margin-right: auto; }
+      .footer-social { justify-content: center; }
+      .footer-logo { justify-content: center; }
+    }
+
+    /* SCROLL ANIMATIONS */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img data-config-src="app.icon" src="appicon.jpg" alt="DPS QuickBook"> <span data-config="app.name">DPS QuickBook</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav-home">Home</a></li>
+      <li><a href="index.html#how-it-works" data-i18n="nav-how">How It Works</a></li>
+      <li><a href="index.html#pricing" data-i18n="nav-pricing">Pricing</a></li>
+      <li><a href="index.html#faq" data-i18n="nav-contact">Contact</a></li>
+      <li><div class="lang-toggle" onclick="toggleLang()"><span id="lang-en" class="active">EN</span><span id="lang-es">ES</span></div></li>
+      <li><a href="index.html#download" class="nav-cta" data-i18n="nav-cta">Download App</a></li>
+    </ul>
+    <button class="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <!-- HERO -->
+  <div class="legal-hero">
+    <h1 data-i18n="priv-hero-title">Privacy Policy</h1>
+    <p data-i18n="priv-hero-desc">How {{app.mobileName}} by {{company.name}} collects, uses, and protects your personal information.</p>
+    <span class="effective-date" data-i18n="priv-effective">Effective Date: {{legal.effectiveDate}}</span>
+    <br>
+    <a href="terms.html" class="cross-link" data-i18n="priv-cross-link" data-i18n-html="true">View Terms of Service &rarr;</a>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="legal-page">
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc fade-in">
+      <h2 data-i18n="priv-toc-title">Contents</h2>
+      <ul class="toc-list">
+        <li><a href="#privacy-policy"><span class="toc-num">1</span> <span data-i18n="priv-toc-1">Privacy Policy</span></a></li>
+        <li><a href="#data-collection"><span class="toc-num">2</span> <span data-i18n="priv-toc-2">Data Collection Disclosure</span></a></li>
+        <li><a href="#contact"><span class="toc-num">3</span> <span data-i18n="priv-toc-3">Contact Information</span></a></li>
+      </ul>
+    </div>
+
+    <!-- SECTION 1: PRIVACY POLICY -->
+    <div class="legal-section fade-in" id="privacy-policy">
+      <div class="section-num"><span>1</span> <span data-i18n="priv-s1-label">Section One</span></div>
+      <h2 data-i18n="priv-s1-title">Privacy Policy</h2>
+
+      <h3 data-i18n="priv-s1-h3-1">1.1 — Information We Collect</h3>
+      <p data-i18n="priv-s1-p-1">We collect only information necessary to provide appointment monitoring and reservation services. This includes:</p>
+      <ul>
+        <li data-i18n="priv-s1-li-1">Full name</li>
+        <li data-i18n="priv-s1-li-2">Email address</li>
+        <li data-i18n="priv-s1-li-3">Location preferences (city, zip code, preferred DPS offices)</li>
+        <li data-i18n="priv-s1-li-4">Availability windows (days and times you are available for appointments)</li>
+        <li data-i18n="priv-s1-li-5">Account login credentials (stored securely using encryption)</li>
+        <li data-i18n="priv-s1-li-6">Payment information (processed securely through third-party payment providers; we do not store card numbers)</li>
+      </ul>
+
+      <h3 data-i18n="priv-s1-h3-2">1.2 — How We Use Your Information</h3>
+      <p data-i18n="priv-s1-p-2">Your information is used exclusively to:</p>
+      <ul>
+        <li data-i18n="priv-s1-li-7">Provide appointment monitoring and browsing services</li>
+        <li data-i18n="priv-s1-li-8">Attempt automated appointment reservations on your behalf (premium users only)</li>
+        <li data-i18n="priv-s1-li-9">Send notifications regarding appointment status</li>
+        <li data-i18n="priv-s1-li-10">Manage your account and preferences</li>
+        <li data-i18n="priv-s1-li-11">Process payments for premium services</li>
+      </ul>
+
+      <h3 data-i18n="priv-s1-h3-3">1.3 — What We Do Not Do</h3>
+      <div class="highlight-green">
+        <p class="bold-statement" data-i18n="priv-s1-bold-1">We do not sell personal data.</p>
+        <p data-i18n="priv-s1-p-3">We do not share, rent, trade, or otherwise distribute your personal information to third parties for marketing, advertising, or any purpose unrelated to providing our services.</p>
+      </div>
+
+      <h3 data-i18n="priv-s1-h3-4">1.4 — Government Non-Affiliation</h3>
+      <div class="highlight-important">
+        <p data-i18n="priv-s1-p-4">We do not represent, act on behalf of, or claim affiliation with the Texas Department of Public Safety (DPS) or any government agency. {{app.mobileName}} is an independent, privately operated service.</p>
+      </div>
+
+      <h3 data-i18n="priv-s1-h3-5">1.5 — Data Security</h3>
+      <p data-i18n="priv-s1-p-5">We implement industry-standard security measures to protect your personal information, including encryption of sensitive data at rest and in transit. However, no method of electronic storage or transmission is 100% secure, and we cannot guarantee absolute security.</p>
+
+      <h3 data-i18n="priv-s1-h3-6">1.6 — Data Retention & Deletion</h3>
+      <p data-i18n="priv-s1-p-6">We retain your personal information only for as long as necessary to provide our services. You may request deletion of your account and all associated data at any time through the app settings or by contacting us directly. Upon deletion, your data will be permanently removed from our systems within 30 days.</p>
+
+      <h3 data-i18n="priv-s1-h3-7">1.7 — Third-Party Services</h3>
+      <p data-i18n="priv-s1-p-7">We may use third-party services for payment processing, analytics, and infrastructure. These providers are contractually bound to handle your data securely and only as necessary to perform services on our behalf.</p>
+
+      <h3 data-i18n="priv-s1-h3-8">1.8 — Changes to This Policy</h3>
+      <p data-i18n="priv-s1-p-8">We may update this Privacy Policy from time to time. If we make material changes, we will notify you through the app or by email. Continued use of the service after changes constitutes acceptance of the updated policy.</p>
+    </div>
+
+    <!-- SECTION 2: DATA COLLECTION -->
+    <div class="legal-section fade-in" id="data-collection">
+      <div class="section-num"><span>2</span> <span data-i18n="priv-s2-label">Section Two</span></div>
+      <h2 data-i18n="priv-s2-title">Data Collection Disclosure</h2>
+
+      <p class="bold-statement" data-i18n="priv-s2-bold-1">We collect only information necessary to provide appointment monitoring services.</p>
+
+      <h3 data-i18n="priv-s2-h3-1">2.1 — What We Collect and Why</h3>
+      <ul>
+        <li data-i18n="priv-s2-li-1" data-i18n-html="true"><strong>Name</strong> — to identify your account and personalize your experience</li>
+        <li data-i18n="priv-s2-li-2" data-i18n-html="true"><strong>Email address</strong> — for account communications and appointment notifications</li>
+        <li data-i18n="priv-s2-li-3" data-i18n-html="true"><strong>Location preferences</strong> — to search for appointments near your preferred areas</li>
+        <li data-i18n="priv-s2-li-4" data-i18n-html="true"><strong>Availability windows</strong> — to match you with appointments during times that work for you</li>
+        <li data-i18n="priv-s2-li-5" data-i18n-html="true"><strong>Account credentials</strong> — securely encrypted to maintain your account access</li>
+        <li data-i18n="priv-s2-li-6" data-i18n-html="true"><strong>Payment status</strong> — to manage premium subscription features (we do not store card numbers)</li>
+      </ul>
+
+      <h3 data-i18n="priv-s2-h3-2">2.2 — Your Rights</h3>
+      <p data-i18n="priv-s2-p-1">You have the right to:</p>
+      <ul>
+        <li data-i18n="priv-s2-li-7">Access all personal data we hold about you</li>
+        <li data-i18n="priv-s2-li-8">Correct inaccurate information at any time</li>
+        <li data-i18n="priv-s2-li-9">Request deletion of your account and all associated data</li>
+        <li data-i18n="priv-s2-li-10">Withdraw consent for data processing (which may limit service availability)</li>
+        <li data-i18n="priv-s2-li-11">Export your data in a commonly used format upon request</li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact-box fade-in" id="contact">
+      <h2 data-i18n="priv-contact-title">Contact Information</h2>
+      <p data-i18n="priv-contact-desc">If you have questions about this privacy policy or your data, please reach out:</p>
+      <div style="margin-top:20px">
+        <div class="contact-detail">
+          <span class="cd-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg></span>
+          <p data-i18n="priv-contact-email" data-i18n-html="true">Email: <a href="mailto:{{company.email}}">{{company.email}}</a></p>
+        </div>
+        <div class="contact-detail">
+          <span class="cd-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22V18h6v4M9 6h.01M15 6h.01M9 10h.01M15 10h.01M9 14h.01M15 14h.01"/></svg></span>
+          <p data-i18n="priv-contact-address" data-i18n-html="true">{{company.name}}<br>{{company.street}}, {{company.city}}, {{company.state}} {{company.zip}}<br>{{company.country}}</p>
+        </div>
+      </div>
+      <p style="margin-top:16px; font-size:0.85rem; opacity:0.6;" data-i18n="priv-contact-response">Please allow up to 5 business days for a response.</p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo"><img data-config-src="app.icon" src="appicon.jpg" alt="DPS QuickBook"> <span data-config="app.name">DPS QuickBook</span></a>
+          <p class="footer-brand-desc" data-i18n="footer-desc">Find and secure earlier Texas DPS appointments. Book manually for free or let us handle it automatically.</p>
+          <p class="footer-brand-desc" data-i18n="footer-address" data-i18n-html="true" style="margin-bottom: 16px; font-size: 0.82rem;">{{company.name}}<br>{{company.street}}, {{company.city}}, {{company.state}} {{company.zip}}<br>{{company.country}}</p>
+          <div class="footer-social">
+            <a href="#" class="footer-social-link" aria-label="Twitter" data-config-href="links.twitter"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="#" class="footer-social-link" aria-label="Instagram" data-config-href="links.instagram"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" class="footer-social-link" aria-label="Facebook" data-config-href="links.facebook"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title" data-i18n="footer-product">Product</h4>
+          <ul class="footer-col-links">
+            <li><a href="index.html#how-it-works" data-i18n="footer-how">How It Works</a></li>
+            <li><a href="index.html#pricing" data-i18n="footer-pricing">Pricing</a></li>
+            <li><a href="index.html#download" data-i18n="footer-download">Download App</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title" data-i18n="footer-company">Company</h4>
+          <ul class="footer-col-links">
+            <li><a href="index.html#transparency" data-i18n="footer-trust">Trust & Privacy</a></li>
+            <li><a href="index.html#transparency" data-i18n="footer-compliance">Compliance</a></li>
+            <li><a href="index.html#faq" data-i18n="footer-faq">FAQ</a></li>
+            <li><a href="index.html#faq" data-i18n="footer-contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title" data-i18n="footer-legal">Legal</h4>
+          <ul class="footer-col-links">
+            <li><a href="privacy.html" data-i18n="footer-privacy">Privacy Policy</a></li>
+            <li><a href="terms.html" data-i18n="footer-terms">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright" data-i18n="footer-disclaimer">Not affiliated with the Texas Department of Public Safety. All appointments booked through the official DPS website.</p>
+        <p class="footer-copyright" data-i18n="footer-copyright" data-i18n-html="true">&copy; {{company.copyrightYear}} {{app.name}} by {{company.name}}. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script>
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Nav scroll effect
+    const nav = document.querySelector('nav');
+    const toggleBtn = document.querySelector('.mobile-toggle');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }, { passive: true });
+
+    // Mobile toggle
+    toggleBtn.addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+  </script>
+
+  <script>
+    const translations = {
+      es: {
+        // Nav
+        "nav-home": "Inicio",
+        "nav-how": "C\u00f3mo Funciona",
+        "nav-pricing": "Precios",
+        "nav-contact": "Contacto",
+        "nav-cta": "Descargar App",
+
+        // Hero
+        "priv-hero-title": "Pol\u00edtica de Privacidad",
+        "priv-hero-desc": "C\u00f3mo {{app.mobileName}} por {{company.name}} recopila, usa y protege tu informaci\u00f3n personal.",
+        "priv-effective": "Fecha de Vigencia: {{legal.effectiveDateEs}}",
+        "priv-cross-link": "Ver T\u00e9rminos de Servicio \u2192",
+
+        // TOC
+        "priv-toc-title": "Contenido",
+        "priv-toc-1": "Pol\u00edtica de Privacidad",
+        "priv-toc-2": "Divulgaci\u00f3n de Recopilaci\u00f3n de Datos",
+        "priv-toc-3": "Informaci\u00f3n de Contacto",
+
+        // Section 1
+        "priv-s1-label": "Secci\u00f3n Uno",
+        "priv-s1-title": "Pol\u00edtica de Privacidad",
+        "priv-s1-h3-1": "1.1 \u2014 Informaci\u00f3n que Recopilamos",
+        "priv-s1-p-1": "Recopilamos solo la informaci\u00f3n necesaria para proporcionar servicios de monitoreo y reservaci\u00f3n de citas. Esto incluye:",
+        "priv-s1-li-1": "Nombre completo",
+        "priv-s1-li-2": "Direcci\u00f3n de correo electr\u00f3nico",
+        "priv-s1-li-3": "Preferencias de ubicaci\u00f3n (ciudad, c\u00f3digo postal, oficinas del DPS preferidas)",
+        "priv-s1-li-4": "Ventanas de disponibilidad (d\u00edas y horarios en los que est\u00e1s disponible para citas)",
+        "priv-s1-li-5": "Credenciales de inicio de sesi\u00f3n de la cuenta (almacenadas de forma segura mediante cifrado)",
+        "priv-s1-li-6": "Informaci\u00f3n de pago (procesada de forma segura a trav\u00e9s de proveedores de pago externos; no almacenamos n\u00fameros de tarjeta)",
+
+        "priv-s1-h3-2": "1.2 \u2014 C\u00f3mo Usamos Tu Informaci\u00f3n",
+        "priv-s1-p-2": "Tu informaci\u00f3n se utiliza exclusivamente para:",
+        "priv-s1-li-7": "Proporcionar servicios de monitoreo y navegaci\u00f3n de citas",
+        "priv-s1-li-8": "Intentar reservaciones autom\u00e1ticas de citas en tu nombre (solo usuarios premium)",
+        "priv-s1-li-9": "Enviar notificaciones sobre el estado de las citas",
+        "priv-s1-li-10": "Administrar tu cuenta y preferencias",
+        "priv-s1-li-11": "Procesar pagos por servicios premium",
+
+        "priv-s1-h3-3": "1.3 \u2014 Lo Que No Hacemos",
+        "priv-s1-bold-1": "No vendemos datos personales.",
+        "priv-s1-p-3": "No compartimos, alquilamos, intercambiamos ni distribuimos de ninguna otra manera tu informaci\u00f3n personal a terceros con fines de marketing, publicidad o cualquier prop\u00f3sito no relacionado con la prestaci\u00f3n de nuestros servicios.",
+
+        "priv-s1-h3-4": "1.4 \u2014 No Afiliaci\u00f3n Gubernamental",
+        "priv-s1-p-4": "No representamos, actuamos en nombre de, ni reclamamos afiliaci\u00f3n con el Departamento de Seguridad P\u00fablica de Texas (DPS) ni con ninguna agencia gubernamental. {{app.mobileName}} es un servicio independiente y de operaci\u00f3n privada.",
+
+        "priv-s1-h3-5": "1.5 \u2014 Seguridad de Datos",
+        "priv-s1-p-5": "Implementamos medidas de seguridad est\u00e1ndar de la industria para proteger tu informaci\u00f3n personal, incluyendo el cifrado de datos sensibles en reposo y en tr\u00e1nsito. Sin embargo, ning\u00fan m\u00e9todo de almacenamiento o transmisi\u00f3n electr\u00f3nica es 100% seguro, y no podemos garantizar una seguridad absoluta.",
+
+        "priv-s1-h3-6": "1.6 \u2014 Retenci\u00f3n y Eliminaci\u00f3n de Datos",
+        "priv-s1-p-6": "Conservamos tu informaci\u00f3n personal solo durante el tiempo necesario para proporcionar nuestros servicios. Puedes solicitar la eliminaci\u00f3n de tu cuenta y todos los datos asociados en cualquier momento a trav\u00e9s de la configuraci\u00f3n de la aplicaci\u00f3n o contact\u00e1ndonos directamente. Tras la eliminaci\u00f3n, tus datos ser\u00e1n removidos permanentemente de nuestros sistemas dentro de 30 d\u00edas.",
+
+        "priv-s1-h3-7": "1.7 \u2014 Servicios de Terceros",
+        "priv-s1-p-7": "Podemos utilizar servicios de terceros para el procesamiento de pagos, an\u00e1lisis e infraestructura. Estos proveedores est\u00e1n contractualmente obligados a manejar tus datos de forma segura y solo seg\u00fan sea necesario para realizar servicios en nuestro nombre.",
+
+        "priv-s1-h3-8": "1.8 \u2014 Cambios a Esta Pol\u00edtica",
+        "priv-s1-p-8": "Podemos actualizar esta Pol\u00edtica de Privacidad de vez en cuando. Si realizamos cambios materiales, te notificaremos a trav\u00e9s de la aplicaci\u00f3n o por correo electr\u00f3nico. El uso continuado del servicio despu\u00e9s de los cambios constituye la aceptaci\u00f3n de la pol\u00edtica actualizada.",
+
+        // Section 2
+        "priv-s2-label": "Secci\u00f3n Dos",
+        "priv-s2-title": "Divulgaci\u00f3n de Recopilaci\u00f3n de Datos",
+        "priv-s2-bold-1": "Recopilamos solo la informaci\u00f3n necesaria para proporcionar servicios de monitoreo de citas.",
+
+        "priv-s2-h3-1": "2.1 \u2014 Qu\u00e9 Recopilamos y Por Qu\u00e9",
+        "priv-s2-li-1": "<strong>Nombre</strong> \u2014 para identificar tu cuenta y personalizar tu experiencia",
+        "priv-s2-li-2": "<strong>Correo electr\u00f3nico</strong> \u2014 para comunicaciones de la cuenta y notificaciones de citas",
+        "priv-s2-li-3": "<strong>Preferencias de ubicaci\u00f3n</strong> \u2014 para buscar citas cerca de tus \u00e1reas preferidas",
+        "priv-s2-li-4": "<strong>Ventanas de disponibilidad</strong> \u2014 para encontrar citas durante los horarios que te convengan",
+        "priv-s2-li-5": "<strong>Credenciales de la cuenta</strong> \u2014 cifradas de forma segura para mantener el acceso a tu cuenta",
+        "priv-s2-li-6": "<strong>Estado de pago</strong> \u2014 para administrar las funciones de suscripci\u00f3n premium (no almacenamos n\u00fameros de tarjeta)",
+
+        "priv-s2-h3-2": "2.2 \u2014 Tus Derechos",
+        "priv-s2-p-1": "Tienes derecho a:",
+        "priv-s2-li-7": "Acceder a todos los datos personales que tenemos sobre ti",
+        "priv-s2-li-8": "Corregir informaci\u00f3n inexacta en cualquier momento",
+        "priv-s2-li-9": "Solicitar la eliminaci\u00f3n de tu cuenta y todos los datos asociados",
+        "priv-s2-li-10": "Retirar el consentimiento para el procesamiento de datos (lo que puede limitar la disponibilidad del servicio)",
+        "priv-s2-li-11": "Exportar tus datos en un formato de uso com\u00fan previa solicitud",
+
+        // Contact
+        "priv-contact-title": "Informaci\u00f3n de Contacto",
+        "priv-contact-desc": "Si tienes preguntas sobre esta pol\u00edtica de privacidad o tus datos, por favor comun\u00edcate:",
+        "priv-contact-email": "Correo: <a href=\"mailto:{{company.email}}\">{{company.email}}</a>",
+        "priv-contact-address": "{{company.name}}<br>{{company.street}}, {{company.city}}, {{company.state}} {{company.zip}}<br>Estados Unidos",
+        "priv-contact-response": "Por favor permite hasta 5 d\u00edas h\u00e1biles para recibir una respuesta.",
+
+        // Footer
+        "footer-address": "{{company.name}}<br>{{company.street}}, {{company.city}}, {{company.state}} {{company.zip}}<br>Estados Unidos",
+        "footer-desc": "Encuentra y asegura citas del DPS de Texas m\u00e1s tempranas. Reserva manualmente gratis o d\u00e9janos manejarlo autom\u00e1ticamente.",
+        "footer-product": "Producto",
+        "footer-how": "C\u00f3mo Funciona",
+        "footer-pricing": "Precios",
+        "footer-download": "Descargar App",
+        "footer-company": "Empresa",
+        "footer-trust": "Confianza y Privacidad",
+        "footer-compliance": "Cumplimiento",
+        "footer-faq": "Preguntas",
+        "footer-contact": "Contacto",
+        "footer-legal": "Legal",
+        "footer-privacy": "Pol\u00edtica de Privacidad",
+        "footer-terms": "T\u00e9rminos de Servicio",
+        "footer-disclaimer": "No afiliado al Departamento de Seguridad P\u00fablica de Texas. Todas las citas se reservan a trav\u00e9s del sitio oficial del DPS.",
+        "footer-copyright": "\u00a9 {{company.copyrightYear}} {{app.name}} por {{company.name}}. Todos los derechos reservados."
+      }
+    };
+
+    const englishOriginals = {};
+
+    function initTranslations() {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        englishOriginals[key] = el.getAttribute('data-i18n-html') === 'true' ? el.innerHTML : el.textContent;
+      });
+    }
+
+    function setLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (lang === 'es' && translations.es[key]) {
+          if (el.getAttribute('data-i18n-html') === 'true') { el.innerHTML = translations.es[key]; }
+          else { el.textContent = translations.es[key]; }
+        } else if (lang === 'en' && englishOriginals[key]) {
+          if (el.getAttribute('data-i18n-html') === 'true') { el.innerHTML = englishOriginals[key]; }
+          else { el.textContent = englishOriginals[key]; }
+        }
+      });
+      document.documentElement.lang = lang;
+      document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+      document.getElementById('lang-es').classList.toggle('active', lang === 'es');
+      localStorage.setItem('lang', lang);
+    }
+
+    function toggleLang() {
+      const current = localStorage.getItem('lang') || 'en';
+      setLanguage(current === 'en' ? 'es' : 'en');
+    }
+
+    // --- CONFIG RESOLVER ---
+    function resolveConfig(str) {
+      return str.replace(/\{\{(\S+?)\}\}/g, (_, key) => {
+        return key.split('.').reduce((o, k) => o?.[k], CONFIG) ?? '{{' + key + '}}';
+      });
+    }
+
+    function applyConfig() {
+      document.querySelectorAll('[data-config]').forEach(el => {
+        const val = el.dataset.config.split('.').reduce((o, k) => o?.[k], CONFIG);
+        if (val) el.textContent = val;
+      });
+      document.querySelectorAll('[data-config-src]').forEach(el => {
+        const val = el.dataset.configSrc.split('.').reduce((o, k) => o?.[k], CONFIG);
+        if (val) el.src = val;
+      });
+      document.querySelectorAll('[data-config-href]').forEach(el => {
+        const key = el.dataset.configHref;
+        let val = key.split('.').reduce((o, k) => o?.[k], CONFIG);
+        if (val) {
+          if (key === 'company.email') val = 'mailto:' + val;
+          el.href = val;
+        }
+      });
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        if (el.getAttribute('data-i18n-html') === 'true') {
+          el.innerHTML = resolveConfig(el.innerHTML);
+        } else {
+          const resolved = resolveConfig(el.textContent);
+          if (resolved !== el.textContent) el.textContent = resolved;
+        }
+      });
+    }
+
+    applyConfig();
+    Object.keys(translations.es).forEach(key => {
+      if (typeof translations.es[key] === 'string') {
+        translations.es[key] = resolveConfig(translations.es[key]);
+      }
+    });
+
+    initTranslations();
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang && savedLang !== 'en') setLanguage(savedLang);
+  </script>
+
+</body>
+</html>

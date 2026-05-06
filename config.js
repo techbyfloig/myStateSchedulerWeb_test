@@ -11,7 +11,7 @@ const CONFIG = {
     state: "TX",
     zip: "75150",
     country: "United States",
-    email: "support@techbyfloig.com",
+    email: "support@mystatescheduler.com",
     copyrightYear: "2026",
   },
   links: {
@@ -33,7 +33,7 @@ const CONFIG = {
     freePrice: "$0",
   },
   legal: {
-    effectiveDate: "March 1, 2026",
-    effectiveDateEs: "1 de marzo de 2026",
+    effectiveDate: "May 5, 2026",
+    effectiveDateEs: "5 de mayo de 2026",
   },
 };

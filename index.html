@@ -546,9 +546,21 @@
     /* ANIMATIONS */
     .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
+    /* Under-construction banner — push fixed nav and body content below banner */
+    body { padding-top: 44px; }
+    nav { top: 44px; }
+    @media (max-width: 768px) {
+      body { padding-top: 76px; }
+      nav { top: 76px; }
+    }
   </style>
 </head>
 <body>
+  <!-- UNDER CONSTRUCTION BANNER -->
+  <div style="background:#FFF3CD; color:#664D03; padding:10px 16px; text-align:center; font-family:'DM Sans',Arial,sans-serif; font-size:0.85rem; line-height:1.5; border-bottom:1px solid #FFE69C; position:fixed; top:0; left:0; right:0; z-index:101;" data-i18n="under-construction-banner" data-i18n-html="true">
+    <strong>Under construction</strong> — this page is being updated. Information may change before final publication.
+  </div>
+
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo"><img data-config-src="app.icon" src="appicon.jpg" alt="DPS QuickBook"> <span data-config="app.name">DPS QuickBook</span></a>
@@ -1065,6 +1077,8 @@
 
     // --- LANGUAGE TOGGLE ---
     const translations = { es: {
+      // Under construction banner
+      "under-construction-banner": "<strong>En construcción</strong> — esta página está siendo actualizada. La información puede cambiar antes de la publicación final.",
       // Nav
       "nav-how": "Cómo Funciona", "nav-pricing": "Precios", "nav-faq": "Preguntas", "nav-contact": "Contacto",
       "nav-trust": "Confianza y Privacidad", "nav-cta": "Descargar App",

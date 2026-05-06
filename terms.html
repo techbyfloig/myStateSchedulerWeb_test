@@ -313,9 +313,21 @@
     /* SCROLL ANIMATIONS */
     .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
+    /* Under-construction banner — push fixed nav and body content below banner */
+    body { padding-top: 44px; }
+    nav { top: 44px; }
+    @media (max-width: 768px) {
+      body { padding-top: 76px; }
+      nav { top: 76px; }
+    }
   </style>
 </head>
 <body>
+
+  <!-- UNDER CONSTRUCTION BANNER -->
+  <div style="background:#FFF3CD; color:#664D03; padding:10px 16px; text-align:center; font-family:'DM Sans',Arial,sans-serif; font-size:0.85rem; line-height:1.5; border-bottom:1px solid #FFE69C; position:fixed; top:0; left:0; right:0; z-index:101;" data-i18n="under-construction-banner" data-i18n-html="true">
+    <strong>Under construction</strong> — this page is being updated. Information may change before final publication.
+  </div>
 
   <!-- NAV -->
   <nav>
@@ -352,9 +364,10 @@
       <ul class="toc-list">
         <li><a href="#terms-of-service"><span class="toc-num">1</span> <span data-i18n="terms-toc-1">Terms of Service</span></a></li>
         <li><a href="#service-description"><span class="toc-num">2</span> <span data-i18n="terms-toc-2">Service Description & Limitations</span></a></li>
-        <li><a href="#government-disclaimer"><span class="toc-num">3</span> <span data-i18n="terms-toc-3">Government Non-Affiliation</span></a></li>
-        <li><a href="#authorization"><span class="toc-num">4</span> <span data-i18n="terms-toc-4">User Authorization</span></a></li>
-        <li><a href="#contact"><span class="toc-num">5</span> <span data-i18n="terms-toc-5">Contact Information</span></a></li>
+        <li><a href="#sms-program"><span class="toc-num">3</span> <span data-i18n="terms-toc-sms">SMS Messaging Program</span></a></li>
+        <li><a href="#government-disclaimer"><span class="toc-num">4</span> <span data-i18n="terms-toc-3">Government Non-Affiliation</span></a></li>
+        <li><a href="#authorization"><span class="toc-num">5</span> <span data-i18n="terms-toc-4">User Authorization</span></a></li>
+        <li><a href="#contact"><span class="toc-num">6</span> <span data-i18n="terms-toc-5">Contact Information</span></a></li>
       </ul>
     </div>
 
@@ -433,9 +446,47 @@
       <p data-i18n="terms-s2-p4">You will always receive a notification when an appointment is secured. You may cancel or modify your auto-booking preferences at any time through the app.</p>
     </div>
 
-    <!-- SECTION 3: GOVERNMENT DISCLAIMER -->
+    <!-- SECTION 3: SMS MESSAGING PROGRAM -->
+    <div class="legal-section fade-in" id="sms-program">
+      <div class="section-num"><span>3</span> <span data-i18n="terms-sms-label">Section Three</span></div>
+      <h2 data-i18n="terms-sms-title">SMS Messaging Program</h2>
+
+      <p data-i18n="terms-sms-intro">{{app.mobileName}} offers two optional, separate SMS programs in the United States. You can opt in to one, both, or neither. Opting in to one program does not opt you in to the other.</p>
+
+      <h3 data-i18n="terms-sms-h3-1">3.1 — Appointment Alerts (Transactional)</h3>
+      <p data-i18n="terms-sms-p-1" data-i18n-html="true">By checking <em>"Text me with appointment alerts"</em> in the app and providing your mobile phone number, you consent to receive transactional SMS messages from {{app.mobileName}} about your appointments — including confirmations, reminders, status updates, and changes.</p>
+      <ul>
+        <li data-i18n="terms-sms-li-1">Message frequency varies based on your appointment activity.</li>
+        <li data-i18n="terms-sms-li-2">Message and data rates may apply. Check with your wireless carrier.</li>
+        <li data-i18n="terms-sms-li-3" data-i18n-html="true">Reply <strong>STOP</strong> at any time to cancel. Reply <strong>HELP</strong> for help.</li>
+      </ul>
+
+      <h3 data-i18n="terms-sms-h3-2">3.2 — Promotional Messages (Marketing)</h3>
+      <p data-i18n="terms-sms-p-2" data-i18n-html="true">By checking <em>"Text me with promotional messages"</em> in the app and providing your mobile phone number, you consent to receive marketing SMS messages from {{app.mobileName}} about offers, news, and product updates.</p>
+      <ul>
+        <li data-i18n="terms-sms-li-4">Up to 4 messages per month.</li>
+        <li data-i18n="terms-sms-li-5" data-i18n-html="true"><strong>Consent is not a condition of any purchase or service.</strong></li>
+        <li data-i18n="terms-sms-li-6">Message and data rates may apply.</li>
+        <li data-i18n="terms-sms-li-7" data-i18n-html="true">Reply <strong>STOP</strong> at any time to cancel. Reply <strong>HELP</strong> for help.</li>
+      </ul>
+
+      <h3 data-i18n="terms-sms-h3-3">3.3 — Carriers and Delivery</h3>
+      <p data-i18n="terms-sms-p-3">Supported carriers include AT&amp;T, T-Mobile, Verizon, Sprint, U.S. Cellular, Boost, MetroPCS, and most other US carriers. Carriers are not liable for delayed or undelivered messages. Message delivery is not guaranteed and depends on factors outside our control.</p>
+
+      <h3 data-i18n="terms-sms-h3-4">3.4 — STOP and HELP Behavior</h3>
+      <ul>
+        <li data-i18n="terms-sms-li-8" data-i18n-html="true">Reply <strong>STOP</strong> to any message to opt out of <em>that</em> program. You will receive a single confirmation message and then no further messages from that program.</li>
+        <li data-i18n="terms-sms-li-9" data-i18n-html="true">Reply <strong>HELP</strong> to receive contact information and program details.</li>
+        <li data-i18n="terms-sms-li-10">Opting out of one program does not opt you out of the other. To stop both, reply STOP to a message from each program.</li>
+      </ul>
+
+      <h3 data-i18n="terms-sms-h3-5">3.5 — Eligibility and Mobile Number Changes</h3>
+      <p data-i18n="terms-sms-p-4">You must be at least 18 years old, a resident of the United States, and the owner or authorized user of the mobile phone number you provide. If you change or deactivate your mobile number, you must update your account or opt out promptly so that messages are not sent to a number reassigned to someone else.</p>
+    </div>
+
+    <!-- SECTION 4: GOVERNMENT DISCLAIMER -->
     <div class="legal-section fade-in" id="government-disclaimer">
-      <div class="section-num"><span>3</span> <span data-i18n="terms-s3-label">Section Three</span></div>
+      <div class="section-num"><span>4</span> <span data-i18n="terms-s3-label">Section Four</span></div>
       <h2 data-i18n="terms-s3-title">Government Non-Affiliation Disclaimer</h2>
 
       <div class="highlight-important">
@@ -446,9 +497,9 @@
       </div>
     </div>
 
-    <!-- SECTION 4: AUTHORIZATION -->
+    <!-- SECTION 5: AUTHORIZATION -->
     <div class="legal-section fade-in" id="authorization">
-      <div class="section-num"><span>4</span> <span data-i18n="terms-s4-label">Section Four</span></div>
+      <div class="section-num"><span>5</span> <span data-i18n="terms-s4-label">Section Five</span></div>
       <h2 data-i18n="terms-s4-title">User Authorization</h2>
 
       <div class="highlight-warning">
@@ -562,6 +613,9 @@
   <script>
     const translations = {
       es: {
+        // Under construction banner
+        "under-construction-banner": "<strong>En construcción</strong> — esta página está siendo actualizada. La información puede cambiar antes de la publicación final.",
+
         // Nav
         "nav-home": "Inicio",
         "nav-how": "C\u00f3mo Funciona",
@@ -632,16 +686,41 @@
         "terms-s2-p3": "La funci\u00f3n de reserva autom\u00e1tica proporciona monitoreo automatizado y reserva basada en las preferencias autorizadas por el usuario. Cuando usted habilita la reserva autom\u00e1tica, autoriza a {{app.mobileName}} a intentar reservas de citas en su nombre utilizando la informaci\u00f3n y preferencias que ha proporcionado.",
         "terms-s2-p4": "Siempre recibir\u00e1 una notificaci\u00f3n cuando se asegure una cita. Puede cancelar o modificar sus preferencias de reserva autom\u00e1tica en cualquier momento a trav\u00e9s de la aplicaci\u00f3n.",
 
-        // Section 3: Government Disclaimer
-        "terms-s3-label": "Secci\u00f3n Tres",
+        // Section 3: SMS Messaging Program
+        "terms-toc-sms": "Programa de Mensajer\u00eda SMS",
+        "terms-sms-label": "Secci\u00f3n Tres",
+        "terms-sms-title": "Programa de Mensajer\u00eda SMS",
+        "terms-sms-intro": "{{app.mobileName}} ofrece dos programas SMS opcionales y separados en los Estados Unidos. Puedes optar por uno, ambos o ninguno. Optar por un programa no te inscribe en el otro.",
+        "terms-sms-h3-1": "3.1 \u2014 Alertas de Citas (Transaccional)",
+        "terms-sms-p-1": "Al marcar <em>\"Av\u00edsame con alertas de citas\"</em> en la aplicaci\u00f3n y proporcionar tu n\u00famero de tel\u00e9fono m\u00f3vil, consientes recibir mensajes SMS transaccionales de {{app.mobileName}} sobre tus citas \u2014 incluyendo confirmaciones, recordatorios, actualizaciones de estado y cambios.",
+        "terms-sms-li-1": "La frecuencia de mensajes var\u00eda seg\u00fan tu actividad de citas.",
+        "terms-sms-li-2": "Pueden aplicarse tarifas de mensajes y datos. Consulta con tu operador m\u00f3vil.",
+        "terms-sms-li-3": "Responde <strong>STOP</strong> en cualquier momento para cancelar. Responde <strong>HELP</strong> para obtener ayuda.",
+        "terms-sms-h3-2": "3.2 \u2014 Mensajes Promocionales (Marketing)",
+        "terms-sms-p-2": "Al marcar <em>\"Av\u00edsame con mensajes promocionales\"</em> en la aplicaci\u00f3n y proporcionar tu n\u00famero de tel\u00e9fono m\u00f3vil, consientes recibir mensajes SMS de marketing de {{app.mobileName}} sobre ofertas, noticias y actualizaciones de producto.",
+        "terms-sms-li-4": "Hasta 4 mensajes por mes.",
+        "terms-sms-li-5": "<strong>El consentimiento no es una condici\u00f3n para ninguna compra o servicio.</strong>",
+        "terms-sms-li-6": "Pueden aplicarse tarifas de mensajes y datos.",
+        "terms-sms-li-7": "Responde <strong>STOP</strong> en cualquier momento para cancelar. Responde <strong>HELP</strong> para obtener ayuda.",
+        "terms-sms-h3-3": "3.3 \u2014 Operadores y Entrega",
+        "terms-sms-p-3": "Los operadores compatibles incluyen AT&amp;T, T-Mobile, Verizon, Sprint, U.S. Cellular, Boost, MetroPCS y la mayor\u00eda de los operadores de EE.UU. Los operadores no son responsables de mensajes retrasados o no entregados. La entrega de mensajes no est\u00e1 garantizada y depende de factores fuera de nuestro control.",
+        "terms-sms-h3-4": "3.4 \u2014 Comportamiento de STOP y HELP",
+        "terms-sms-li-8": "Responde <strong>STOP</strong> a cualquier mensaje para darte de baja de <em>ese</em> programa. Recibir\u00e1s un \u00fanico mensaje de confirmaci\u00f3n y luego no recibir\u00e1s m\u00e1s mensajes de ese programa.",
+        "terms-sms-li-9": "Responde <strong>HELP</strong> para recibir informaci\u00f3n de contacto y detalles del programa.",
+        "terms-sms-li-10": "Darte de baja de un programa no te da de baja del otro. Para detener ambos, responde STOP a un mensaje de cada programa.",
+        "terms-sms-h3-5": "3.5 \u2014 Elegibilidad y Cambios de N\u00famero M\u00f3vil",
+        "terms-sms-p-4": "Debes tener al menos 18 a\u00f1os, ser residente de los Estados Unidos y ser el propietario o usuario autorizado del n\u00famero de tel\u00e9fono m\u00f3vil que proporcionas. Si cambias o desactivas tu n\u00famero m\u00f3vil, debes actualizar tu cuenta o darte de baja con prontitud para que los mensajes no se env\u00eden a un n\u00famero reasignado a otra persona.",
+
+        // Section 4: Government Disclaimer
+        "terms-s3-label": "Secci\u00f3n Cuatro",
         "terms-s3-title": "Aviso de No Afiliaci\u00f3n Gubernamental",
         "terms-s3-p1": "{{app.mobileName}} no es el Departamento de Seguridad P\u00fablica de Texas.",
         "terms-s3-p2": "{{app.mobileName}} es un servicio independiente, operado de forma privada, desarrollado y mantenido por {{company.name}}. No estamos afiliados, respaldados, patrocinados ni asociados con el Departamento de Seguridad P\u00fablica de Texas (DPS), el Departamento de Veh\u00edculos Motorizados de Texas (TxDMV), ni con ninguna agencia gubernamental federal, estatal o local.",
         "terms-s3-p3": "Toda la programaci\u00f3n de citas se realiza a trav\u00e9s de sistemas gubernamentales oficiales disponibles p\u00fablicamente. No tenemos acceso especial, prioridad ni influencia sobre los sistemas de citas gubernamentales.",
         "terms-s3-p4": "Los usuarios son los \u00fanicos responsables de verificar su elegibilidad, preparar los documentos requeridos y cumplir con todas las pol\u00edticas y requisitos del DPS.",
 
-        // Section 4: Authorization
-        "terms-s4-label": "Secci\u00f3n Cuatro",
+        // Section 5: Authorization
+        "terms-s4-label": "Secci\u00f3n Cinco",
         "terms-s4-title": "Autorizaci\u00f3n del Usuario",
         "terms-s4-p1": "Importante: Por favor lea esta secci\u00f3n cuidadosamente.",
         "terms-s4-p2": "Al habilitar y utilizar los servicios de reserva autom\u00e1tica, usted autoriza expresamente a {{app.mobileName}} a actuar en su nombre para intentar reservas de citas utilizando la informaci\u00f3n que proporciona. Esta autorizaci\u00f3n incluye:",

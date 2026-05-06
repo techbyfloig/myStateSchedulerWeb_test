@@ -313,9 +313,21 @@
     /* SCROLL ANIMATIONS */
     .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
+    /* Under-construction banner — push fixed nav and body content below banner */
+    body { padding-top: 44px; }
+    nav { top: 44px; }
+    @media (max-width: 768px) {
+      body { padding-top: 76px; }
+      nav { top: 76px; }
+    }
   </style>
 </head>
 <body>
+
+  <!-- UNDER CONSTRUCTION BANNER -->
+  <div style="background:#FFF3CD; color:#664D03; padding:10px 16px; text-align:center; font-family:'DM Sans',Arial,sans-serif; font-size:0.85rem; line-height:1.5; border-bottom:1px solid #FFE69C; position:fixed; top:0; left:0; right:0; z-index:101;" data-i18n="under-construction-banner" data-i18n-html="true">
+    <strong>Under construction</strong> — this page is being updated. Information may change before final publication.
+  </div>
 
   <!-- NAV -->
   <nav>
@@ -351,7 +363,8 @@
       <ul class="toc-list">
         <li><a href="#privacy-policy"><span class="toc-num">1</span> <span data-i18n="priv-toc-1">Privacy Policy</span></a></li>
         <li><a href="#data-collection"><span class="toc-num">2</span> <span data-i18n="priv-toc-2">Data Collection Disclosure</span></a></li>
-        <li><a href="#contact"><span class="toc-num">3</span> <span data-i18n="priv-toc-3">Contact Information</span></a></li>
+        <li><a href="#sms-privacy"><span class="toc-num">3</span> <span data-i18n="priv-toc-sms">SMS Messaging Privacy</span></a></li>
+        <li><a href="#contact"><span class="toc-num">4</span> <span data-i18n="priv-toc-3">Contact Information</span></a></li>
       </ul>
     </div>
 
@@ -368,6 +381,7 @@
         <li data-i18n="priv-s1-li-3">Location preferences (city, zip code, preferred DPS offices)</li>
         <li data-i18n="priv-s1-li-4">Availability windows (days and times you are available for appointments)</li>
         <li data-i18n="priv-s1-li-5">Account login credentials (stored securely using encryption)</li>
+        <li data-i18n="priv-s1-li-phone">Mobile phone number (optional, only if you opt in to SMS appointment alerts or promotional messages — see Section 3 below)</li>
         <li data-i18n="priv-s1-li-6">Payment information (processed securely through third-party payment providers; we do not store card numbers)</li>
       </ul>
 
@@ -431,6 +445,42 @@
         <li data-i18n="priv-s2-li-10">Withdraw consent for data processing (which may limit service availability)</li>
         <li data-i18n="priv-s2-li-11">Export your data in a commonly used format upon request</li>
       </ul>
+    </div>
+
+    <!-- SECTION 3: SMS MESSAGING PRIVACY -->
+    <div class="legal-section fade-in" id="sms-privacy">
+      <div class="section-num"><span>3</span> <span data-i18n="priv-sms-label">Section Three</span></div>
+      <h2 data-i18n="priv-sms-title">SMS Messaging Privacy</h2>
+
+      <p data-i18n="priv-sms-intro">{{app.mobileName}} offers two optional, separate SMS programs: appointment alerts (transactional) and promotional messages (marketing). You can opt in to either, both, or neither — opting in is never a condition of using the service. The information below applies only when you choose to opt in.</p>
+
+      <h3 data-i18n="priv-sms-h3-1">3.1 — What We Collect for SMS</h3>
+      <p data-i18n="priv-sms-p-collect">If you opt in to one or both SMS programs, we collect:</p>
+      <ul>
+        <li data-i18n="priv-sms-li-1">The mobile phone number you provide</li>
+        <li data-i18n="priv-sms-li-2">Your opt-in selections (alerts, promotional, or both)</li>
+        <li data-i18n="priv-sms-li-3">A timestamped record of your consent (required by federal law)</li>
+        <li data-i18n="priv-sms-li-4">Records of messages sent to and received from your number, including STOP and HELP requests</li>
+      </ul>
+
+      <h3 data-i18n="priv-sms-h3-2">3.2 — Our SMS Data Commitment</h3>
+      <div class="highlight-green">
+        <p class="bold-statement" data-i18n="priv-sms-bold-1">We do not share, sell, rent, or otherwise transfer your mobile phone number, SMS opt-in status, or SMS message content to any third party or affiliate for marketing or promotional purposes.</p>
+        <p data-i18n="priv-sms-p-2">This applies to all of the categories of information collected under this Privacy Policy.</p>
+      </div>
+
+      <p data-i18n="priv-sms-p-3">The only situations in which your mobile phone number is disclosed to a third party are:</p>
+      <ul>
+        <li data-i18n="priv-sms-li-5" data-i18n-html="true"><strong>Our SMS provider (Vonage)</strong> — solely to deliver the messages you have consented to receive. Vonage is contractually bound to use your number only for that purpose.</li>
+        <li data-i18n="priv-sms-li-6" data-i18n-html="true"><strong>Legal compliance</strong> — when required by a valid subpoena, court order, or other lawful request.</li>
+        <li data-i18n="priv-sms-li-7" data-i18n-html="true"><strong>Safety, rights, or property</strong> — to protect you, us, or others when we believe in good faith it is necessary.</li>
+      </ul>
+
+      <h3 data-i18n="priv-sms-h3-3">3.3 — Stopping SMS Messages</h3>
+      <p data-i18n="priv-sms-p-stop" data-i18n-html="true">Reply <strong>STOP</strong> to any message to opt out of that program. Reply <strong>HELP</strong> to receive help. Opting out of one program (such as promotional) does not opt you out of the other (such as appointment alerts) — to stop both, reply STOP to a message from each program. Standard message and data rates may apply. We retain the record that you opted out so we can honor that choice going forward.</p>
+
+      <h3 data-i18n="priv-sms-h3-4">3.4 — How Long We Keep SMS Records</h3>
+      <p data-i18n="priv-sms-p-retention">We retain your consent records and message logs for at least four years after your most recent activity, in order to comply with the federal Telephone Consumer Protection Act (TCPA) and to address any disputes about consent. After that period, we delete or anonymize the records.</p>
     </div>
 
     <!-- CONTACT -->
@@ -527,6 +577,9 @@
   <script>
     const translations = {
       es: {
+        // Under construction banner
+        "under-construction-banner": "<strong>En construcción</strong> — esta página está siendo actualizada. La información puede cambiar antes de la publicación final.",
+
         // Nav
         "nav-home": "Inicio",
         "nav-how": "C\u00f3mo Funciona",
@@ -605,6 +658,32 @@
         "priv-s2-li-9": "Solicitar la eliminaci\u00f3n de tu cuenta y todos los datos asociados",
         "priv-s2-li-10": "Retirar el consentimiento para el procesamiento de datos (lo que puede limitar la disponibilidad del servicio)",
         "priv-s2-li-11": "Exportar tus datos en un formato de uso com\u00fan previa solicitud",
+
+        // Section 1.1 added bullet
+        "priv-s1-li-phone": "N\u00famero de tel\u00e9fono m\u00f3vil (opcional, solo si optas por recibir alertas SMS de citas o mensajes promocionales \u2014 ver Secci\u00f3n 3 a continuaci\u00f3n)",
+
+        // Section 3: SMS Messaging Privacy
+        "priv-toc-sms": "Privacidad de Mensajes SMS",
+        "priv-sms-label": "Secci\u00f3n Tres",
+        "priv-sms-title": "Privacidad de Mensajes SMS",
+        "priv-sms-intro": "{{app.mobileName}} ofrece dos programas SMS opcionales y separados: alertas de citas (transaccionales) y mensajes promocionales (marketing). Puedes optar por uno, ambos o ninguno \u2014 optar nunca es condici\u00f3n para usar el servicio. La informaci\u00f3n a continuaci\u00f3n aplica solo si decides optar.",
+        "priv-sms-h3-1": "3.1 \u2014 Qu\u00e9 Recopilamos para SMS",
+        "priv-sms-p-collect": "Si optas por uno o ambos programas SMS, recopilamos:",
+        "priv-sms-li-1": "El n\u00famero de tel\u00e9fono m\u00f3vil que proporcionas",
+        "priv-sms-li-2": "Tus selecciones de consentimiento (alertas, promocional, o ambos)",
+        "priv-sms-li-3": "Un registro con marca de tiempo de tu consentimiento (requerido por ley federal)",
+        "priv-sms-li-4": "Registros de mensajes enviados y recibidos de tu n\u00famero, incluyendo solicitudes STOP y HELP",
+        "priv-sms-h3-2": "3.2 \u2014 Nuestro Compromiso con los Datos SMS",
+        "priv-sms-bold-1": "No compartimos, vendemos, alquilamos ni transferimos de ninguna otra manera tu n\u00famero de tel\u00e9fono m\u00f3vil, tu estado de consentimiento SMS o el contenido de los mensajes SMS a ning\u00fan tercero o afiliado con fines de marketing o promoci\u00f3n.",
+        "priv-sms-p-2": "Esto aplica a todas las categor\u00edas de informaci\u00f3n recopiladas bajo esta Pol\u00edtica de Privacidad.",
+        "priv-sms-p-3": "Las \u00fanicas situaciones en las que tu n\u00famero de tel\u00e9fono m\u00f3vil se divulga a un tercero son:",
+        "priv-sms-li-5": "<strong>Nuestro proveedor SMS (Vonage)</strong> \u2014 \u00fanicamente para entregar los mensajes que has aceptado recibir. Vonage est\u00e1 contractualmente obligado a usar tu n\u00famero solo con ese prop\u00f3sito.",
+        "priv-sms-li-6": "<strong>Cumplimiento legal</strong> \u2014 cuando lo requiera una citaci\u00f3n v\u00e1lida, orden judicial u otra solicitud legal.",
+        "priv-sms-li-7": "<strong>Seguridad, derechos o propiedad</strong> \u2014 para protegerte a ti, a nosotros, o a otros cuando creamos de buena fe que es necesario.",
+        "priv-sms-h3-3": "3.3 \u2014 C\u00f3mo Detener los Mensajes SMS",
+        "priv-sms-p-stop": "Responde <strong>STOP</strong> a cualquier mensaje para darte de baja de ese programa. Responde <strong>HELP</strong> para obtener ayuda. Darte de baja de un programa (como el promocional) no te da de baja del otro (como las alertas de citas) \u2014 para detener ambos, responde STOP a un mensaje de cada programa. Pueden aplicarse tarifas est\u00e1ndar de mensajes y datos. Conservamos el registro de tu baja para honrar esa elecci\u00f3n en el futuro.",
+        "priv-sms-h3-4": "3.4 \u2014 Cu\u00e1nto Tiempo Conservamos los Registros SMS",
+        "priv-sms-p-retention": "Conservamos tus registros de consentimiento y registros de mensajes durante al menos cuatro a\u00f1os despu\u00e9s de tu actividad m\u00e1s reciente, para cumplir con la Ley Federal de Protecci\u00f3n al Consumidor Telef\u00f3nico (TCPA) y para abordar cualquier disputa sobre el consentimiento. Despu\u00e9s de ese per\u00edodo, eliminamos o anonimizamos los registros.",
 
         // Contact
         "priv-contact-title": "Informaci\u00f3n de Contacto",

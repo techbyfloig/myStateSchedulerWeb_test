@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{app.name}} — Find Earlier Texas DPS Appointments</title>
-  <meta name="description" content="Find and secure earlier Texas DPS appointments. Book manually for free or let us automatically reserve newly available slots for you.">
+  <meta name="description" content="Skip the long wait for Texas DPS appointments. My State Scheduler monitors openings and lets you book earlier slots — manually for free or automatically with Auto-Search.">
   <link rel="icon" type="image/png" href="appicon.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -411,10 +411,10 @@
 
     /* APP DOWNLOAD */
     .app-download { padding: 80px 24px 100px; background: var(--bg-primary); position: relative; }
-    .app-download-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .app-download-inner { max-width: 680px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 60px; align-items: center; text-align: center; }
     .app-download-text h2 { font-size: clamp(1.8rem, 3.5vw, 2.3rem); font-weight: 700; color: var(--navy); margin-bottom: 16px; }
     .app-download-text p { font-size: 1.02rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 32px; }
-    .store-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+    .store-buttons { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
     .store-btn { display: inline-flex; align-items: center; gap: 12px; background: rgba(30, 58, 95, 0.85); color: white; padding: 14px 26px; border-radius: 14px; text-decoration: none; transition: all 0.25s; box-shadow: var(--shadow-md); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
     .store-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); background: var(--navy); }
     .store-btn-icon { font-size: 26px; line-height: 1; display: flex; align-items: center; }
@@ -589,13 +589,13 @@
       <p class="hero-trust" data-i18n="hero-trust">Not affiliated with the Texas Department of Public Safety.</p>
       <div class="hero-stats">
         <div class="hero-stat">
-          <div class="hero-stat-number"><span class="counter" data-config-target="stats.appointmentsMonitored" data-target="10000">0</span><span class="hero-stat-suffix">+</span></div>
-          <span class="hero-stat-label" data-i18n="stat-monitored">Appointments Monitored</span>
+          <div class="hero-stat-number"><span style="font-size: 1rem; font-family: 'DM Sans', sans-serif;">24/7</span></div>
+          <span class="hero-stat-label" data-i18n="stat-monitored">Live monitoring</span>
         </div>
         <div class="hero-stat-divider"></div>
         <div class="hero-stat">
-          <div class="hero-stat-number"><span class="counter" data-config-target="stats.appRating" data-target="4.8" data-decimal="true">0</span></div>
-          <span class="hero-stat-label" data-i18n="stat-rating">App Store Rating</span>
+          <div class="hero-stat-number"><span style="font-size: 1rem; font-family: 'DM Sans', sans-serif;">EN + ES</span></div>
+          <span class="hero-stat-label" data-i18n="stat-rating">Bilingual app</span>
         </div>
         <div class="hero-stat-divider"></div>
         <div class="hero-stat">
@@ -644,20 +644,20 @@
     <div class="section-container">
       <div class="proof-bar">
         <div class="proof-stat fade-in">
-          <div class="proof-stat-number"><span class="counter" data-config-target="stats.appointmentsMonitored" data-target="10000">0</span><span class="proof-suffix">+</span></div>
-          <div class="proof-stat-label" data-i18n="proof-monitored">Appointments Monitored</div>
+          <div class="proof-stat-number"><span style="font-size: 1.4rem; font-family: 'DM Sans', sans-serif; color: #fff;">EN + ES</span></div>
+          <div class="proof-stat-label" data-i18n="proof-monitored">Bilingual app</div>
         </div>
         <div class="proof-stat fade-in">
-          <div class="proof-stat-number"><span class="counter" data-config-target="stats.usersServed" data-target="2500">0</span><span class="proof-suffix">+</span></div>
-          <div class="proof-stat-label" data-i18n="proof-users">Users Served</div>
-        </div>
-        <div class="proof-stat fade-in">
-          <div class="proof-stat-number"><span class="counter" data-config-target="stats.avgTimeSaved" data-target="48">0</span><span class="proof-suffix"> hrs</span></div>
-          <div class="proof-stat-label" data-i18n="proof-time">Avg. Time Saved</div>
-        </div>
-        <div class="proof-stat fade-in">
-          <div class="proof-stat-number"><span class="counter" data-config-target="stats.dpsLocations" data-target="150">0</span><span class="proof-suffix">+</span></div>
+          <div class="proof-stat-number"><span class="counter" data-config-target="stats.dpsLocations" data-target="230">0</span><span class="proof-suffix">+</span></div>
           <div class="proof-stat-label" data-i18n="proof-locations">Texas DPS Locations</div>
+        </div>
+        <div class="proof-stat fade-in">
+          <div class="proof-stat-number"><span style="font-size: 1.4rem; font-family: 'DM Sans', sans-serif; color: #fff;">24/7</span></div>
+          <div class="proof-stat-label" data-i18n="proof-users">Automated monitoring</div>
+        </div>
+        <div class="proof-stat fade-in">
+          <div class="proof-stat-number"><span style="font-size: 1.4rem; font-family: 'DM Sans', sans-serif; color: #fff;">100%</span></div>
+          <div class="proof-stat-label" data-i18n="proof-rating">Refund within 24h</div>
         </div>
       </div>
     </div>
@@ -668,24 +668,25 @@
     <div class="section-container fade-in">
       <span class="section-label" data-i18n="solution-label">The Solution</span>
       <h2 class="section-title" data-i18n="solution-title">We Monitor So You Don't Have To.</h2>
-      <p class="section-desc" data-i18n="solution-desc">Choose the approach that works for you — browse openings yourself, or let us handle it automatically.</p>
+      <p class="section-desc" data-i18n="solution-desc">Choose the approach that works for you — browse openings yourself, or let Auto-Search handle it automatically.</p>
       <div class="solution-grid">
         <div class="solution-card solution-free">
           <div class="solution-card-badge"><svg width="12" height="12" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="#2D8F5E"/></svg> Free</div>
-          <h3 data-i18n="solution-free-title">Manual Booking</h3>
+          <h3 data-i18n="solution-free-title">Manual Search &amp; Booking</h3>
           <ul>
             <li><span class="check">&#10003;</span> <span data-i18n="solution-free-1">View available appointments 24/7</span></li>
-            <li><span class="check">&#10003;</span> <span data-i18n="solution-free-2">Choose your location & search radius</span></li>
+            <li><span class="check">&#10003;</span> <span data-i18n="solution-free-2">Choose your location, date &amp; time</span></li>
             <li><span class="check">&#10003;</span> <span data-i18n="solution-free-3">Book directly at your own pace</span></li>
           </ul>
         </div>
         <div class="solution-card solution-premium">
           <div class="solution-card-badge"><svg width="12" height="12" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="var(--orange-light)"/></svg> Premium</div>
-          <h3 data-i18n="solution-premium-title">Auto-Booking</h3>
+          <h3 data-i18n="solution-premium-title">Auto-Search</h3>
+          <p style="font-size:0.82rem; color:rgba(255,255,255,0.6); margin-top:-14px; margin-bottom:20px;" data-i18n="solution-premium-powered">Hands-off — works 24/7</p>
           <ul>
-            <li><span class="check">&#10003;</span> <span data-i18n="solution-premium-1">We monitor newly released openings</span></li>
-            <li><span class="check">&#10003;</span> <span data-i18n="solution-premium-2">Automatically reserve eligible appointments based on your availability</span></li>
-            <li><span class="check">&#10003;</span> <span data-i18n="solution-premium-3">Instant notification once reserved</span></li>
+            <li><span class="check">&#10003;</span> <span data-i18n="solution-premium-1">We monitor 24/7 for newly opened &amp; cancelled slots</span></li>
+            <li><span class="check">&#10003;</span> <span data-i18n="solution-premium-2">Auto-books a match — only inside the dates you activate</span></li>
+            <li><span class="check">&#10003;</span> <span data-i18n="solution-premium-3">Instant push notification once it books</span></li>
           </ul>
         </div>
       </div>
@@ -702,9 +703,9 @@
       </div>
       <div class="steps-grid">
         <div class="step"><div class="step-number">1</div><h3 data-i18n="step-h3-1">Create an Account</h3><p data-i18n="step-p-1">Quick and easy — just the essentials to get started.</p></div>
-        <div class="step"><div class="step-number">2</div><h3 data-i18n="step-h3-2">Set Your Preferences</h3><p data-i18n="step-p-2">Choose your preferred location, radius, and available times.</p></div>
-        <div class="step"><div class="step-number">3</div><h3 data-i18n="step-h3-3">Choose Your Plan</h3><p data-i18n="step-p-3">Browse manually for free or enable auto-booking for hands-off scheduling.</p></div>
-        <div class="step"><div class="step-number">4</div><h3 data-i18n="step-h3-4">Get Notified</h3><p data-i18n="step-p-4">We'll let you know the moment an appointment is secured.</p></div>
+        <div class="step"><div class="step-number">2</div><h3 data-i18n="step-h3-2">Set Your Preferences</h3><p data-i18n="step-p-2">Set your location &amp; radius, days, hours, and minimum notice.</p></div>
+        <div class="step"><div class="step-number">3</div><h3 data-i18n="step-h3-3">Choose Your Plan</h3><p data-i18n="step-p-3">Search free, or start an Auto-Search — pick a speed and your date range.</p></div>
+        <div class="step"><div class="step-number">4</div><h3 data-i18n="step-h3-4">Get Notified</h3><p data-i18n="step-p-4">Auto-Search books a match and notifies you instantly.</p></div>
       </div>
       <div class="compliance-line" data-i18n="how-compliance" data-i18n-html="true"><strong>All appointments are secured through the official DPS website.</strong></div>
     </div>
@@ -766,37 +767,42 @@
   <section class="pricing section-divider" id="pricing">
     <div class="section-container pricing-inner fade-in">
       <span class="section-label" data-i18n="pricing-label">Pricing</span>
-      <h2 class="section-title" data-i18n="pricing-title">Manage Everything From One Dashboard</h2>
-      <p class="section-desc" style="margin:0 auto 48px" data-i18n="pricing-desc">With your account, you have full control over your appointments and preferences.</p>
+      <h2 class="section-title" data-i18n="pricing-title">Simple, one-time pricing</h2>
+      <p class="section-desc" style="margin:0 auto 48px" data-i18n="pricing-desc">Search and book manually for free. Pay once — only when you want Auto-Search to watch and book for you. No subscription.</p>
       <div class="pricing-grid" style="margin-top: 48px;">
         <div class="pricing-card pricing-free">
-          <div class="pricing-card-label" data-i18n="pricing-free-label">Free Plan</div>
+          <div class="pricing-card-label" data-i18n="pricing-free-label">Free</div>
           <h3 data-config="pricing.freePrice">$0</h3>
-          <p class="price-note" data-i18n="pricing-free-note">Manual booking is always free. No card required.</p>
+          <p class="price-note" data-i18n="pricing-free-note">Manual search &amp; booking. Always free, no card required.</p>
           <ul>
             <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-free-1">Search publicly available DPS appointments</span></li>
-            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-free-2">View and manage your scheduled appointments</span></li>
+            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-free-2">View and manage your appointments</span></li>
             <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-free-3">Save preferred locations</span></li>
-            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-free-4">Access your personal dashboard</span></li>
-            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-free-5">Receive standard booking confirmations</span></li>
+            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-free-4">Instant booking confirmations</span></li>
           </ul>
           <a href="#download" class="pricing-btn" data-i18n="pricing-free-btn">Get Started Free</a>
         </div>
         <div class="pricing-card pricing-premium">
-          <div class="pricing-card-label" data-i18n="pricing-premium-label">Auto-Booking</div>
-          <h3>Premium</h3>
-          <p class="price-note" data-i18n="pricing-premium-note">Charged only when auto-booking is used.</p>
-          <ul>
-            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-premium-1">Includes all Free features</span></li>
-            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-premium-2">Automated monitoring of publicly available cancellations</span></li>
-            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-premium-3">Reservation attempt when an earlier appointment becomes available</span></li>
-            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-premium-4">Real-time status updates within your dashboard</span></li>
-            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-premium-5">Instant notification if a booking is secured</span></li>
+          <div class="pricing-card-label" data-i18n="pricing-premium-label">Auto-Search</div>
+          <h3><span data-i18n="pricing-from">From</span> <span data-config="pricing.standard">$16</span></h3>
+          <p class="price-note" data-i18n="pricing-premium-note">One-time fee to start an Auto-Search. No subscription.</p>
+          <ul class="pricing-tiers">
+            <li><span class="pcheck">&#10003;</span> <strong><span data-i18n="pricing-tier-standard">Standard</span> &middot; <span data-config="pricing.standard">$16</span></strong> — <span data-i18n="pricing-tier-standard-desc">24/7 monitoring</span></li>
+            <li><span class="pcheck">&#10003;</span> <strong><span data-i18n="pricing-tier-priority">Priority</span> &middot; <span data-config="pricing.priority">$22</span></strong> — <span data-i18n="pricing-tier-priority-desc">2&times; faster scanning</span></li>
+            <li><span class="pcheck">&#10003;</span> <strong><span data-i18n="pricing-tier-rush">Rush</span> &middot; <span data-config="pricing.rush">$30</span></strong> — <span data-i18n="pricing-tier-rush-desc">Maximum speed, first in line</span></li>
           </ul>
-          <a href="#download" class="pricing-btn" data-i18n="pricing-premium-btn">Start Auto-Booking</a>
+          <ul>
+            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-premium-1">Everything in Free, plus:</span></li>
+            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-premium-2">We monitor 24/7 for newly opened &amp; cancelled slots</span></li>
+            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-premium-3">Auto-books a match only inside the dates you activate, never sooner than your minimum-notice</span></li>
+            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-premium-4">Instant push notification the moment it books</span></li>
+            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-premium-5">30 days of searching (continuous from purchase) you can split into multiple date ranges</span></li>
+          </ul>
+          <p class="price-note" data-i18n="pricing-refund" style="margin-top:14px; font-weight:600;">Refundable — 100% within 24 hours, 60% within 7 days.</p>
+          <a href="#download" class="pricing-btn" data-i18n="pricing-premium-btn">Start Auto-Search</a>
         </div>
       </div>
-      <p class="pricing-footnote" data-i18n="pricing-footnote">This service is not affiliated with, endorsed by, or sponsored by the Texas Department of Public Safety. All appointments are obtained through publicly available systems.</p>
+      <p class="pricing-footnote" data-i18n="pricing-footnote">Booking a Texas DPS appointment is free on the official site (txdpsscheduler.com) — you pay only for our monitoring and automation. My State Scheduler is not affiliated with, endorsed by, or sponsored by the Texas Department of Public Safety; we do not control appointment availability and do not guarantee specific dates.</p>
     </div>
   </section>
 
@@ -811,46 +817,88 @@
       <div class="faq-grid">
         <div class="faq-list">
           <div class="faq-item fade-in">
-            <button class="faq-question" aria-expanded="false">
-              <span data-i18n="faq-q-1">Is {{app.name}} affiliated with the Texas DPS?</span>
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a1">
+              <span data-i18n="faq-q-1">Is My State Scheduler affiliated with the Texas DPS?</span>
               <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="faq-answer"><p data-i18n="faq-a-1">No. {{app.name}} is an independent service operated by {{company.name}}. We are not affiliated with, endorsed by, or sponsored by the Texas Department of Public Safety or any government agency. All appointments are booked through the official DPS scheduling system.</p></div>
+            <div class="faq-answer" id="faq-a1" role="region"><p data-i18n="faq-a-1">No. My State Scheduler is an independent service operated by Tech by Floig LLC. We are not affiliated with, endorsed by, or sponsored by the Texas Department of Public Safety or any government agency. All appointments are booked through the official DPS scheduling system.</p></div>
           </div>
           <div class="faq-item fade-in">
-            <button class="faq-question" aria-expanded="false">
-              <span data-i18n="faq-q-2">How does auto-booking work?</span>
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a2">
+              <span data-i18n="faq-q-2">How does Auto-Search work?</span>
               <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="faq-answer"><p data-i18n="faq-a-2">When you enable auto-booking, our system continuously monitors DPS appointment availability based on your specified preferences (location, radius, time windows). When a matching slot opens up, we automatically reserve it for you and send you an instant notification. You can disable auto-booking at any time.</p></div>
+            <div class="faq-answer" id="faq-a2" role="region"><p data-i18n="faq-a-2">When you start an Auto-Search, our system monitors Texas DPS availability 24/7 based on your preferences (location and radius, days, hours, minimum notice). When a matching slot opens, it automatically books it — only inside the date ranges you activate, and never sooner than your minimum-notice setting — then sends you an instant push notification.</p></div>
           </div>
           <div class="faq-item fade-in">
-            <button class="faq-question" aria-expanded="false">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a3">
               <span data-i18n="faq-q-3">Is manual browsing really free?</span>
               <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="faq-answer"><p data-i18n="faq-a-3">Yes. Manual browsing is completely free, with no credit card required. You can view available appointments, set your location and radius, and book directly at your own pace at no cost. Premium features (auto-booking) are charged only when actively used.</p></div>
+            <div class="faq-answer" id="faq-a3" role="region"><p data-i18n="faq-a-3">Yes. Manual search and booking are completely free, with no card required. Auto-Search is a separate one-time fee (from $16) you pay to start a search — and it's refundable: 100% within 24 hours, 60% within 7 days.</p></div>
           </div>
           <div class="faq-item fade-in">
-            <button class="faq-question" aria-expanded="false">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a4">
               <span data-i18n="faq-q-4">What information do you need from me?</span>
               <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="faq-answer"><p data-i18n="faq-a-4">We collect only what is necessary: your name, email, location preferences, availability windows, and account credentials (encrypted). We never sell your data or share it with third parties for marketing. You can delete your account and all data at any time.</p></div>
+            <div class="faq-answer" id="faq-a4" role="region"><p data-i18n="faq-a-4">We collect only what is necessary: your name, email, location preferences, availability windows, and account credentials (encrypted). We never sell your data or share it with third parties for marketing. You can delete your account and all data at any time.</p></div>
           </div>
           <div class="faq-item fade-in">
-            <button class="faq-question" aria-expanded="false">
-              <span data-i18n="faq-q-5">Can I cancel an auto-booked appointment?</span>
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a5">
+              <span data-i18n="faq-q-5">Can I cancel an appointment Auto-Search books?</span>
               <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="faq-answer"><p data-i18n="faq-a-5">Yes. Any appointment secured through auto-booking can be managed and cancelled through the official DPS website. You are always notified immediately when an appointment is reserved, giving you full control over whether to keep it.</p></div>
+            <div class="faq-answer" id="faq-a5" role="region"><p data-i18n="faq-a-5">Yes. Any appointment Auto-Search books can be managed or cancelled — directly in the app, or through the official DPS website. You're notified instantly the moment it books, so you stay in full control of whether to keep it.</p></div>
           </div>
           <div class="faq-item fade-in">
-            <button class="faq-question" aria-expanded="false">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a6">
               <span data-i18n="faq-q-6">Which DPS locations are supported?</span>
               <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="faq-answer"><p data-i18n="faq-a-6">{{app.name}} monitors appointments across all Texas DPS office locations statewide. You can set your preferred location and search radius, and we will find available appointments within your specified area.</p></div>
+            <div class="faq-answer" id="faq-a6" role="region"><p data-i18n="faq-a-6">My State Scheduler monitors all Texas DPS driver-license offices statewide. You set your ZIP code and a search radius, and Auto-Search looks for openings at any office within that radius — you don't have to pick a specific office.</p></div>
+          </div>
+          <div class="faq-item fade-in">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a7">
+              <span data-i18n="faq-q-7">How much does Auto-Search cost?</span>
+              <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer" id="faq-a7" role="region"><p data-i18n="faq-a-7">Auto-Search is a one-time fee per search — Standard $16, Priority $22, or Rush $30. No subscription. Manual search and booking are always free.</p></div>
+          </div>
+          <div class="faq-item fade-in">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a8">
+              <span data-i18n="faq-q-8">What's the difference between Standard, Priority, and Rush?</span>
+              <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer" id="faq-a8" role="region"><p data-i18n="faq-a-8">They set how fast we scan for openings. Standard monitors 24/7 at our base speed, Priority scans about 2× faster, and Rush runs at maximum speed for first-in-line booking.</p></div>
+          </div>
+          <div class="faq-item fade-in">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a9">
+              <span data-i18n="faq-q-9">Can I get a refund?</span>
+              <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer" id="faq-a9" role="region"><p data-i18n="faq-a-9">Yes. You get a 100% refund within 24 hours of purchase and 60% within 7 days. After 7 days, the fee is non-refundable.</p></div>
+          </div>
+          <div class="faq-item fade-in">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a10">
+              <span data-i18n="faq-q-10">How long does an Auto-Search run?</span>
+              <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer" id="faq-a10" role="region"><p data-i18n="faq-a-10">Every Auto-Search gives you 30 days of searching — 30 continuous calendar days that start when you pay. The clock keeps running whether Auto-Search is actively searching or paused, so paused days count too. You can split those 30 days into as many search ranges as you like, but once 30 days pass from purchase, the Auto-Search expires. Example: if you search for 3 days, pause, then try to activate more 35 days later, your window has already ended — so activate your ranges within the 30-day window.</p></div>
+          </div>
+          <div class="faq-item fade-in">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a11">
+              <span data-i18n="faq-q-11">Do you guarantee I'll get an appointment?</span>
+              <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer" id="faq-a11" role="region"><p data-i18n="faq-a-11">No. We don't control Texas DPS availability and can't guarantee a slot or a specific date. Auto-Search monitors continuously and books the first opening that matches your preferences — but only if and when one becomes available.</p></div>
+          </div>
+          <div class="faq-item fade-in">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a12">
+              <span data-i18n="faq-q-12">Is the app available in Spanish?</span>
+              <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer" id="faq-a12" role="region"><p data-i18n="faq-a-12">Yes. My State Scheduler is fully bilingual — every screen works in English and Spanish.</p></div>
           </div>
         </div>
         <div class="contact-card fade-in">
@@ -891,21 +939,6 @@
             <span class="store-btn-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 010 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg></span>
             <span class="store-btn-text"><span class="store-btn-label" data-i18n="store-google-label">Get it on</span><span class="store-btn-name">Google Play</span></span>
           </a>
-        </div>
-      </div>
-      <div class="app-download-visual fade-in">
-        <div class="phone-mockup">
-          <div class="phone-screen">
-            <div class="phone-header">
-              <div class="phone-header-title" data-config="app.name">DPS QuickBook</div>
-              <div class="phone-header-sub" data-i18n="phone-sub">3 appointments found nearby</div>
-            </div>
-            <div class="phone-body">
-              <div class="phone-card"><div class="phone-card-row"><span class="phone-card-label">Garland Mega Center</span><span class="phone-card-badge badge-green">Available</span></div><div class="phone-card-detail">Mar 4, 2026 &middot; 10:30 AM &middot; 3.2 mi</div></div>
-              <div class="phone-card"><div class="phone-card-row"><span class="phone-card-label">Carrollton Office</span><span class="phone-card-badge badge-green">Available</span></div><div class="phone-card-detail">Mar 5, 2026 &middot; 2:15 PM &middot; 8.7 mi</div></div>
-              <div class="phone-card"><div class="phone-card-row"><span class="phone-card-label">McKinney Office</span><span class="phone-card-badge badge-blue">Auto-booked</span></div><div class="phone-card-detail">Mar 6, 2026 &middot; 9:00 AM &middot; 14.1 mi</div></div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -1089,7 +1122,7 @@
       "hero-btn-download": '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14m-7-7l7 7 7-7"/></svg> Descargar la App',
       "hero-btn-how": 'Cómo Funciona <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>',
       "hero-trust": "No afiliado al Departamento de Seguridad Pública de Texas.",
-      "stat-monitored": "Citas Monitoreadas", "stat-rating": "Calificación App Store", "stat-coverage": "Cobertura en Todo Texas",
+      "stat-monitored": "Monitoreo en vivo", "stat-rating": "App bilingüe", "stat-coverage": "Cobertura en Todo Texas",
       // Problem
       "problem-label": "El Problema",
       "problem-title-1": "Largas Esperas.", "problem-title-2": "Citas Perdidas.", "problem-title-3": "Actualización Constante.",
@@ -1098,25 +1131,26 @@
       "problem-p-2": "Los espacios de cancelación aparecen en momentos aleatorios durante el día sin aviso ni patrón.",
       "problem-p-3": "Revisar manualmente el sitio del DPS todo el día no es realista cuando tienes trabajo, escuela o vida.",
       // Social Proof
-      "proof-monitored": "Citas Monitoreadas", "proof-users": "Usuarios Atendidos",
-      "proof-time": "Tiempo Promedio Ahorrado", "proof-locations": "Ubicaciones DPS en Texas",
+      "proof-monitored": "App bilingüe", "proof-locations": "Ubicaciones DPS en Texas",
+      "proof-users": "Monitoreo automatizado", "proof-rating": "Reembolso en 24h",
       // Solution
       "solution-label": "La Solución", "solution-title": "Nosotros Monitoreamos Para Que Tú No Tengas Que Hacerlo.",
-      "solution-desc": "Elige el enfoque que funcione para ti — busca espacios tú mismo, o déjanos manejarlo automáticamente.",
-      "solution-free-title": "Reserva Manual",
-      "solution-free-1": "Ver citas disponibles 24/7", "solution-free-2": "Elige tu ubicación y radio de búsqueda",
+      "solution-desc": "Elige el enfoque que funcione para ti — busca espacios tú mismo, o deja que Auto-Buscador lo maneje automáticamente.",
+      "solution-free-title": "Búsqueda y Reserva Manual",
+      "solution-free-1": "Ver citas disponibles 24/7", "solution-free-2": "Elige tu ubicación, fecha y hora",
       "solution-free-3": "Reserva directamente a tu ritmo",
-      "solution-premium-title": "Reserva Automática",
-      "solution-premium-1": "Monitoreamos nuevas aperturas publicadas",
-      "solution-premium-2": "Reservamos automáticamente citas elegibles según tu disponibilidad",
-      "solution-premium-3": "Notificación instantánea una vez reservada",
+      "solution-premium-title": "Auto-Buscador",
+      "solution-premium-powered": "Sin esfuerzo — funciona 24/7",
+      "solution-premium-1": "Monitoreamos 24/7 nuevas aperturas y cancelaciones",
+      "solution-premium-2": "Reserva una coincidencia — solo dentro de las fechas que actives",
+      "solution-premium-3": "Notificación push instantánea en cuanto reserva",
       "solution-note": "Siempre se te notifica cuando se asegura una cita — sin sorpresas.",
       // How It Works
       "how-label": "Cómo Funciona", "how-title": "Cuatro Simples Pasos",
       "step-h3-1": "Crea una Cuenta", "step-p-1": "Rápido y fácil — solo lo esencial para comenzar.",
-      "step-h3-2": "Configura tus Preferencias", "step-p-2": "Elige tu ubicación preferida, radio y horarios disponibles.",
-      "step-h3-3": "Elige tu Plan", "step-p-3": "Busca manualmente gratis o activa la reserva automática.",
-      "step-h3-4": "Recibe Notificaciones", "step-p-4": "Te avisaremos en el momento en que se asegure una cita.",
+      "step-h3-2": "Configura tus Preferencias", "step-p-2": "Define tu ubicación y radio, días, horas y aviso mínimo.",
+      "step-h3-3": "Elige tu Plan", "step-p-3": "Busca gratis, o inicia un Auto-Buscador: elige una velocidad y tu rango de fechas.",
+      "step-h3-4": "Recibe Notificaciones", "step-p-4": "Auto-Buscador reserva una coincidencia y te avisa al instante.",
       "how-compliance": "<strong>Todas las citas se aseguran a través del sitio oficial del DPS.</strong>",
       // Final CTA
       "cta-title": "Deja de Actualizar.<br>Empieza a <span>Asegurar</span> Citas.",
@@ -1134,38 +1168,54 @@
       "compliance-1": "No afiliado al DPS de Texas", "compliance-2": "No controlamos la disponibilidad de citas",
       "compliance-3": "No garantizamos fechas específicas", "compliance-4": "Los usuarios son responsables de confirmar su elegibilidad",
       // Pricing
-      "pricing-label": "Precios", "pricing-title": "Administra Todo Desde Un Solo Panel",
-      "pricing-desc": "Con tu cuenta, tienes control total sobre tus citas y preferencias.",
-      "pricing-free-label": "Plan Gratuito", "pricing-free-note": "La reserva manual siempre es gratis. Sin tarjeta requerida.",
+      "pricing-label": "Precios", "pricing-title": "Precios simples, pago único",
+      "pricing-desc": "Busca y reserva manualmente gratis. Paga una sola vez, solo cuando quieras que Auto-Buscador vigile y reserve por ti. Sin suscripción.",
+      "pricing-free-label": "Gratis", "pricing-free-note": "Búsqueda y reserva manual. Siempre gratis, sin tarjeta.",
       "pricing-free-1": "Busca citas del DPS disponibles públicamente",
-      "pricing-free-2": "Ve y administra tus citas programadas",
+      "pricing-free-2": "Ve y administra tus citas",
       "pricing-free-3": "Guarda ubicaciones preferidas",
-      "pricing-free-4": "Accede a tu panel personal",
-      "pricing-free-5": "Recibe confirmaciones estándar de reserva",
+      "pricing-free-4": "Confirmaciones de reserva instantáneas",
       "pricing-free-btn": "Comenzar Gratis",
-      "pricing-premium-label": "Reserva Automática", "pricing-premium-note": "Se cobra solo cuando se usa la reserva automática.",
-      "pricing-premium-1": "Incluye todas las funciones gratuitas",
-      "pricing-premium-2": "Monitoreo automatizado de cancelaciones disponibles públicamente",
-      "pricing-premium-3": "Intento de reserva cuando una cita más temprana esté disponible",
-      "pricing-premium-4": "Actualizaciones de estado en tiempo real en tu panel",
-      "pricing-premium-5": "Notificación instantánea si se asegura una reserva",
-      "pricing-premium-btn": "Iniciar Reserva Automática",
-      "pricing-footnote": "Este servicio no está afiliado, respaldado ni patrocinado por el Departamento de Seguridad Pública de Texas. Todas las citas se obtienen a través de sistemas disponibles públicamente.",
+      "pricing-from": "Desde",
+      "pricing-tier-standard": "Estándar", "pricing-tier-standard-desc": "Monitoreo 24/7",
+      "pricing-tier-priority": "Prioritario", "pricing-tier-priority-desc": "Escaneo 2× más rápido",
+      "pricing-tier-rush": "Express", "pricing-tier-rush-desc": "Velocidad máxima, primero en la fila",
+      "pricing-premium-label": "Auto-Buscador", "pricing-premium-note": "Pago único para iniciar un Auto-Buscador. Sin suscripción.",
+      "pricing-premium-1": "Todo lo del plan Gratis, más:",
+      "pricing-premium-2": "Monitoreamos 24/7 las nuevas aperturas y cancelaciones",
+      "pricing-premium-3": "Reserva automáticamente una coincidencia solo dentro de las fechas que actives, nunca antes de tu aviso mínimo",
+      "pricing-premium-4": "Notificación push instantánea en cuanto reserva",
+      "pricing-premium-5": "30 días de búsqueda (corridos desde la compra) que puedes dividir en varios rangos de fechas",
+      "pricing-refund": "Reembolsable — 100% dentro de 24 horas, 60% dentro de 7 días.",
+      "pricing-premium-btn": "Iniciar Auto-Buscador",
+      "pricing-footnote": "Reservar una cita del DPS de Texas es gratis en el sitio oficial (txdpsscheduler.com); solo pagas por nuestro monitoreo y automatización. My State Scheduler no está afiliado, respaldado ni patrocinado por el Departamento de Seguridad Pública de Texas; no controlamos la disponibilidad de citas ni garantizamos fechas específicas.",
       // FAQ
       "faq-label": "Preguntas y Contacto", "faq-title": "¿Preguntas? Estamos Aquí para Ayudar.",
       "faq-desc": "Consulta preguntas comunes o envíanos un mensaje directamente.",
-      "faq-q-1": "¿{{app.name}} está afiliado al DPS de Texas?",
-      "faq-a-1": "No. {{app.name}} es un servicio independiente operado por {{company.name}}. No estamos afiliados, respaldados ni patrocinados por el Departamento de Seguridad Pública de Texas ni ninguna agencia gubernamental. Todas las citas se reservan a través del sistema oficial de programación del DPS.",
-      "faq-q-2": "¿Cómo funciona la reserva automática?",
-      "faq-a-2": "Cuando activas la reserva automática, nuestro sistema monitorea continuamente la disponibilidad de citas del DPS según tus preferencias especificadas (ubicación, radio, ventanas de tiempo). Cuando se abre un espacio que coincide, lo reservamos automáticamente para ti y te enviamos una notificación instantánea. Puedes desactivar la reserva automática en cualquier momento.",
+      "faq-q-1": "¿My State Scheduler está afiliado al DPS de Texas?",
+      "faq-a-1": "No. My State Scheduler es un servicio independiente operado por Tech by Floig LLC. No estamos afiliados, respaldados ni patrocinados por el Departamento de Seguridad Pública de Texas ni ninguna agencia gubernamental. Todas las citas se reservan a través del sistema oficial de programación del DPS.",
+      "faq-q-2": "¿Cómo funciona Auto-Buscador?",
+      "faq-a-2": "Cuando inicias un Auto-Buscador, nuestro sistema monitorea la disponibilidad del DPS de Texas 24/7 según tus preferencias (ubicación y radio, días, horas, aviso mínimo). Cuando se abre un espacio que coincide, lo agenda de forma automática — solo dentro de los rangos de fechas que actives y nunca antes de tu aviso mínimo — y te envía una notificación push instantánea.",
       "faq-q-3": "¿La búsqueda manual es realmente gratuita?",
-      "faq-a-3": "Sí. La búsqueda manual es completamente gratuita, sin necesidad de tarjeta de crédito. Puedes ver citas disponibles, configurar tu ubicación y radio, y reservar directamente a tu ritmo sin costo. Las funciones premium (reserva automática) se cobran solo cuando se usan activamente.",
+      "faq-a-3": "Sí. La búsqueda y reserva manual son completamente gratis, sin tarjeta. Auto-Buscador es una tarifa única aparte (desde $16) que pagas para iniciar una búsqueda, y es reembolsable: 100% dentro de 24 horas, 60% dentro de 7 días.",
       "faq-q-4": "¿Qué información necesitan de mí?",
       "faq-a-4": "Solo recopilamos lo necesario: tu nombre, correo electrónico, preferencias de ubicación, ventanas de disponibilidad y credenciales de cuenta (encriptadas). Nunca vendemos tus datos ni los compartimos con terceros para marketing. Puedes eliminar tu cuenta y todos los datos en cualquier momento.",
-      "faq-q-5": "¿Puedo cancelar una cita reservada automáticamente?",
-      "faq-a-5": "Sí. Cualquier cita asegurada mediante reserva automática puede ser administrada y cancelada a través del sitio oficial del DPS. Siempre se te notifica inmediatamente cuando se reserva una cita, dándote control total sobre si mantenerla.",
+      "faq-q-5": "¿Puedo cancelar una cita que reserva Auto-Buscador?",
+      "faq-a-5": "Sí. Cualquier cita que reserve Auto-Buscador puede administrarse o cancelarse — directamente en la app o en el sitio oficial del DPS. Se te notifica al instante en cuanto reserva, así mantienes el control total de si conservarla.",
       "faq-q-6": "¿Qué ubicaciones del DPS son compatibles?",
-      "faq-a-6": "{{app.name}} monitorea citas en todas las oficinas del DPS de Texas en todo el estado. Puedes configurar tu ubicación preferida y radio de búsqueda, y encontraremos citas disponibles dentro de tu área especificada.",
+      "faq-a-6": "My State Scheduler monitorea todas las oficinas de licencias del DPS de Texas en todo el estado. Tú defines tu código postal y un radio de búsqueda, y Auto-Buscador busca aperturas en cualquier oficina dentro de ese radio — no tienes que elegir una oficina específica.",
+      "faq-q-7": "¿Cuánto cuesta Auto-Buscador?",
+      "faq-a-7": "Auto-Buscador es una tarifa única por búsqueda: Estándar $16, Prioritario $22 o Express $30. Sin suscripción. La búsqueda y reserva manual siempre son gratis.",
+      "faq-q-8": "¿Cuál es la diferencia entre Estándar, Prioritario y Express?",
+      "faq-a-8": "Definen qué tan rápido buscamos aperturas. Estándar monitorea 24/7 a velocidad base, Prioritario escanea unas 2× más rápido y Express funciona a velocidad máxima para reservar primero.",
+      "faq-q-9": "¿Puedo obtener un reembolso?",
+      "faq-a-9": "Sí. Recibes un reembolso del 100% dentro de 24 horas de la compra y del 60% dentro de 7 días. Después de 7 días, la tarifa no es reembolsable.",
+      "faq-q-10": "¿Cuánto dura un Auto-Buscador?",
+      "faq-a-10": "Cada Auto-Buscador te da 30 días de búsqueda — 30 días corridos (de calendario) que comienzan cuando pagas. El reloj sigue avanzando tanto si Auto-Buscador está buscando como en pausa, así que los días en pausa también cuentan. Puedes dividir esos 30 días en tantos rangos de búsqueda como quieras, pero una vez que pasan 30 días desde la compra, el Auto-Buscador expira. Ejemplo: si buscas 3 días, pausas y luego intentas activar más 35 días después, tu ventana ya terminó — así que activa tus rangos dentro de la ventana de 30 días.",
+      "faq-q-11": "¿Garantizan que conseguiré una cita?",
+      "faq-a-11": "No. No controlamos la disponibilidad del DPS de Texas y no podemos garantizar un espacio ni una fecha específica. Auto-Buscador monitorea continuamente y reserva la primera apertura que coincida con tus preferencias, pero solo si y cuando haya una disponible.",
+      "faq-q-12": "¿La app está disponible en español?",
+      "faq-a-12": "Sí. My State Scheduler es totalmente bilingüe — cada pantalla funciona en inglés y español.",
       // Contact
       "contact-title": "Contáctanos", "contact-desc": "¿Tienes una pregunta no cubierta aquí? Envíanos un mensaje y te responderemos.",
       "contact-name-label": "Nombre", "contact-name-ph": "Tu nombre",
@@ -1176,9 +1226,9 @@
       "download-label": "Obtén la App", "download-title": "Accede a Todo Desde Tu Teléfono.",
       "download-desc": "Monitorea citas, administra tu disponibilidad y recibe notificaciones directamente desde la app.",
       "store-apple-label": "Descárgalo en", "store-google-label": "Disponible en",
-      "phone-sub": "3 citas encontradas cerca",
       // Footer
       "footer-desc": "Encuentra y asegura citas del DPS de Texas más tempranas. Reserva manualmente gratis o déjanos manejarlo automáticamente.",
+      "footer-product-of": "Un producto de Tech by Floig LLC",
       "footer-product": "Producto", "footer-how": "Cómo Funciona", "footer-pricing": "Precios", "footer-download": "Descargar App",
       "footer-company": "Empresa", "footer-trust": "Confianza y Privacidad", "footer-compliance": "Cumplimiento",
       "footer-faq": "Preguntas", "footer-contact": "Contacto",

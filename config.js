@@ -31,6 +31,9 @@ const CONFIG = {
   },
   pricing: {
     freePrice: "$0",
+    standard: "$16",
+    priority: "$22",
+    rush: "$30",
   },
   legal: {
     effectiveDate: "May 5, 2026",

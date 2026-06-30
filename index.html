@@ -685,7 +685,7 @@
           <p style="font-size:0.82rem; color:rgba(255,255,255,0.6); margin-top:-14px; margin-bottom:20px;" data-i18n="solution-premium-powered">Hands-off — works 24/7</p>
           <ul>
             <li><span class="check">&#10003;</span> <span data-i18n="solution-premium-1">We monitor 24/7 for newly opened &amp; cancelled slots</span></li>
-            <li><span class="check">&#10003;</span> <span data-i18n="solution-premium-2">Auto-books a match — only inside the dates you activate</span></li>
+            <li><span class="check">&#10003;</span> <span data-i18n="solution-premium-2">Auto-books the first match whose date falls inside your target window</span></li>
             <li><span class="check">&#10003;</span> <span data-i18n="solution-premium-3">Instant push notification once it books</span></li>
           </ul>
         </div>
@@ -794,9 +794,9 @@
           <ul>
             <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-premium-1">Everything in Free, plus:</span></li>
             <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-premium-2">We monitor 24/7 for newly opened &amp; cancelled slots</span></li>
-            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-premium-3">Auto-books a match only inside the dates you activate, never sooner than your minimum-notice</span></li>
+            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-premium-3">Auto-books the first match whose appointment date falls inside your target window, never sooner than your minimum-notice</span></li>
             <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-premium-4">Instant push notification the moment it books</span></li>
-            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-premium-5">30 days of searching (continuous from purchase) you can split into multiple date ranges</span></li>
+            <li><span class="pcheck">&#10003;</span> <span data-i18n="pricing-premium-5">30 continuous days of searching from payment — pick a target window of any size, edit it anytime for free</span></li>
           </ul>
           <p class="price-note" data-i18n="pricing-refund" style="margin-top:14px; font-weight:600;">Refundable — 100% within 24 hours, 60% within 7 days.</p>
           <a href="#download" class="pricing-btn" data-i18n="pricing-premium-btn">Start Auto-Search</a>
@@ -828,7 +828,7 @@
               <span data-i18n="faq-q-2">How does Auto-Search work?</span>
               <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="faq-answer" id="faq-a2" role="region"><p data-i18n="faq-a-2">When you start an Auto-Search, our system monitors Texas DPS availability 24/7 based on your preferences (location and radius, days, hours, minimum notice). When a matching slot opens, it automatically books it — only inside the date ranges you activate, and never sooner than your minimum-notice setting — then sends you an instant push notification.</p></div>
+            <div class="faq-answer" id="faq-a2" role="region"><p data-i18n="faq-a-2">When you start an Auto-Search, our system monitors Texas DPS availability 24/7 based on your preferences (location and radius, days, hours, minimum notice). When a slot opens whose appointment date falls inside your target window, it automatically books it — never sooner than your minimum-notice setting — then sends you an instant push notification.</p></div>
           </div>
           <div class="faq-item fade-in">
             <button class="faq-question" aria-expanded="false" aria-controls="faq-a3">
@@ -884,7 +884,7 @@
               <span data-i18n="faq-q-10">How long does an Auto-Search run?</span>
               <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="faq-answer" id="faq-a10" role="region"><p data-i18n="faq-a-10">Every Auto-Search gives you 30 days of searching — 30 continuous calendar days that start when you pay. The clock keeps running whether Auto-Search is actively searching or paused, so paused days count too. You can split those 30 days into as many search ranges as you like, but once 30 days pass from purchase, the Auto-Search expires. Example: if you search for 3 days, pause, then try to activate more 35 days later, your window has already ended — so activate your ranges within the 30-day window.</p></div>
+            <div class="faq-answer" id="faq-a10" role="region"><p data-i18n="faq-a-10">Every Auto-Search gives you 30 continuous days of searching that start the moment you pay. During those 30 days, the engine scans Texas DPS 24/7 and books the first available slot whose appointment date falls inside your target window — a date range you set that can be any size, sit anywhere in the future, and even extend beyond day 30. Your target window is free to edit anytime: if your preferred dates have passed, update the window to a new future range and the search resumes. Once 30 days from payment have elapsed, the Auto-Search expires. Example: you pay on June 29 (budget through July 29) and set a target window of July 9–14. If no slot is found by July 14 the search pauses; update the window to July 25–August 5 and searching resumes for the remaining budget days — no extra charge.</p></div>
           </div>
           <div class="faq-item fade-in">
             <button class="faq-question" aria-expanded="false" aria-controls="faq-a11">
@@ -1142,7 +1142,7 @@
       "solution-premium-title": "Auto-Buscador",
       "solution-premium-powered": "Sin esfuerzo — funciona 24/7",
       "solution-premium-1": "Monitoreamos 24/7 nuevas aperturas y cancelaciones",
-      "solution-premium-2": "Reserva una coincidencia — solo dentro de las fechas que actives",
+      "solution-premium-2": "Reserva la primera cita cuya fecha caiga dentro de tu ventana de fechas",
       "solution-premium-3": "Notificación push instantánea en cuanto reserva",
       "solution-note": "Siempre se te notifica cuando se asegura una cita — sin sorpresas.",
       // How It Works
@@ -1183,9 +1183,9 @@
       "pricing-premium-label": "Auto-Buscador", "pricing-premium-note": "Pago único para iniciar un Auto-Buscador. Sin suscripción.",
       "pricing-premium-1": "Todo lo del plan Gratis, más:",
       "pricing-premium-2": "Monitoreamos 24/7 las nuevas aperturas y cancelaciones",
-      "pricing-premium-3": "Reserva automáticamente una coincidencia solo dentro de las fechas que actives, nunca antes de tu aviso mínimo",
+      "pricing-premium-3": "Reserva automáticamente la primera coincidencia cuya fecha de cita esté dentro de tu ventana de fechas, nunca antes de tu aviso mínimo",
       "pricing-premium-4": "Notificación push instantánea en cuanto reserva",
-      "pricing-premium-5": "30 días de búsqueda (corridos desde la compra) que puedes dividir en varios rangos de fechas",
+      "pricing-premium-5": "30 días continuos de búsqueda desde el pago — elige una ventana de fechas de cualquier tamaño, edítala en cualquier momento sin costo",
       "pricing-refund": "Reembolsable — 100% dentro de 24 horas, 60% dentro de 7 días.",
       "pricing-premium-btn": "Iniciar Auto-Buscador",
       "pricing-footnote": "Reservar una cita del DPS de Texas es gratis en el sitio oficial (txdpsscheduler.com); solo pagas por nuestro monitoreo y automatización. My State Scheduler no está afiliado, respaldado ni patrocinado por el Departamento de Seguridad Pública de Texas; no controlamos la disponibilidad de citas ni garantizamos fechas específicas.",
@@ -1195,7 +1195,7 @@
       "faq-q-1": "¿My State Scheduler está afiliado al DPS de Texas?",
       "faq-a-1": "No. My State Scheduler es un servicio independiente operado por Tech by Floig LLC. No estamos afiliados, respaldados ni patrocinados por el Departamento de Seguridad Pública de Texas ni ninguna agencia gubernamental. Todas las citas se reservan a través del sistema oficial de programación del DPS.",
       "faq-q-2": "¿Cómo funciona Auto-Buscador?",
-      "faq-a-2": "Cuando inicias un Auto-Buscador, nuestro sistema monitorea la disponibilidad del DPS de Texas 24/7 según tus preferencias (ubicación y radio, días, horas, aviso mínimo). Cuando se abre un espacio que coincide, lo agenda de forma automática — solo dentro de los rangos de fechas que actives y nunca antes de tu aviso mínimo — y te envía una notificación push instantánea.",
+      "faq-a-2": "Cuando inicias un Auto-Buscador, nuestro sistema monitorea la disponibilidad del DPS de Texas 24/7 según tus preferencias (ubicación y radio, días, horas, aviso mínimo). Cuando se abre un espacio cuya fecha de cita está dentro de tu ventana de fechas, lo reserva automáticamente — nunca antes de tu aviso mínimo — y te envía una notificación push instantánea.",
       "faq-q-3": "¿La búsqueda manual es realmente gratuita?",
       "faq-a-3": "Sí. La búsqueda y reserva manual son completamente gratis, sin tarjeta. Auto-Buscador es una tarifa única aparte (desde $16) que pagas para iniciar una búsqueda, y es reembolsable: 100% dentro de 24 horas, 60% dentro de 7 días.",
       "faq-q-4": "¿Qué información necesitan de mí?",
@@ -1211,7 +1211,7 @@
       "faq-q-9": "¿Puedo obtener un reembolso?",
       "faq-a-9": "Sí. Recibes un reembolso del 100% dentro de 24 horas de la compra y del 60% dentro de 7 días. Después de 7 días, la tarifa no es reembolsable.",
       "faq-q-10": "¿Cuánto dura un Auto-Buscador?",
-      "faq-a-10": "Cada Auto-Buscador te da 30 días de búsqueda — 30 días corridos (de calendario) que comienzan cuando pagas. El reloj sigue avanzando tanto si Auto-Buscador está buscando como en pausa, así que los días en pausa también cuentan. Puedes dividir esos 30 días en tantos rangos de búsqueda como quieras, pero una vez que pasan 30 días desde la compra, el Auto-Buscador expira. Ejemplo: si buscas 3 días, pausas y luego intentas activar más 35 días después, tu ventana ya terminó — así que activa tus rangos dentro de la ventana de 30 días.",
+      "faq-a-10": "Cada Auto-Buscador te da 30 días continuos de búsqueda que comienzan en el momento del pago. Durante esos 30 días, el sistema escanea el DPS de Texas 24/7 y reserva el primer espacio disponible cuya fecha de cita esté dentro de tu ventana de fechas — un rango que tú configuras, de cualquier tamaño, en cualquier punto del futuro, incluso más allá del día 30. Tu ventana de fechas es gratuita de editar en cualquier momento: si tus fechas preferidas ya pasaron, actualiza la ventana a un rango futuro nuevo y la búsqueda se reanuda. Una vez que transcurren 30 días desde el pago, el Auto-Buscador expira. Ejemplo: pagas el 29 de junio (presupuesto hasta el 29 de julio) y configuras una ventana de fechas del 9 al 14 de julio. Si no se encuentra ningún espacio para el 14 de julio, la búsqueda se pausa; actualiza la ventana al 25 de julio–5 de agosto y la búsqueda se reanuda por los días de presupuesto restantes, sin costo adicional.",
       "faq-q-11": "¿Garantizan que conseguiré una cita?",
       "faq-a-11": "No. No controlamos la disponibilidad del DPS de Texas y no podemos garantizar un espacio ni una fecha específica. Auto-Buscador monitorea continuamente y reserva la primera apertura que coincida con tus preferencias, pero solo si y cuando haya una disponible.",
       "faq-q-12": "¿La app está disponible en español?",

@@ -110,7 +110,8 @@
         "open-body": "Este enlace se abre en la aplicación My State Scheduler. Si la aplicación no se abrió, instálala desde tu tienda de aplicaciones y vuelve a tocar el enlace.",
         "store-apple-label": "Descárgalo en",
         "store-google-label": "Disponible en",
-        "footer-disclaimer": "No afiliado al Departamento de Seguridad Pública de Texas. Todas las citas se reservan a través del sitio oficial del DPS."
+        "footer-disclaimer": "No afiliado al Departamento de Seguridad Pública de Texas. Todas las citas se reservan a través del sitio oficial del DPS.",
+        "toast-coming-soon": "Próximamente — ¡Mantente atento!"
       }
     };
 
@@ -183,7 +184,14 @@
     }
     document.querySelectorAll('.store-btn, [data-config-href="links.appStore"], [data-config-href="links.playStore"]').forEach(link => {
       link.addEventListener('click', function(e) {
-        if (this.getAttribute('href') === '#') { e.preventDefault(); showToast('Coming soon — Stay tuned!'); }
+        if (this.getAttribute('href') === '#') {
+          e.preventDefault();
+          const lang = localStorage.getItem('lang') || 'en';
+          const msg = (lang === 'es' && translations.es['toast-coming-soon'])
+            ? translations.es['toast-coming-soon']
+            : 'Coming soon — Stay tuned!';
+          showToast(msg);
+        }
       });
     });
 

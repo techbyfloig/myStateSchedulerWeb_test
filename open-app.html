@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open in the My State Scheduler app</title>
+  <meta name="description" content="This link opens in the My State Scheduler app. Install it from your app store, then tap the link again.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="appicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg-primary: #FAFBFE;
+      --bg-white: #FFFFFF;
+      --navy: #1E3A5F;
+      --navy-light: #2A4F7A;
+      --orange: #D4793A;
+      --text-primary: #1A2B42;
+      --text-secondary: #5A6B80;
+      --border: #E2E8F0;
+      --shadow-md: 0 4px 16px rgba(30, 58, 95, 0.07);
+      --shadow-lg: 0 8px 32px rgba(30, 58, 95, 0.09);
+      --radius-lg: 20px;
+    }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    h1 { font-family: 'Fraunces', serif; line-height: 1.25; letter-spacing: -0.01em; }
+    nav {
+      padding: 16px 32px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: linear-gradient(165deg, #1E3A5F, #2A4F7A);
+    }
+    .nav-logo {
+      font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.25rem;
+      color: #FFFFFF; text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav-logo img { width: 38px; height: 38px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+    .lang-toggle { display: flex; align-items: center; gap: 4px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 4px 6px; cursor: pointer; font-size: 0.78rem; font-weight: 600; }
+    .lang-toggle span { padding: 4px 10px; border-radius: 50px; color: rgba(255,255,255,0.6); transition: all 0.25s; }
+    .lang-toggle span.active { background: rgba(255,255,255,0.85); color: var(--navy); }
+    main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 48px 24px; }
+    .card {
+      max-width: 480px; width: 100%; text-align: center;
+      background: var(--bg-white); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);
+      padding: 48px 32px;
+    }
+    .card img.app-icon { width: 72px; height: 72px; border-radius: 18px; box-shadow: var(--shadow-md); margin-bottom: 24px; }
+    .card h1 { font-size: clamp(1.5rem, 4vw, 2rem); margin-bottom: 16px; }
+    .card p { font-size: 1.02rem; color: var(--text-secondary); margin-bottom: 32px; }
+    .store-buttons { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+    .store-btn { display: inline-flex; align-items: center; gap: 12px; background: var(--navy); color: white; padding: 14px 26px; border-radius: 14px; text-decoration: none; transition: all 0.25s; box-shadow: var(--shadow-md); min-width: 220px; justify-content: center; }
+    .store-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+    .store-btn-icon { display: flex; align-items: center; }
+    .store-btn-text { display: flex; flex-direction: column; line-height: 1.2; text-align: left; }
+    .store-btn-label { font-size: 0.68rem; opacity: 0.7; font-weight: 400; }
+    .store-btn-name { font-size: 1.02rem; font-weight: 600; }
+    footer { text-align: center; padding: 24px; color: var(--text-secondary); font-size: 0.82rem; }
+    .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(100px); background: var(--navy); color: #fff; padding: 12px 24px; border-radius: 50px; font-size: 0.9rem; box-shadow: var(--shadow-lg); opacity: 0; transition: all 0.3s; z-index: 999; }
+    .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo"><img data-config-src="app.icon" src="appicon.jpg" alt="My State Scheduler"> <span data-config="app.name">My State Scheduler</span></a>
+    <div class="lang-toggle" onclick="toggleLang()" role="button" tabindex="0" aria-label="Toggle language"><span id="lang-en" class="active">EN</span><span id="lang-es">ES</span></div>
+  </nav>
+
+  <main>
+    <div class="card">
+      <img class="app-icon" data-config-src="app.icon" src="appicon.jpg" alt="My State Scheduler">
+      <h1 data-i18n="open-title">Open in the My State Scheduler app</h1>
+      <p data-i18n="open-body">This link opens in the My State Scheduler app. If the app didn't open, install it from your app store, then tap the link again.</p>
+      <div class="store-buttons">
+        <a data-config-href="links.appStore" href="#" class="store-btn">
+          <span class="store-btn-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg></span>
+          <span class="store-btn-text"><span class="store-btn-label" data-i18n="store-apple-label">Download on the</span><span class="store-btn-name">App Store</span></span>
+        </a>
+        <a data-config-href="links.playStore" href="#" class="store-btn">
+          <span class="store-btn-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 010 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg></span>
+          <span class="store-btn-text"><span class="store-btn-label" data-i18n="store-google-label">Get it on</span><span class="store-btn-name">Google Play</span></span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <span data-i18n="footer-disclaimer">Not affiliated with the Texas Department of Public Safety. All appointments are secured through the official DPS website.</span>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="config.js"></script>
+  <script>
+    const translations = {
+      es: {
+        "open-title": "Abrir en la aplicación My State Scheduler",
+        "open-body": "Este enlace se abre en la aplicación My State Scheduler. Si la aplicación no se abrió, instálala desde tu tienda de aplicaciones y vuelve a tocar el enlace.",
+        "store-apple-label": "Descárgalo en",
+        "store-google-label": "Disponible en",
+        "footer-disclaimer": "No afiliado al Departamento de Seguridad Pública de Texas. Todas las citas se reservan a través del sitio oficial del DPS."
+      }
+    };
+
+    const englishOriginals = {};
+    function initTranslations() {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        englishOriginals[key] = el.getAttribute('data-i18n-html') === 'true' ? el.innerHTML : el.textContent;
+      });
+    }
+    function setLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (lang === 'es' && translations.es[key]) {
+          if (el.getAttribute('data-i18n-html') === 'true') { el.innerHTML = translations.es[key]; }
+          else { el.textContent = translations.es[key]; }
+        } else if (lang === 'en' && englishOriginals[key]) {
+          if (el.getAttribute('data-i18n-html') === 'true') { el.innerHTML = englishOriginals[key]; }
+          else { el.textContent = englishOriginals[key]; }
+        }
+      });
+      document.documentElement.lang = lang;
+      document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+      document.getElementById('lang-es').classList.toggle('active', lang === 'es');
+      localStorage.setItem('lang', lang);
+    }
+    function toggleLang() {
+      const current = localStorage.getItem('lang') || 'en';
+      setLanguage(current === 'en' ? 'es' : 'en');
+    }
+
+    function resolveConfig(str) {
+      return str.replace(/\{\{(\S+?)\}\}/g, (_, key) => {
+        return key.split('.').reduce((o, k) => o?.[k], CONFIG) ?? '{{' + key + '}}';
+      });
+    }
+    function applyConfig() {
+      document.querySelectorAll('[data-config]').forEach(el => {
+        const val = el.dataset.config.split('.').reduce((o, k) => o?.[k], CONFIG);
+        if (val) el.textContent = val;
+      });
+      document.querySelectorAll('[data-config-src]').forEach(el => {
+        const val = el.dataset.configSrc.split('.').reduce((o, k) => o?.[k], CONFIG);
+        if (val) el.src = val;
+      });
+      document.querySelectorAll('[data-config-href]').forEach(el => {
+        const key = el.dataset.configHref;
+        let val = key.split('.').reduce((o, k) => o?.[k], CONFIG);
+        if (val) {
+          if (key === 'company.email') val = 'mailto:' + val;
+          el.href = val;
+        }
+      });
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        if (el.getAttribute('data-i18n-html') === 'true') {
+          el.innerHTML = resolveConfig(el.innerHTML);
+        } else {
+          const resolved = resolveConfig(el.textContent);
+          if (resolved !== el.textContent) el.textContent = resolved;
+        }
+      });
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      clearTimeout(t._tid);
+      t._tid = setTimeout(() => t.classList.remove('show'), 2500);
+    }
+    document.querySelectorAll('.store-btn, [data-config-href="links.appStore"], [data-config-href="links.playStore"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        if (this.getAttribute('href') === '#') { e.preventDefault(); showToast('Coming soon — Stay tuned!'); }
+      });
+    });
+
+    applyConfig();
+    Object.keys(translations.es).forEach(key => {
+      if (typeof translations.es[key] === 'string') {
+        translations.es[key] = resolveConfig(translations.es[key]);
+      }
+    });
+    initTranslations();
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang && savedLang !== 'en') setLanguage(savedLang);
+  </script>
+</body>
+</html>

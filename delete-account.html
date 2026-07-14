@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Your Account and Data — My State Scheduler by TECHBYFLOIG LLC</title>
+  <meta name="description" content="Steps to delete your My State Scheduler account and personal data, what's removed, what's retained, and how to reach us if you can't access the app.">
+  <link rel="icon" type="image/png" href="appicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg-primary: #FAFBFE;
+      --bg-warm: #FFF9F3;
+      --bg-white: #FFFFFF;
+      --navy: #1E3A5F;
+      --navy-light: #2A4F7A;
+      --navy-muted: #3D6590;
+      --navy-soft: #EEF2F7;
+      --orange: #D4793A;
+      --orange-deep: #C06A30;
+      --orange-light: #E8993D;
+      --orange-glow: rgba(212, 121, 58, 0.08);
+      --text-primary: #1A2B42;
+      --text-secondary: #5A6B80;
+      --text-light: #8A96A6;
+      --border: #E2E8F0;
+      --shadow-sm: 0 1px 3px rgba(30, 58, 95, 0.05);
+      --shadow-md: 0 4px 16px rgba(30, 58, 95, 0.07);
+      --shadow-lg: 0 8px 32px rgba(30, 58, 95, 0.09);
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 { font-family: 'Fraunces', serif; line-height: 1.25; letter-spacing: -0.01em; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 16px 32px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: transparent;
+      backdrop-filter: none; -webkit-backdrop-filter: none;
+      border-bottom: 1px solid transparent;
+      box-shadow: none;
+      transition: background 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease;
+    }
+    nav.scrolled {
+      background: linear-gradient(165deg, rgba(30, 58, 95, 0.97), rgba(42, 79, 122, 0.97));
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 2px 20px rgba(30, 58, 95, 0.25);
+      padding: 12px 32px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .nav-logo {
+      font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.25rem;
+      color: #FFFFFF; text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav-logo img { width: 38px; height: 38px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); flex-shrink: 0; }
+    .nav-links { display: flex; align-items: center; gap: 30px; list-style: none; }
+    .nav-links a { text-decoration: none; color: rgba(255,255,255,0.75); font-size: 0.93rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #FFFFFF; }
+    .nav-cta {
+      background: rgba(255,255,255,0.85) !important; color: var(--navy) !important;
+      padding: 10px 22px; border-radius: 50px; font-weight: 600 !important;
+      transition: all 0.25s !important; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    }
+    .nav-cta:hover { background: #FFFFFF !important; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
+    .lang-toggle { display: flex; align-items: center; gap: 4px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 4px 6px; cursor: pointer; font-size: 0.78rem; font-weight: 600; margin-right: 8px; }
+    .lang-toggle span { padding: 4px 10px; border-radius: 50px; color: rgba(255,255,255,0.6); transition: all 0.25s; }
+    .lang-toggle span.active { background: rgba(255,255,255,0.85); color: var(--navy); }
+    .mobile-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .mobile-toggle span { width: 24px; height: 2px; background: #FFFFFF; border-radius: 2px; transition: transform 0.3s ease, opacity 0.3s ease; display: block; }
+    .mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .mobile-toggle.active span:nth-child(2) { opacity: 0; }
+    .mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* HERO HEADER */
+    .legal-hero {
+      padding: 140px 24px 60px;
+      text-align: center;
+      background: url('image2.png') center/cover no-repeat;
+      position: relative; overflow: hidden;
+    }
+    .legal-hero::before { content: ''; position: absolute; inset: 0; background: rgba(30, 58, 95, 0.5); pointer-events: none; }
+    .legal-hero h1 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; color: #FFFFFF; margin-bottom: 18px; position: relative; z-index: 1; }
+    .legal-hero p { font-size: 1.08rem; color: rgba(255,255,255,0.85); max-width: 680px; margin: 0 auto; line-height: 1.7; position: relative; z-index: 1; }
+    .legal-hero .effective-date { display: inline-block; margin-top: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.12); padding: 8px 18px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.15); position: relative; z-index: 1; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+    .legal-hero .cross-link { display: inline-block; margin-top: 14px; font-size: 0.9rem; color: var(--orange-light); text-decoration: none; font-weight: 500; transition: color 0.2s; position: relative; z-index: 1; }
+    .legal-hero .cross-link:hover { color: #FFFFFF; text-decoration: underline; }
+
+    /* PAGE LAYOUT */
+    .legal-page { max-width: 860px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    /* TABLE OF CONTENTS */
+    .toc {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      margin-bottom: 48px;
+    }
+    .toc h2 { font-size: 1.15rem; font-weight: 600; color: var(--navy); margin-bottom: 16px; }
+    .toc-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .toc-list a {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none; color: var(--text-secondary);
+      font-size: 0.95rem; font-weight: 500;
+      padding: 8px 14px; border-radius: 10px;
+      transition: all 0.2s;
+    }
+    .toc-list a:hover { background: var(--navy-soft); color: var(--navy); }
+    .toc-list .toc-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px; border-radius: 8px;
+      font-size: 0.78rem; font-weight: 700;
+      background: linear-gradient(135deg, rgba(30,58,95,0.07), rgba(212,121,58,0.07));
+      color: var(--navy);
+      flex-shrink: 0;
+    }
+
+    /* LEGAL SECTIONS */
+    .legal-section {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      margin-bottom: 28px;
+      transition: box-shadow 0.3s;
+    }
+    .legal-section:hover { box-shadow: var(--shadow-md); }
+    .legal-section:target { box-shadow: 0 0 0 2px var(--orange), var(--shadow-md); }
+
+
+    .legal-section h2 {
+      font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 20px;
+    }
+
+    .legal-section h3 {
+      font-size: 1.1rem; font-weight: 600; color: var(--navy); margin: 28px 0 12px;
+      padding-top: 20px; border-top: 1px solid var(--border);
+    }
+    .legal-section h3:first-of-type { border-top: none; padding-top: 0; margin-top: 24px; }
+
+    .legal-section p {
+      font-size: 0.95rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 14px;
+    }
+
+    .legal-section ul {
+      list-style: none; margin: 12px 0 16px; display: flex; flex-direction: column; gap: 8px;
+    }
+    .legal-section li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.93rem; color: var(--text-secondary); line-height: 1.6;
+    }
+    .legal-section li::before { content: '\2192'; color: var(--navy-muted); flex-shrink: 0; margin-top: 1px; }
+
+    /* STEP LIST (delete-account page only) */
+    .step-list { display: flex; flex-direction: column; gap: 16px; margin: 20px 0 24px; }
+    .step-item { display: flex; align-items: flex-start; gap: 14px; }
+    .step-item p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 0; }
+
+    /* HIGHLIGHT BOXES */
+    .highlight-important, .highlight-warning, .highlight-green {
+      padding: 20px 24px 20px 8px;
+      border-radius: var(--radius-md);
+      margin: 20px 0;
+      font-size: 0.93rem;
+      line-height: 1.7;
+    }
+    .highlight-important p, .highlight-warning p, .highlight-green p { margin-bottom: 0; }
+
+    .highlight-important {
+      background: var(--navy-soft);
+      border-left: 3px solid var(--navy);
+      color: var(--navy);
+    }
+
+    .highlight-warning {
+      background: #FFF5F0;
+      border-left: 3px solid var(--orange);
+      color: #8B4513;
+    }
+
+    .highlight-green {
+      background: #E8F5EE;
+      border-left: 3px solid #2D8F5E;
+      color: #1E5A3A;
+    }
+
+    .bold-statement {
+      font-weight: 600; color: var(--navy); font-size: 1rem;
+    }
+
+    /* CONTACT BOX */
+    .contact-box {
+      background: linear-gradient(165deg, var(--navy), var(--navy-light));
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      color: white;
+      margin-top: 40px;
+    }
+    .contact-box h2 { font-size: 1.3rem; color: white; margin-bottom: 16px; }
+    .contact-box p { color: rgba(255,255,255,0.8); font-size: 0.93rem; line-height: 1.7; margin-bottom: 8px; }
+    .contact-box a { color: var(--orange-light); text-decoration: none; font-weight: 600; }
+    .contact-box a:hover { text-decoration: underline; }
+    .contact-detail { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .contact-detail .cd-icon {
+      width: 32px; height: 32px; border-radius: 8px;
+      background: rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.7); flex-shrink: 0;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 60px 24px 32px;
+      background: var(--navy);
+      color: rgba(255, 255, 255, 0.7);
+      position: relative;
+    }
+    footer::before {
+      content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 85%; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    }
+    .footer-inner { max-width: 1080px; margin: 0 auto; }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+      padding-bottom: 40px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); margin-bottom: 28px;
+    }
+    .footer-logo {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.15rem;
+      color: #FFFFFF; text-decoration: none; margin-bottom: 14px;
+    }
+    .footer-logo img { width: 32px; height: 32px; border-radius: 8px; }
+    .footer-brand-desc { font-size: 0.88rem; color: rgba(255, 255, 255, 0.55); line-height: 1.6; margin-bottom: 20px; max-width: 280px; }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social-link {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255, 255, 255, 0.6); transition: background 0.2s, color 0.2s; text-decoration: none;
+    }
+    .footer-social-link:hover { background: rgba(255, 255, 255, 0.15); color: #FFFFFF; }
+    .footer-col-title {
+      font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255, 255, 255, 0.4); margin-bottom: 18px;
+    }
+    .footer-col-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col-links a { font-size: 0.9rem; color: rgba(255, 255, 255, 0.65); text-decoration: none; transition: color 0.2s; }
+    .footer-col-links a:hover { color: #FFFFFF; }
+    .footer-bottom { text-align: center; }
+    .footer-copyright { font-size: 0.78rem; color: rgba(255, 255, 255, 0.35); line-height: 1.6; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+    @media (max-width: 640px) {
+      nav { padding: 12px 18px; }
+      nav.scrolled { padding: 10px 18px; }
+      .nav-links {
+        display: flex; position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column;
+        background: linear-gradient(165deg, rgba(30, 58, 95, 0.98), rgba(42, 79, 122, 0.98));
+        backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+        padding: 0 20px; gap: 0;
+        max-height: 0; overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
+        box-shadow: 0 8px 24px rgba(30,58,95,0.25);
+      }
+      .nav-links.open { max-height: 380px; padding: 20px; gap: 16px; }
+      .nav-links a { opacity: 0; transform: translateX(-10px); transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s; }
+      .nav-links.open a { opacity: 1; transform: translateX(0); }
+      .nav-links li:nth-child(1) a { transition-delay: 0.05s; }
+      .nav-links li:nth-child(2) a { transition-delay: 0.1s; }
+      .nav-links li:nth-child(3) a { transition-delay: 0.15s; }
+      .nav-links li:nth-child(4) a { transition-delay: 0.2s; }
+      .nav-links li:nth-child(5) a { transition-delay: 0.25s; }
+      .mobile-toggle { display: flex; }
+      .legal-hero { padding: 110px 18px 40px; }
+      .legal-page { padding: 40px 16px 80px; }
+      .legal-section { padding: 28px 22px; }
+      .toc { padding: 24px 20px; }
+      .contact-box { padding: 28px 22px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+      .footer-brand-desc { max-width: 100%; margin-left: auto; margin-right: auto; }
+      .footer-social { justify-content: center; }
+      .footer-logo { justify-content: center; }
+    }
+
+    /* SCROLL ANIMATIONS */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    /* Under-construction banner — push fixed nav and body content below banner */
+    body { padding-top: 44px; }
+    nav { top: 44px; }
+    @media (max-width: 768px) {
+      body { padding-top: 76px; }
+      nav { top: 76px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- UNDER CONSTRUCTION BANNER -->
+  <div style="background:#FFF3CD; color:#664D03; padding:10px 16px; text-align:center; font-family:'DM Sans',Arial,sans-serif; font-size:0.85rem; line-height:1.5; border-bottom:1px solid #FFE69C; position:fixed; top:0; left:0; right:0; z-index:101;" data-i18n="under-construction-banner" data-i18n-html="true">
+    <strong>Under construction</strong> — this page is being updated. Information may change before final publication.
+  </div>
+
+  <!-- NAV -->
+  <nav aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
+      <img data-config-src="app.icon" src="appicon.jpg" alt="My State Scheduler"> <span data-config="app.name">My State Scheduler</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav-home">Home</a></li>
+      <li><a href="index.html#how-it-works" data-i18n="nav-how">How It Works</a></li>
+      <li><a href="index.html#pricing" data-i18n="nav-pricing">Pricing</a></li>
+      <li><a href="index.html#faq" data-i18n="nav-contact">Contact</a></li>
+      <li><div class="lang-toggle" onclick="toggleLang()" role="button" aria-label="Toggle language between English and Spanish" tabindex="0"><span id="lang-en" class="active">EN</span><span id="lang-es">ES</span></div></li>
+      <li><a href="index.html#download" class="nav-cta" data-i18n="nav-cta">Download App</a></li>
+    </ul>
+    <button type="button" class="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <!-- HERO -->
+  <div class="legal-hero">
+    <h1 data-i18n="del-hero-title">Delete Your Account and Data</h1>
+    <p data-i18n="del-hero-desc">My State Scheduler, by TECHBYFLOIG LLC, gives you full control over your account. Here is how to permanently delete your account and personal data, and exactly what happens when you do.</p>
+    <a href="privacy.html" class="cross-link" data-i18n="del-cross-link" data-i18n-html="true">View Privacy Policy &rarr;</a>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="legal-page">
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc fade-in">
+      <h2 data-i18n="del-toc-title">Contents</h2>
+      <ul class="toc-list">
+        <li><a href="#how-to-delete"><span class="toc-num">1</span> <span data-i18n="del-toc-1">How to Delete Your Account</span></a></li>
+        <li><a href="#what-is-deleted"><span class="toc-num">2</span> <span data-i18n="del-toc-2">What Gets Deleted</span></a></li>
+        <li><a href="#what-is-retained"><span class="toc-num">3</span> <span data-i18n="del-toc-3">What We Keep</span></a></li>
+        <li><a href="#cant-access"><span class="toc-num">4</span> <span data-i18n="del-toc-4">Can't Access the App?</span></a></li>
+        <li><a href="#contact"><span class="toc-num">5</span> <span data-i18n="del-toc-5">Contact Us</span></a></li>
+      </ul>
+    </div>
+
+    <!-- SECTION 1: HOW TO DELETE -->
+    <div class="legal-section fade-in" id="how-to-delete">
+      <h2 data-i18n="del-s1-title">How to Delete Your Account</h2>
+      <p data-i18n="del-s1-p-1">You can permanently delete your My State Scheduler account and all of your data at any time, directly from the app:</p>
+
+      <div class="step-list">
+        <div class="step-item"><span class="toc-num">1</span><p data-i18n="del-s1-step-1">Open the My State Scheduler app and sign in to your account.</p></div>
+        <div class="step-item"><span class="toc-num">2</span><p data-i18n="del-s1-step-2">Go to the Account tab.</p></div>
+        <div class="step-item"><span class="toc-num">3</span><p data-i18n="del-s1-step-3" data-i18n-html="true">Tap <strong>"Delete account."</strong></p></div>
+        <div class="step-item"><span class="toc-num">4</span><p data-i18n="del-s1-step-4">Type your account email address to confirm.</p></div>
+        <div class="step-item"><span class="toc-num">5</span><p data-i18n="del-s1-step-5" data-i18n-html="true">Tap <strong>Delete</strong>.</p></div>
+      </div>
+
+      <div class="highlight-warning">
+        <p class="bold-statement" data-i18n="del-s1-bold-1">Deletion is immediate and permanent.</p>
+        <p data-i18n="del-s1-p-2">There is no grace period and no way to recover your account or data once you confirm the deletion.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 2: WHAT GETS DELETED -->
+    <div class="legal-section fade-in" id="what-is-deleted">
+      <h2 data-i18n="del-s2-title">What Gets Deleted</h2>
+      <p data-i18n="del-s2-p-1">When you delete your account, we permanently remove:</p>
+      <ul>
+        <li data-i18n="del-s2-li-1">Your name, date of birth, and the last 4 digits of your Social Security number</li>
+        <li data-i18n="del-s2-li-2">Your Texas driver's license or ID number</li>
+        <li data-i18n="del-s2-li-3">Your phone number and email address</li>
+        <li data-i18n="del-s2-li-4">Your account login credentials — you are signed out of every device</li>
+        <li data-i18n="del-s2-li-5">Your booked appointments</li>
+        <li data-i18n="del-s2-li-6">Your Auto-Searches</li>
+      </ul>
+
+      <div class="highlight-important">
+        <p data-i18n="del-s2-p-2" data-i18n-html="true">If you have an active, paid Auto-Search running, it is cancelled and refunded according to our standard refund policy as part of deleting your account. See our <a href="terms.html" style="color:var(--navy); text-decoration:underline;">Terms of Service</a> for the refund policy.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 3: WHAT WE KEEP -->
+    <div class="legal-section fade-in" id="what-is-retained">
+      <h2 data-i18n="del-s3-title">What We Keep</h2>
+      <p data-i18n="del-s3-p-1">A very small amount of information is retained after your account is deleted, with no personal data attached:</p>
+      <ul>
+        <li data-i18n="del-s3-li-1" data-i18n-html="true"><strong>An anonymized payment record</strong> — the payment processor's transaction ID and amount, with no personal information attached, kept for accounting, tax, and legal purposes.</li>
+        <li data-i18n="del-s3-li-2" data-i18n-html="true"><strong>Shared applicant information</strong> — if you booked an appointment on behalf of someone else (for example, a family member) and that person's exact information is also actively used by another My State Scheduler account, we keep that person's record only for as long as another account is still using it. Once no account references it, it is deleted too.</li>
+      </ul>
+    </div>
+
+    <!-- SECTION 4: CAN'T ACCESS THE APP -->
+    <div class="legal-section fade-in" id="cant-access">
+      <h2 data-i18n="del-s4-title">Can't Access the App?</h2>
+      <div class="highlight-important">
+        <p data-i18n="del-s4-p-1" data-i18n-html="true">If you have uninstalled the app or can't sign in, you can still request deletion of your account and data. Email us at <a href="mailto:support@mystatescheduler.com" style="color:var(--navy); text-decoration:underline;">support@mystatescheduler.com</a> from the email address on your account, and we will complete the deletion within 30 days.</p>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact-box fade-in" id="contact">
+      <h2 data-i18n="del-contact-title">Contact Us</h2>
+      <p data-i18n="del-contact-desc">Questions about deleting your account or data? Reach out:</p>
+      <div style="margin-top:20px">
+        <div class="contact-detail">
+          <span class="cd-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg></span>
+          <p data-i18n="del-contact-email" data-i18n-html="true">Email: <a href="mailto:support@mystatescheduler.com">support@mystatescheduler.com</a></p>
+        </div>
+        <div class="contact-detail">
+          <span class="cd-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22V18h6v4M9 6h.01M15 6h.01M9 10h.01M15 10h.01M9 14h.01M15 14h.01"/></svg></span>
+          <p data-i18n="del-contact-address" data-i18n-html="true">TECHBYFLOIG LLC<br>4853 Preston Trail Dr, Mesquite, TX 75150<br>United States</p>
+        </div>
+      </div>
+      <p style="margin-top:16px; font-size:0.85rem; opacity:0.6;" data-i18n="del-contact-response">We aim to respond within 5 business days and complete account-deletion requests within 30 days.</p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo"><img data-config-src="app.icon" src="appicon.jpg" alt="My State Scheduler"> <span data-config="app.name">My State Scheduler</span></a>
+          <p class="footer-brand-desc" data-i18n="footer-desc">Find and secure earlier Texas DPS appointments. Book manually for free or let us handle it automatically.</p>
+
+          <p class="footer-brand-desc" data-i18n="footer-address" data-i18n-html="true" style="margin-bottom: 16px; font-size: 0.82rem;">TECHBYFLOIG LLC<br>4853 Preston Trail Dr, Mesquite, TX 75150<br>United States</p>
+          <div class="footer-social">
+            <a href="#" class="footer-social-link" aria-label="Twitter" data-config-href="links.twitter"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="#" class="footer-social-link" aria-label="Instagram" data-config-href="links.instagram"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" class="footer-social-link" aria-label="Facebook" data-config-href="links.facebook"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title" data-i18n="footer-product">Product</h4>
+          <ul class="footer-col-links">
+            <li><a href="index.html#how-it-works" data-i18n="footer-how">How It Works</a></li>
+            <li><a href="index.html#pricing" data-i18n="footer-pricing">Pricing</a></li>
+            <li><a href="index.html#download" data-i18n="footer-download">Download App</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title" data-i18n="footer-company">Company</h4>
+          <ul class="footer-col-links">
+            <li><a href="index.html#transparency" data-i18n="footer-trust">Trust &amp; Privacy</a></li>
+            <li><a href="index.html#transparency" data-i18n="footer-compliance">Compliance</a></li>
+            <li><a href="index.html#faq" data-i18n="footer-faq">FAQ</a></li>
+            <li><a href="index.html#faq" data-i18n="footer-contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title" data-i18n="footer-legal">Legal</h4>
+          <ul class="footer-col-links">
+            <li><a href="privacy.html" data-i18n="footer-privacy">Privacy Policy</a></li>
+            <li><a href="terms.html" data-i18n="footer-terms">Terms of Service</a></li>
+            <li><a href="delete-account.html" data-i18n="footer-delete-account">Delete Account</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright" data-i18n="footer-disclaimer">Not affiliated with the Texas Department of Public Safety. All appointments booked through the official DPS website.</p>
+        <p class="footer-copyright" data-i18n="footer-copyright" data-i18n-html="true">&copy; 2026 My State Scheduler by TECHBYFLOIG LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script>
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Nav scroll effect
+    const nav = document.querySelector('nav');
+    const toggleBtn = document.querySelector('.mobile-toggle');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }, { passive: true });
+
+    // Mobile toggle
+    toggleBtn.addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+  </script>
+
+  <script>
+    const translations = {
+      es: {
+        // Under construction banner
+        "under-construction-banner": "<strong>En construcción</strong> — esta página está siendo actualizada. La información puede cambiar antes de la publicación final.",
+
+        // Nav
+        "nav-home": "Inicio",
+        "nav-how": "Cómo Funciona",
+        "nav-pricing": "Precios",
+        "nav-contact": "Contacto",
+        "nav-cta": "Descargar App",
+
+        // Hero
+        "del-hero-title": "Eliminar tu Cuenta y Datos",
+        "del-hero-desc": "My State Scheduler, por TECHBYFLOIG LLC, te da control total sobre tu cuenta. Así puedes eliminar permanentemente tu cuenta y tus datos personales, y esto es exactamente lo que ocurre cuando lo haces.",
+        "del-cross-link": "Ver Política de Privacidad &rarr;",
+
+        // TOC
+        "del-toc-title": "Contenido",
+        "del-toc-1": "Cómo Eliminar tu Cuenta",
+        "del-toc-2": "Qué Se Elimina",
+        "del-toc-3": "Qué Conservamos",
+        "del-toc-4": "¿No Puedes Acceder a la App?",
+        "del-toc-5": "Contacto",
+
+        // Section 1 — How to delete
+        "del-s1-title": "Cómo Eliminar tu Cuenta",
+        "del-s1-p-1": "Puedes eliminar permanentemente tu cuenta de My State Scheduler y todos tus datos en cualquier momento, directamente desde la app:",
+        "del-s1-step-1": "Abre la app My State Scheduler e inicia sesión en tu cuenta.",
+        "del-s1-step-2": "Ve a la pestaña Cuenta.",
+        "del-s1-step-3": "Toca <strong>\"Eliminar cuenta.\"</strong>",
+        "del-s1-step-4": "Escribe el correo electrónico de tu cuenta para confirmar.",
+        "del-s1-step-5": "Toca <strong>Eliminar</strong>.",
+        "del-s1-bold-1": "La eliminación es inmediata y permanente.",
+        "del-s1-p-2": "No hay período de gracia ni forma de recuperar tu cuenta o tus datos una vez que confirmas la eliminación.",
+
+        // Section 2 — What gets deleted
+        "del-s2-title": "Qué Se Elimina",
+        "del-s2-p-1": "Cuando eliminas tu cuenta, removemos permanentemente:",
+        "del-s2-li-1": "Tu nombre, fecha de nacimiento y los últimos 4 dígitos de tu número de Seguro Social",
+        "del-s2-li-2": "Tu número de licencia de conducir o identificación de Texas",
+        "del-s2-li-3": "Tu número de teléfono y correo electrónico",
+        "del-s2-li-4": "Las credenciales de inicio de sesión de tu cuenta — se cierra tu sesión en todos los dispositivos",
+        "del-s2-li-5": "Tus citas reservadas",
+        "del-s2-li-6": "Tus Auto-Búsquedas",
+        "del-s2-p-2": "Si tienes una Auto-Búsqueda paga activa, se cancela y se reembolsa según nuestra política de reembolsos estándar como parte de la eliminación de tu cuenta. Consulta nuestros <a href=\"terms.html\" style=\"color:var(--navy); text-decoration:underline;\">Términos de Servicio</a> para conocer la política de reembolsos.",
+
+        // Section 3 — What we keep
+        "del-s3-title": "Qué Conservamos",
+        "del-s3-p-1": "Se conserva una cantidad muy pequeña de información después de eliminar tu cuenta, sin ningún dato personal adjunto:",
+        "del-s3-li-1": "<strong>Un registro de pago anonimizado</strong> — el ID de transacción del procesador de pagos y el monto, sin información personal adjunta, conservado para fines contables, fiscales y legales.",
+        "del-s3-li-2": "<strong>Información compartida de solicitantes</strong> — si reservaste una cita en nombre de otra persona (por ejemplo, un familiar) y la información exacta de esa persona también está siendo usada activamente por otra cuenta de My State Scheduler, conservamos el registro de esa persona solo mientras otra cuenta lo siga usando. Una vez que ninguna cuenta lo referencia, también se elimina.",
+
+        // Section 4 — Can't access the app
+        "del-s4-title": "¿No Puedes Acceder a la App?",
+        "del-s4-p-1": "Si desinstalaste la app o no puedes iniciar sesión, aún puedes solicitar la eliminación de tu cuenta y tus datos. Escríbenos a <a href=\"mailto:support@mystatescheduler.com\" style=\"color:var(--navy); text-decoration:underline;\">support@mystatescheduler.com</a> desde el correo electrónico de tu cuenta, y completaremos la eliminación dentro de 30 días.",
+
+        // Contact
+        "del-contact-title": "Contacto",
+        "del-contact-desc": "¿Preguntas sobre eliminar tu cuenta o tus datos? Comunícate con nosotros:",
+        "del-contact-email": "Correo: <a href=\"mailto:support@mystatescheduler.com\">support@mystatescheduler.com</a>",
+        "del-contact-address": "TECHBYFLOIG LLC<br>4853 Preston Trail Dr, Mesquite, TX 75150<br>Estados Unidos",
+        "del-contact-response": "Buscamos responder dentro de 5 días hábiles y completar las solicitudes de eliminación de cuenta dentro de 30 días.",
+
+        // Footer
+        "footer-address": "TECHBYFLOIG LLC<br>4853 Preston Trail Dr, Mesquite, TX 75150<br>Estados Unidos",
+        "footer-desc": "Encuentra y asegura citas del DPS de Texas más tempranas. Reserva manualmente gratis o déjanos manejarlo automáticamente.",
+        "footer-product": "Producto",
+        "footer-how": "Cómo Funciona",
+        "footer-pricing": "Precios",
+        "footer-download": "Descargar App",
+        "footer-company": "Empresa",
+        "footer-trust": "Confianza y Privacidad",
+        "footer-compliance": "Cumplimiento",
+        "footer-faq": "Preguntas",
+        "footer-contact": "Contacto",
+        "footer-legal": "Legal",
+        "footer-privacy": "Política de Privacidad",
+        "footer-terms": "Términos de Servicio",
+        "footer-delete-account": "Eliminar Cuenta",
+        "footer-disclaimer": "No afiliado al Departamento de Seguridad Pública de Texas. Todas las citas se reservan a través del sitio oficial del DPS.",
+        "footer-copyright": "© 2026 My State Scheduler por TECHBYFLOIG LLC. Todos los derechos reservados."
+      }
+    };
+
+    const englishOriginals = {};
+
+    function initTranslations() {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        englishOriginals[key] = el.getAttribute('data-i18n-html') === 'true' ? el.innerHTML : el.textContent;
+      });
+    }
+
+    function setLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (lang === 'es' && translations.es[key]) {
+          if (el.getAttribute('data-i18n-html') === 'true') { el.innerHTML = translations.es[key]; }
+          else { el.textContent = translations.es[key]; }
+        } else if (lang === 'en' && englishOriginals[key]) {
+          if (el.getAttribute('data-i18n-html') === 'true') { el.innerHTML = englishOriginals[key]; }
+          else { el.textContent = englishOriginals[key]; }
+        }
+      });
+      document.documentElement.lang = lang;
+      document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+      document.getElementById('lang-es').classList.toggle('active', lang === 'es');
+      localStorage.setItem('lang', lang);
+    }
+
+    function toggleLang() {
+      const current = localStorage.getItem('lang') || 'en';
+      setLanguage(current === 'en' ? 'es' : 'en');
+    }
+
+    // --- CONFIG RESOLVER ---
+    function resolveConfig(str) {
+      return str.replace(/\{\{(\S+?)\}\}/g, (_, key) => {
+        return key.split('.').reduce((o, k) => o?.[k], CONFIG) ?? '{{' + key + '}}';
+      });
+    }
+
+    function applyConfig() {
+      document.querySelectorAll('[data-config]').forEach(el => {
+        const val = el.dataset.config.split('.').reduce((o, k) => o?.[k], CONFIG);
+        if (val) el.textContent = val;
+      });
+      document.querySelectorAll('[data-config-src]').forEach(el => {
+        const val = el.dataset.configSrc.split('.').reduce((o, k) => o?.[k], CONFIG);
+        if (val) el.src = val;
+      });
+      document.querySelectorAll('[data-config-href]').forEach(el => {
+        const key = el.dataset.configHref;
+        let val = key.split('.').reduce((o, k) => o?.[k], CONFIG);
+        if (val) {
+          if (key === 'company.email') val = 'mailto:' + val;
+          el.href = val;
+        }
+      });
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        if (el.getAttribute('data-i18n-html') === 'true') {
+          el.innerHTML = resolveConfig(el.innerHTML);
+        } else {
+          const resolved = resolveConfig(el.textContent);
+          if (resolved !== el.textContent) el.textContent = resolved;
+        }
+      });
+    }
+
+    applyConfig();
+    Object.keys(translations.es).forEach(key => {
+      if (typeof translations.es[key] === 'string') {
+        translations.es[key] = resolveConfig(translations.es[key]);
+      }
+    });
+
+    initTranslations();
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang && savedLang !== 'en') setLanguage(savedLang);
+  </script>
+
+</body>
+</html>

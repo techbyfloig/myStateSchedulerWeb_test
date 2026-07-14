@@ -313,21 +313,9 @@
     /* SCROLL ANIMATIONS */
     .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
-    /* Under-construction banner — push fixed nav and body content below banner */
-    body { padding-top: 44px; }
-    nav { top: 44px; }
-    @media (max-width: 768px) {
-      body { padding-top: 76px; }
-      nav { top: 76px; }
-    }
   </style>
 </head>
 <body>
-
-  <!-- UNDER CONSTRUCTION BANNER -->
-  <div style="background:#FFF3CD; color:#664D03; padding:10px 16px; text-align:center; font-family:'DM Sans',Arial,sans-serif; font-size:0.85rem; line-height:1.5; border-bottom:1px solid #FFE69C; position:fixed; top:0; left:0; right:0; z-index:101;" data-i18n="under-construction-banner" data-i18n-html="true">
-    <strong>Under construction</strong> — this page is being updated. Information may change before final publication.
-  </div>
 
   <!-- NAV -->
   <nav>
@@ -574,6 +562,7 @@
           <ul class="footer-col-links">
             <li><a href="privacy.html" data-i18n="footer-privacy">Privacy Policy</a></li>
             <li><a href="terms.html" data-i18n="footer-terms">Terms of Service</a></li>
+            <li><a href="delete-account.html" data-i18n="footer-delete-account">Delete Account</a></li>
           </ul>
         </div>
       </div>
@@ -613,8 +602,6 @@
   <script>
     const translations = {
       es: {
-        // Under construction banner
-        "under-construction-banner": "<strong>En construcción</strong> — esta página está siendo actualizada. La información puede cambiar antes de la publicación final.",
 
         // Nav
         "nav-home": "Inicio",
@@ -752,6 +739,7 @@
         "footer-legal": "Legal",
         "footer-privacy": "Pol\u00edtica de Privacidad",
         "footer-terms": "T\u00e9rminos de Servicio",
+        "footer-delete-account": "Eliminar Cuenta",
         "footer-disclaimer": "No afiliado al Departamento de Seguridad P\u00fablica de Texas. Todas las citas se reservan a trav\u00e9s del sitio oficial del DPS.",
         "footer-address": "{{company.name}}<br>{{company.street}}, {{company.city}}, {{company.state}} {{company.zip}}<br>Estados Unidos",
         "footer-copyright": "\u00a9 {{company.copyrightYear}} {{app.name}} por {{company.name}}. Todos los derechos reservados."

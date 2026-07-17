@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy — My State by Tech by Floig LLC</title>
-  <meta name="description" content="Privacy policy and data collection practices for My State by Tech by Floig LLC.">
+  <title>Privacy Policy — My State Scheduler</title>
+  <meta name="description" content="Privacy policy and data collection practices for My State Scheduler.">
   <link rel="icon" type="image/png" href="appicon.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -336,7 +336,7 @@
   <!-- HERO -->
   <div class="legal-hero">
     <h1 data-i18n="priv-hero-title">Privacy Policy</h1>
-    <p data-i18n="priv-hero-desc">How {{app.mobileName}} by {{company.name}} collects, uses, and protects your personal information.</p>
+    <p data-i18n="priv-hero-desc">How {{app.mobileName}} collects, uses, and protects your personal information.</p>
     <span class="effective-date" data-i18n="priv-effective">Effective Date: {{legal.effectiveDate}}</span>
     <br>
     <a href="terms.html" class="cross-link" data-i18n="priv-cross-link" data-i18n-html="true">View Terms of Service &rarr;</a>
@@ -501,10 +501,6 @@
           <span class="cd-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg></span>
           <p data-i18n="priv-contact-email" data-i18n-html="true">Email: <a href="mailto:{{company.email}}">{{company.email}}</a></p>
         </div>
-        <div class="contact-detail">
-          <span class="cd-icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22V18h6v4M9 6h.01M15 6h.01M9 10h.01M15 10h.01M9 14h.01M15 14h.01"/></svg></span>
-          <p data-i18n="priv-contact-address" data-i18n-html="true">{{company.name}}<br>{{company.street}}, {{company.city}}, {{company.state}} {{company.zip}}<br>{{company.country}}</p>
-        </div>
       </div>
       <p style="margin-top:16px; font-size:0.85rem; opacity:0.6;" data-i18n="priv-contact-response">Please allow up to 5 business days for a response.</p>
     </div>
@@ -518,7 +514,6 @@
         <div class="footer-brand">
           <a href="index.html" class="footer-logo"><img data-config-src="app.icon" src="appicon.jpg" alt="DPS QuickBook"> <span data-config="app.name">DPS QuickBook</span></a>
           <p class="footer-brand-desc" data-i18n="footer-desc">Find and secure earlier Texas DPS appointments. Book manually for free or let us handle it automatically.</p>
-          <p class="footer-brand-desc" data-i18n="footer-address" data-i18n-html="true" style="margin-bottom: 16px; font-size: 0.82rem;">{{company.name}}<br>{{company.street}}, {{company.city}}, {{company.state}} {{company.zip}}<br>{{company.country}}</p>
           <div class="footer-social">
             <a href="#" class="footer-social-link" aria-label="Twitter" data-config-href="links.twitter"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
             <a href="#" class="footer-social-link" aria-label="Instagram" data-config-href="links.instagram"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
@@ -553,7 +548,7 @@
       </div>
       <div class="footer-bottom">
         <p class="footer-copyright" data-i18n="footer-disclaimer">Not affiliated with the Texas Department of Public Safety. All appointments booked through the official DPS website.</p>
-        <p class="footer-copyright" data-i18n="footer-copyright" data-i18n-html="true">&copy; {{company.copyrightYear}} {{app.name}} by {{company.name}}. All rights reserved.</p>
+        <p class="footer-copyright" data-i18n="footer-copyright" data-i18n-html="true">&copy; {{company.copyrightYear}} {{app.name}}. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -597,7 +592,7 @@
 
         // Hero
         "priv-hero-title": "Pol\u00edtica de Privacidad",
-        "priv-hero-desc": "C\u00f3mo {{app.mobileName}} por {{company.name}} recopila, usa y protege tu informaci\u00f3n personal.",
+        "priv-hero-desc": "C\u00f3mo {{app.mobileName}} recopila, usa y protege tu informaci\u00f3n personal.",
         "priv-effective": "Fecha de Vigencia: {{legal.effectiveDateEs}}",
         "priv-cross-link": "Ver T\u00e9rminos de Servicio \u2192",
 
@@ -716,11 +711,9 @@
         "priv-contact-title": "Informaci\u00f3n de Contacto",
         "priv-contact-desc": "Si tienes preguntas sobre esta pol\u00edtica de privacidad o tus datos, por favor comun\u00edcate:",
         "priv-contact-email": "Correo: <a href=\"mailto:{{company.email}}\">{{company.email}}</a>",
-        "priv-contact-address": "{{company.name}}<br>{{company.street}}, {{company.city}}, {{company.state}} {{company.zip}}<br>Estados Unidos",
         "priv-contact-response": "Por favor permite hasta 5 d\u00edas h\u00e1biles para recibir una respuesta.",
 
         // Footer
-        "footer-address": "{{company.name}}<br>{{company.street}}, {{company.city}}, {{company.state}} {{company.zip}}<br>Estados Unidos",
         "footer-desc": "Encuentra y asegura citas del DPS de Texas m\u00e1s tempranas. Reserva manualmente gratis o d\u00e9janos manejarlo autom\u00e1ticamente.",
         "footer-product": "Producto",
         "footer-how": "C\u00f3mo Funciona",
@@ -736,7 +729,7 @@
         "footer-terms": "T\u00e9rminos de Servicio",
         "footer-delete-account": "Eliminar Cuenta",
         "footer-disclaimer": "No afiliado al Departamento de Seguridad P\u00fablica de Texas. Todas las citas se reservan a trav\u00e9s del sitio oficial del DPS.",
-        "footer-copyright": "\u00a9 {{company.copyrightYear}} {{app.name}} por {{company.name}}. Todos los derechos reservados."
+        "footer-copyright": "\u00a9 {{company.copyrightYear}} {{app.name}}. Todos los derechos reservados."
       }
     };
 

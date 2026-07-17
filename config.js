@@ -5,12 +5,6 @@ const CONFIG = {
     icon: "appicon.jpg",
   },
   company: {
-    name: "Tech by Floig LLC",
-    street: "4853 Preston Trail Dr",
-    city: "Mesquite",
-    state: "TX",
-    zip: "75150",
-    country: "United States",
     email: "support@mystatescheduler.com",
     copyrightYear: "2026",
   },

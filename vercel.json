@@ -5,7 +5,16 @@
       "headers": [
         { "key": "Content-Type", "value": "application/json" }
       ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
     }
+  ],
+  "redirects": [
+    { "source": "/CLAUDE.md", "destination": "/", "permanent": false }
   ],
   "rewrites": [
     { "source": "/open/:path*", "destination": "/open-app.html" }
